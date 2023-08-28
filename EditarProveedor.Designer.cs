@@ -1,6 +1,6 @@
 ﻿namespace Cedisur
 {
-    partial class AgregarProveedor
+    partial class EditarProveedor
     {
         /// <summary>
         /// Required designer variable.
@@ -28,21 +28,99 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarProveedor));
-            panel1 = new Panel();
-            BtnSalir = new PictureBox();
-            BtnVolver = new Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditarProveedor));
+            label1 = new Label();
+            BtnAgregar = new Button();
             label4 = new Label();
             DTPFecha = new DateTimePicker();
             label3 = new Label();
             TxtNombreProv = new TextBox();
             label2 = new Label();
             TxtIDProveedor = new TextBox();
-            BtnAgregar = new Button();
-            label1 = new Label();
+            panel1 = new Panel();
+            BtnSalir = new PictureBox();
+            BtnVolver = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)BtnSalir).BeginInit();
             SuspendLayout();
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Rockwell", 24F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = SystemColors.ButtonFace;
+            label1.Location = new Point(492, 125);
+            label1.Name = "label1";
+            label1.Size = new Size(561, 39);
+            label1.TabIndex = 36;
+            label1.Text = "EDITAR DATOS DEL PROVEEDOR";
+            // 
+            // BtnAgregar
+            // 
+            BtnAgregar.BackColor = SystemColors.AppWorkspace;
+            BtnAgregar.Font = new Font("Rockwell", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            BtnAgregar.Location = new Point(670, 498);
+            BtnAgregar.Name = "BtnAgregar";
+            BtnAgregar.Size = new Size(121, 59);
+            BtnAgregar.TabIndex = 35;
+            BtnAgregar.Text = "Editar";
+            BtnAgregar.UseVisualStyleBackColor = false;
+            BtnAgregar.Click += BtnAgregar_Click;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Rockwell", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.ForeColor = SystemColors.ButtonFace;
+            label4.Location = new Point(1057, 291);
+            label4.Name = "label4";
+            label4.Size = new Size(190, 25);
+            label4.TabIndex = 34;
+            label4.Text = "Fecha de registro";
+            // 
+            // DTPFecha
+            // 
+            DTPFecha.Location = new Point(1057, 319);
+            DTPFecha.Name = "DTPFecha";
+            DTPFecha.Size = new Size(229, 23);
+            DTPFecha.TabIndex = 33;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Rockwell", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.ForeColor = SystemColors.ButtonFace;
+            label3.Location = new Point(549, 291);
+            label3.Name = "label3";
+            label3.Size = new Size(242, 25);
+            label3.TabIndex = 32;
+            label3.Text = "Nombre del proveedor";
+            // 
+            // TxtNombreProv
+            // 
+            TxtNombreProv.Location = new Point(550, 319);
+            TxtNombreProv.Name = "TxtNombreProv";
+            TxtNombreProv.Size = new Size(308, 23);
+            TxtNombreProv.TabIndex = 31;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Rockwell", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = SystemColors.ButtonFace;
+            label2.Location = new Point(104, 291);
+            label2.Name = "label2";
+            label2.Size = new Size(183, 25);
+            label2.TabIndex = 30;
+            label2.Text = "ID del proveedor";
+            // 
+            // TxtIDProveedor
+            // 
+            TxtIDProveedor.Enabled = false;
+            TxtIDProveedor.Location = new Point(104, 319);
+            TxtIDProveedor.Name = "TxtIDProveedor";
+            TxtIDProveedor.Size = new Size(268, 23);
+            TxtIDProveedor.TabIndex = 29;
             // 
             // panel1
             // 
@@ -52,7 +130,7 @@
             panel1.Location = new Point(12, 12);
             panel1.Name = "panel1";
             panel1.Size = new Size(1444, 67);
-            panel1.TabIndex = 2;
+            panel1.TabIndex = 28;
             // 
             // BtnSalir
             // 
@@ -69,92 +147,15 @@
             // 
             BtnVolver.BackColor = SystemColors.AppWorkspace;
             BtnVolver.Font = new Font("Rockwell", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            BtnVolver.Location = new Point(3, 7);
+            BtnVolver.Location = new Point(12, 3);
             BtnVolver.Name = "BtnVolver";
-            BtnVolver.Size = new Size(96, 53);
+            BtnVolver.Size = new Size(141, 53);
             BtnVolver.TabIndex = 2;
-            BtnVolver.Text = "Volver al menú";
+            BtnVolver.Text = "Volver a la ventana anterior";
             BtnVolver.UseVisualStyleBackColor = false;
             BtnVolver.Click += BtnVolver_Click;
             // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Rockwell", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.ForeColor = SystemColors.ButtonFace;
-            label4.Location = new Point(1057, 291);
-            label4.Name = "label4";
-            label4.Size = new Size(190, 25);
-            label4.TabIndex = 25;
-            label4.Text = "Fecha de registro";
-            // 
-            // DTPFecha
-            // 
-            DTPFecha.Location = new Point(1057, 319);
-            DTPFecha.Name = "DTPFecha";
-            DTPFecha.Size = new Size(229, 23);
-            DTPFecha.TabIndex = 24;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Rockwell", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.ForeColor = SystemColors.ButtonFace;
-            label3.Location = new Point(549, 291);
-            label3.Name = "label3";
-            label3.Size = new Size(242, 25);
-            label3.TabIndex = 23;
-            label3.Text = "Nombre del proveedor";
-            // 
-            // TxtNombreProv
-            // 
-            TxtNombreProv.Location = new Point(550, 319);
-            TxtNombreProv.Name = "TxtNombreProv";
-            TxtNombreProv.Size = new Size(308, 23);
-            TxtNombreProv.TabIndex = 22;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Rockwell", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.ForeColor = SystemColors.ButtonFace;
-            label2.Location = new Point(104, 291);
-            label2.Name = "label2";
-            label2.Size = new Size(183, 25);
-            label2.TabIndex = 21;
-            label2.Text = "ID del proveedor";
-            // 
-            // TxtIDProveedor
-            // 
-            TxtIDProveedor.Location = new Point(104, 319);
-            TxtIDProveedor.Name = "TxtIDProveedor";
-            TxtIDProveedor.Size = new Size(268, 23);
-            TxtIDProveedor.TabIndex = 20;
-            // 
-            // BtnAgregar
-            // 
-            BtnAgregar.BackColor = SystemColors.AppWorkspace;
-            BtnAgregar.Font = new Font("Rockwell", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            BtnAgregar.Location = new Point(670, 514);
-            BtnAgregar.Name = "BtnAgregar";
-            BtnAgregar.Size = new Size(121, 59);
-            BtnAgregar.TabIndex = 26;
-            BtnAgregar.Text = "Agregar";
-            BtnAgregar.UseVisualStyleBackColor = false;
-            BtnAgregar.Click += BtnAgregar_Click;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Rockwell", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = SystemColors.ButtonFace;
-            label1.Location = new Point(523, 139);
-            label1.Name = "label1";
-            label1.Size = new Size(401, 39);
-            label1.TabIndex = 27;
-            label1.Text = "AGREGAR PROVEEDOR";
-            // 
-            // AgregarProveedor
+            // EditarProveedor
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -170,10 +171,9 @@
             Controls.Add(TxtIDProveedor);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "AgregarProveedor";
+            Name = "EditarProveedor";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "AgregarProveedor";
-            Load += AgregarProveedor_Load;
+            Text = "EditarProveedor";
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)BtnSalir).EndInit();
             ResumeLayout(false);
@@ -182,16 +182,16 @@
 
         #endregion
 
+        private Label label1;
+        private Button BtnAgregar;
+        private Label label4;
+        private Label label3;
+        private Label label2;
         private Panel panel1;
         private PictureBox BtnSalir;
         private Button BtnVolver;
-        private Label label4;
-        private DateTimePicker DTPFecha;
-        private Label label3;
-        private TextBox TxtNombreProv;
-        private Label label2;
-        private TextBox TxtIDProveedor;
-        private Button BtnAgregar;
-        private Label label1;
+        public DateTimePicker DTPFecha;
+        public TextBox TxtNombreProv;
+        public TextBox TxtIDProveedor;
     }
 }

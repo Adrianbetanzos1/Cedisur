@@ -31,15 +31,15 @@ namespace Cedisur
             {
                 InicioSesion form = new();
                 form.Show();
-                this.Hide(); 
+                this.Hide();
             }
-                
+
 
         }
 
         private void Label2_Click(object sender, EventArgs e)
         {
-            VerProveedores prov = new VerProveedores();
+            VerFacturas prov = new VerFacturas();
             prov.Show();
             this.Hide();
         }
@@ -47,6 +47,7 @@ namespace Cedisur
         {
             SubmenuPro.Visible = false;
             SubMenuFac.Visible = false;
+            SubmenuPagos.Visible = false;
         }
         private void HideSubmenu()
         {
@@ -76,7 +77,7 @@ namespace Cedisur
 
         private void BtnTodos_Click(object sender, EventArgs e)
         {
-            VerProveedores pro = new VerProveedores();
+            VerProveedores pro = new();
             pro.Show();
             this.Hide();
             HideSubmenu();
@@ -84,14 +85,14 @@ namespace Cedisur
 
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
-            AgregarProveedor agregarProveedor = new AgregarProveedor();
+            AgregarProveedor agregarProveedor = new();
             agregarProveedor.Show();
             this.Hide();
         }
 
         private void BtnPagar_Click(object sender, EventArgs e)
         {
-            AgregarFacturas pagos = new AgregarFacturas();
+            AgregarPagos pagos = new AgregarPagos();
             pagos.Show();
             this.Hide();
         }
@@ -104,8 +105,20 @@ namespace Cedisur
 
         private void BtnTodosFac_Click(object sender, EventArgs e)
         {
-            VerFacturas fac = new VerFacturas();
-            fac.Show();
+            VerFacturas facturas = new();
+            facturas.Show();
+            this.Hide();
+        }
+
+        private void BtnPagos_Click(object sender, EventArgs e)
+        {
+            ShowSubmenu(SubmenuPagos);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            VerPagos pagos = new();
+            pagos.Show();
             this.Hide();
         }
     }

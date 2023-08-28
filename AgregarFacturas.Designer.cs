@@ -29,54 +29,63 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarFacturas));
+            label1 = new Label();
             panel1 = new Panel();
             BtnSalir = new PictureBox();
             BtnVolver = new Button();
-            label17 = new Label();
-            TxtNumContrato = new TextBox();
-            label16 = new Label();
-            TxtNumeroCuenta = new TextBox();
-            label15 = new Label();
-            CbSPEI = new CheckedListBox();
-            label14 = new Label();
-            TxtImporteUSD = new TextBox();
-            label13 = new Label();
-            DTPFechaPago = new DateTimePicker();
-            label12 = new Label();
-            TxtImporteMXP = new TextBox();
-            label10 = new Label();
-            label21 = new Label();
-            button1 = new Button();
+            TxtIDProveedor = new TextBox();
+            label2 = new Label();
+            label3 = new Label();
+            TxtNombreFactura = new TextBox();
+            DTPFecha = new DateTimePicker();
+            label4 = new Label();
+            label5 = new Label();
+            TxtDiasVencimiento = new TextBox();
+            label6 = new Label();
+            TxtImporte = new TextBox();
             label7 = new Label();
             TxtDolar = new TextBox();
+            label8 = new Label();
+            TxtSaldoMXP = new TextBox();
+            label9 = new Label();
+            TxtSaldoUSD = new TextBox();
+            label11 = new Label();
             BtnAgregar = new Button();
-            label1 = new Label();
-            label2 = new Label();
+            button1 = new Button();
+            label20 = new Label();
+            TxtAbono = new TextBox();
+            label21 = new Label();
+            label10 = new Label();
             TxtNombrePro = new TextBox();
-            label3 = new Label();
-            TxtID = new TextBox();
-            label4 = new Label();
-            txtSaldoPendiente = new TextBox();
-            label5 = new Label();
-            TxtFacturaN = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)BtnSalir).BeginInit();
             SuspendLayout();
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Rockwell", 24F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = SystemColors.ButtonFace;
+            label1.Location = new Point(593, 101);
+            label1.Name = "label1";
+            label1.Size = new Size(347, 39);
+            label1.TabIndex = 0;
+            label1.Text = "AGREGAR FACTURA";
             // 
             // panel1
             // 
             panel1.BackColor = SystemColors.AppWorkspace;
             panel1.Controls.Add(BtnSalir);
             panel1.Controls.Add(BtnVolver);
-            panel1.Location = new Point(-4, 12);
+            panel1.Location = new Point(12, 11);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1402, 63);
-            panel1.TabIndex = 2;
+            panel1.Size = new Size(1565, 67);
+            panel1.TabIndex = 1;
             // 
             // BtnSalir
             // 
             BtnSalir.Image = (Image)resources.GetObject("BtnSalir.Image");
-            BtnSalir.Location = new Point(1351, 18);
+            BtnSalir.Location = new Point(1519, 20);
             BtnSalir.Name = "BtnSalir";
             BtnSalir.Size = new Size(29, 27);
             BtnSalir.SizeMode = PictureBoxSizeMode.Zoom;
@@ -88,273 +97,245 @@
             // 
             BtnVolver.BackColor = SystemColors.AppWorkspace;
             BtnVolver.Font = new Font("Rockwell", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            BtnVolver.Location = new Point(29, 3);
+            BtnVolver.Location = new Point(3, 7);
             BtnVolver.Name = "BtnVolver";
-            BtnVolver.Size = new Size(96, 53);
+            BtnVolver.Size = new Size(141, 53);
             BtnVolver.TabIndex = 2;
-            BtnVolver.Text = "Volver al menú";
+            BtnVolver.Text = "Volver a la ventana anterior";
             BtnVolver.UseVisualStyleBackColor = false;
             BtnVolver.Click += BtnVolver_Click;
             // 
-            // label17
+            // TxtIDProveedor
             // 
-            label17.AutoSize = true;
-            label17.Font = new Font("Rockwell", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label17.ForeColor = SystemColors.ButtonFace;
-            label17.Location = new Point(335, 489);
-            label17.Name = "label17";
-            label17.Size = new Size(301, 29);
-            label17.TabIndex = 45;
-            label17.Text = "Número de contrato/OC";
+            TxtIDProveedor.Enabled = false;
+            TxtIDProveedor.Location = new Point(136, 286);
+            TxtIDProveedor.Name = "TxtIDProveedor";
+            TxtIDProveedor.Size = new Size(268, 23);
+            TxtIDProveedor.TabIndex = 2;
             // 
-            // TxtNumContrato
+            // label2
             // 
-            TxtNumContrato.Location = new Point(336, 521);
-            TxtNumContrato.Name = "TxtNumContrato";
-            TxtNumContrato.Size = new Size(300, 23);
-            TxtNumContrato.TabIndex = 44;
+            label2.AutoSize = true;
+            label2.Font = new Font("Rockwell", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = SystemColors.ButtonFace;
+            label2.Location = new Point(136, 258);
+            label2.Name = "label2";
+            label2.Size = new Size(183, 25);
+            label2.TabIndex = 3;
+            label2.Text = "ID del proveedor";
             // 
-            // label16
+            // label3
             // 
-            label16.AutoSize = true;
-            label16.Font = new Font("Rockwell", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label16.ForeColor = SystemColors.ButtonFace;
-            label16.Location = new Point(44, 489);
-            label16.Name = "label16";
-            label16.Size = new Size(231, 29);
-            label16.TabIndex = 43;
-            label16.Text = "Número de cuenta";
+            label3.AutoSize = true;
+            label3.Font = new Font("Rockwell", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.ForeColor = SystemColors.ButtonFace;
+            label3.Location = new Point(135, 417);
+            label3.Name = "label3";
+            label3.Size = new Size(227, 25);
+            label3.TabIndex = 5;
+            label3.Text = "Nombre de la factura";
             // 
-            // TxtNumeroCuenta
+            // TxtNombreFactura
             // 
-            TxtNumeroCuenta.Location = new Point(44, 521);
-            TxtNumeroCuenta.Name = "TxtNumeroCuenta";
-            TxtNumeroCuenta.Size = new Size(233, 23);
-            TxtNumeroCuenta.TabIndex = 42;
+            TxtNombreFactura.Location = new Point(136, 445);
+            TxtNombreFactura.Name = "TxtNombreFactura";
+            TxtNombreFactura.Size = new Size(202, 23);
+            TxtNombreFactura.TabIndex = 4;
             // 
-            // label15
+            // DTPFecha
             // 
-            label15.AutoSize = true;
-            label15.Font = new Font("Rockwell", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label15.ForeColor = SystemColors.ButtonFace;
-            label15.Location = new Point(926, 362);
-            label15.Name = "label15";
-            label15.Size = new Size(67, 29);
-            label15.TabIndex = 41;
-            label15.Text = "SPEI";
+            DTPFecha.Location = new Point(385, 445);
+            DTPFecha.Name = "DTPFecha";
+            DTPFecha.Size = new Size(229, 23);
+            DTPFecha.TabIndex = 6;
             // 
-            // CbSPEI
+            // label4
             // 
-            CbSPEI.FormattingEnabled = true;
-            CbSPEI.Items.AddRange(new object[] { "Dolar", "Peso Mexicano" });
-            CbSPEI.Location = new Point(926, 394);
-            CbSPEI.Name = "CbSPEI";
-            CbSPEI.Size = new Size(129, 58);
-            CbSPEI.TabIndex = 40;
+            label4.AutoSize = true;
+            label4.Font = new Font("Rockwell", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.ForeColor = SystemColors.ButtonFace;
+            label4.Location = new Point(385, 417);
+            label4.Name = "label4";
+            label4.Size = new Size(206, 25);
+            label4.TabIndex = 7;
+            label4.Text = "Fecha de la factura";
             // 
-            // label14
+            // label5
             // 
-            label14.AutoSize = true;
-            label14.Font = new Font("Rockwell", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label14.ForeColor = SystemColors.ButtonFace;
-            label14.Location = new Point(335, 362);
-            label14.Name = "label14";
-            label14.Size = new Size(226, 29);
-            label14.TabIndex = 39;
-            label14.Text = "Importe pago USD";
+            label5.AutoSize = true;
+            label5.Font = new Font("Rockwell", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.ForeColor = SystemColors.ButtonFace;
+            label5.Location = new Point(661, 417);
+            label5.Name = "label5";
+            label5.Size = new Size(222, 25);
+            label5.TabIndex = 9;
+            label5.Text = "Dias de vencimiento";
             // 
-            // TxtImporteUSD
+            // TxtDiasVencimiento
             // 
-            TxtImporteUSD.Enabled = false;
-            TxtImporteUSD.Location = new Point(335, 394);
-            TxtImporteUSD.Name = "TxtImporteUSD";
-            TxtImporteUSD.Size = new Size(248, 23);
-            TxtImporteUSD.TabIndex = 38;
+            TxtDiasVencimiento.Location = new Point(661, 445);
+            TxtDiasVencimiento.Name = "TxtDiasVencimiento";
+            TxtDiasVencimiento.Size = new Size(166, 23);
+            TxtDiasVencimiento.TabIndex = 8;
             // 
-            // label13
+            // label6
             // 
-            label13.AutoSize = true;
-            label13.Font = new Font("Rockwell", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label13.ForeColor = SystemColors.ButtonFace;
-            label13.Location = new Point(633, 362);
-            label13.Name = "label13";
-            label13.Size = new Size(193, 29);
-            label13.TabIndex = 37;
-            label13.Text = "Fecha del pago";
+            label6.AutoSize = true;
+            label6.Font = new Font("Rockwell", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.ForeColor = SystemColors.ButtonFace;
+            label6.Location = new Point(917, 417);
+            label6.Name = "label6";
+            label6.Size = new Size(94, 25);
+            label6.TabIndex = 11;
+            label6.Text = "Importe";
             // 
-            // DTPFechaPago
+            // TxtImporte
             // 
-            DTPFechaPago.Location = new Point(634, 394);
-            DTPFechaPago.Name = "DTPFechaPago";
-            DTPFechaPago.Size = new Size(229, 23);
-            DTPFechaPago.TabIndex = 36;
+            TxtImporte.Location = new Point(917, 445);
+            TxtImporte.Name = "TxtImporte";
+            TxtImporte.Size = new Size(166, 23);
+            TxtImporte.TabIndex = 38;
             // 
-            // label12
+            // label7
             // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Rockwell", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label12.ForeColor = SystemColors.ButtonFace;
-            label12.Location = new Point(44, 362);
-            label12.Name = "label12";
-            label12.Size = new Size(237, 29);
-            label12.TabIndex = 35;
-            label12.Text = "Importe pago MXP";
+            label7.AutoSize = true;
+            label7.Font = new Font("Rockwell", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.ForeColor = SystemColors.ButtonFace;
+            label7.Location = new Point(1180, 101);
+            label7.Name = "label7";
+            label7.Size = new Size(75, 19);
+            label7.TabIndex = 13;
+            label7.Text = "USD hoy";
             // 
-            // TxtImporteMXP
+            // TxtDolar
             // 
-            TxtImporteMXP.Location = new Point(44, 394);
-            TxtImporteMXP.Name = "TxtImporteMXP";
-            TxtImporteMXP.Size = new Size(233, 23);
-            TxtImporteMXP.TabIndex = 34;
+            TxtDolar.Location = new Point(1180, 125);
+            TxtDolar.Name = "TxtDolar";
+            TxtDolar.Size = new Size(101, 23);
+            TxtDolar.TabIndex = 12;
             // 
-            // label10
+            // label8
             // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Rockwell", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label10.ForeColor = SystemColors.ButtonFace;
-            label10.Location = new Point(549, 88);
-            label10.Name = "label10";
-            label10.Size = new Size(275, 29);
-            label10.TabIndex = 33;
-            label10.Text = "GENERAR FACTURAS";
+            label8.AutoSize = true;
+            label8.Font = new Font("Rockwell", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.ForeColor = SystemColors.ButtonFace;
+            label8.Location = new Point(385, 496);
+            label8.Name = "label8";
+            label8.Size = new Size(124, 25);
+            label8.TabIndex = 15;
+            label8.Text = "Saldo MXP";
+            // 
+            // TxtSaldoMXP
+            // 
+            TxtSaldoMXP.Enabled = false;
+            TxtSaldoMXP.Location = new Point(385, 524);
+            TxtSaldoMXP.Name = "TxtSaldoMXP";
+            TxtSaldoMXP.Size = new Size(229, 23);
+            TxtSaldoMXP.TabIndex = 14;
+            
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Rockwell", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label9.ForeColor = SystemColors.ButtonFace;
+            label9.Location = new Point(661, 496);
+            label9.Name = "label9";
+            label9.Size = new Size(114, 25);
+            label9.TabIndex = 17;
+            label9.Text = "Saldo USD";
+            // 
+            // TxtSaldoUSD
+            // 
+            TxtSaldoUSD.Enabled = false;
+            TxtSaldoUSD.Location = new Point(661, 524);
+            TxtSaldoUSD.Name = "TxtSaldoUSD";
+            TxtSaldoUSD.Size = new Size(166, 23);
+            TxtSaldoUSD.TabIndex = 16;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Rockwell", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label11.ForeColor = SystemColors.ButtonFace;
+            label11.Location = new Point(136, 349);
+            label11.Name = "label11";
+            label11.Size = new Size(161, 25);
+            label11.TabIndex = 19;
+            label11.Text = "PROVISIONES";
+            // 
+            // BtnAgregar
+            // 
+            BtnAgregar.BackColor = SystemColors.AppWorkspace;
+            BtnAgregar.Font = new Font("Rockwell", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            BtnAgregar.Location = new Point(661, 617);
+            BtnAgregar.Name = "BtnAgregar";
+            BtnAgregar.Size = new Size(121, 59);
+            BtnAgregar.TabIndex = 3;
+            BtnAgregar.Text = "Agregar";
+            BtnAgregar.UseVisualStyleBackColor = false;
+            BtnAgregar.Click += BtnAgregar_Click;
+            // 
+            // button1
+            // 
+            button1.BackColor = SystemColors.AppWorkspace;
+            button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.Location = new Point(1180, 154);
+            button1.Name = "button1";
+            button1.Size = new Size(101, 31);
+            button1.TabIndex = 37;
+            button1.Text = "Convertir";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += Button1_Click;
+            // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.Font = new Font("Rockwell", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label20.ForeColor = SystemColors.ButtonFace;
+            label20.Location = new Point(136, 496);
+            label20.Name = "label20";
+            label20.Size = new Size(77, 25);
+            label20.TabIndex = 39;
+            label20.Text = "Abono";
+            // 
+            // TxtAbono
+            // 
+            TxtAbono.Location = new Point(136, 524);
+            TxtAbono.Name = "TxtAbono";
+            TxtAbono.Size = new Size(202, 23);
+            TxtAbono.TabIndex = 38;
+            TxtAbono.Leave += TxtAbono_Leave;
             // 
             // label21
             // 
             label21.AutoSize = true;
             label21.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label21.ForeColor = SystemColors.ButtonFace;
-            label21.Location = new Point(1197, 219);
+            label21.Location = new Point(1170, 198);
             label21.Name = "label21";
             label21.Size = new Size(104, 17);
-            label21.TabIndex = 53;
+            label21.TabIndex = 40;
             label21.Text = "Coloque el valor";
             // 
-            // button1
+            // label10
             // 
-            button1.BackColor = SystemColors.AppWorkspace;
-            button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(1197, 177);
-            button1.Name = "button1";
-            button1.Size = new Size(101, 31);
-            button1.TabIndex = 52;
-            button1.Text = "Convertir";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += Button1_Click;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.ForeColor = SystemColors.ButtonFace;
-            label7.Location = new Point(1197, 124);
-            label7.Name = "label7";
-            label7.Size = new Size(76, 21);
-            label7.TabIndex = 51;
-            label7.Text = "USD hoy";
-            // 
-            // TxtDolar
-            // 
-            TxtDolar.Location = new Point(1197, 148);
-            TxtDolar.Name = "TxtDolar";
-            TxtDolar.Size = new Size(101, 23);
-            TxtDolar.TabIndex = 50;
-            // 
-            // BtnAgregar
-            // 
-            BtnAgregar.BackColor = SystemColors.AppWorkspace;
-            BtnAgregar.Font = new Font("Rockwell", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            BtnAgregar.Location = new Point(718, 481);
-            BtnAgregar.Name = "BtnAgregar";
-            BtnAgregar.Size = new Size(129, 63);
-            BtnAgregar.TabIndex = 54;
-            BtnAgregar.Text = "Agregar";
-            BtnAgregar.UseVisualStyleBackColor = false;
-            BtnAgregar.Click += BtnAgregar_Click;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(62, 190);
-            label1.Name = "label1";
-            label1.Size = new Size(0, 32);
-            label1.TabIndex = 56;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Rockwell", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.ForeColor = SystemColors.ButtonFace;
-            label2.Location = new Point(335, 249);
-            label2.Name = "label2";
-            label2.Size = new Size(238, 29);
-            label2.TabIndex = 60;
-            label2.Text = "Nombre proveedor";
+            label10.AutoSize = true;
+            label10.Font = new Font("Rockwell", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label10.ForeColor = SystemColors.ButtonFace;
+            label10.Location = new Point(448, 258);
+            label10.Name = "label10";
+            label10.Size = new Size(242, 25);
+            label10.TabIndex = 55;
+            label10.Text = "Nombre del proveedor";
             // 
             // TxtNombrePro
             // 
             TxtNombrePro.Enabled = false;
-            TxtNombrePro.Location = new Point(335, 281);
+            TxtNombrePro.Location = new Point(448, 286);
             TxtNombrePro.Name = "TxtNombrePro";
-            TxtNombrePro.Size = new Size(248, 23);
-            TxtNombrePro.TabIndex = 59;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Rockwell", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.ForeColor = SystemColors.ButtonFace;
-            label3.Location = new Point(44, 249);
-            label3.Name = "label3";
-            label3.Size = new Size(169, 29);
-            label3.TabIndex = 58;
-            label3.Text = "ID proveedor";
-            // 
-            // TxtID
-            // 
-            TxtID.Enabled = false;
-            TxtID.Location = new Point(44, 281);
-            TxtID.Name = "TxtID";
-            TxtID.Size = new Size(233, 23);
-            TxtID.TabIndex = 57;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Rockwell", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.ForeColor = SystemColors.ButtonFace;
-            label4.Location = new Point(625, 249);
-            label4.Name = "label4";
-            label4.Size = new Size(201, 29);
-            label4.TabIndex = 62;
-            label4.Text = "Saldo pendiente";
-            // 
-            // txtSaldoPendiente
-            // 
-            txtSaldoPendiente.Enabled = false;
-            txtSaldoPendiente.Location = new Point(625, 281);
-            txtSaldoPendiente.Name = "txtSaldoPendiente";
-            txtSaldoPendiente.Size = new Size(248, 23);
-            txtSaldoPendiente.TabIndex = 61;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Rockwell", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.ForeColor = SystemColors.ButtonFace;
-            label5.Location = new Point(926, 249);
-            label5.Name = "label5";
-            label5.Size = new Size(263, 29);
-            label5.TabIndex = 64;
-            label5.Text = "Nombre de la factura";
-            // 
-            // TxtFacturaN
-            // 
-            TxtFacturaN.Enabled = false;
-            TxtFacturaN.Location = new Point(926, 281);
-            TxtFacturaN.Name = "TxtFacturaN";
-            TxtFacturaN.Size = new Size(248, 23);
-            TxtFacturaN.TabIndex = 63;
+            TxtNombrePro.Size = new Size(268, 23);
+            TxtNombrePro.TabIndex = 54;
             // 
             // AgregarFacturas
             // 
@@ -362,38 +343,36 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSlateGray;
             ClientSize = new Size(1589, 817);
-            Controls.Add(label5);
-            Controls.Add(TxtFacturaN);
-            Controls.Add(label4);
-            Controls.Add(txtSaldoPendiente);
-            Controls.Add(label2);
+            Controls.Add(label10);
             Controls.Add(TxtNombrePro);
-            Controls.Add(label3);
-            Controls.Add(TxtID);
-            Controls.Add(label1);
-            Controls.Add(BtnAgregar);
             Controls.Add(label21);
+            Controls.Add(label20);
+            Controls.Add(TxtAbono);
             Controls.Add(button1);
+            Controls.Add(BtnAgregar);
+            Controls.Add(label11);
+            Controls.Add(label9);
+            Controls.Add(TxtSaldoUSD);
+            Controls.Add(label8);
+            Controls.Add(TxtSaldoMXP);
             Controls.Add(label7);
             Controls.Add(TxtDolar);
-            Controls.Add(label17);
-            Controls.Add(TxtNumContrato);
-            Controls.Add(label16);
-            Controls.Add(TxtNumeroCuenta);
-            Controls.Add(label15);
-            Controls.Add(CbSPEI);
-            Controls.Add(label14);
-            Controls.Add(TxtImporteUSD);
-            Controls.Add(label13);
-            Controls.Add(DTPFechaPago);
-            Controls.Add(label12);
-            Controls.Add(TxtImporteMXP);
-            Controls.Add(label10);
+            Controls.Add(label6);
+            Controls.Add(TxtImporte);
+            Controls.Add(label5);
+            Controls.Add(TxtDiasVencimiento);
+            Controls.Add(label4);
+            Controls.Add(DTPFecha);
+            Controls.Add(label3);
+            Controls.Add(TxtNombreFactura);
+            Controls.Add(label2);
+            Controls.Add(TxtIDProveedor);
+            Controls.Add(label1);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "AgregarFacturas";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "AgregarFacturas";
+            Text = "AgregarFactura";
             Load += AgregarFacturas_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)BtnSalir).EndInit();
@@ -403,35 +382,33 @@
 
         #endregion
 
-        private Panel panel1;
-        private PictureBox BtnSalir;
-        private Button BtnVolver;
-        private Label label17;
-        private TextBox TxtNumContrato;
-        private Label label16;
-        private TextBox TxtNumeroCuenta;
-        private Label label15;
-        private CheckedListBox CbSPEI;
-        private Label label14;
-        private TextBox TxtImporteUSD;
-        private Label label13;
-        private DateTimePicker DTPFechaPago;
-        private Label label12;
-        private TextBox TxtImporteMXP;
-        private Label label10;
-        private Label label21;
-        private Button button1;
-        private Label label7;
-        private TextBox TxtDolar;
-        private Button BtnAgregar;
         private Label label1;
+        private Panel panel1;
+        private Button BtnVolver;
         private Label label2;
         private Label label3;
         private Label label4;
-        public TextBox TxtNombrePro;
-        public TextBox TxtID;
-        public TextBox txtSaldoPendiente;
         private Label label5;
-        public TextBox TxtFacturaN;
+        private Label label6;
+        private Label label7;
+        private TextBox TxtDolar;
+        private Label label8;
+        private Label label9;
+        private Label label11;
+        private Button BtnAgregar;
+        private PictureBox BtnSalir;
+        private Button button1;
+        private Label label20;
+        private Label label21;
+        private Label label10;
+        public TextBox TxtNombrePro;
+        public TextBox TxtIDProveedor;
+        public TextBox TxtNombreFactura;
+        public DateTimePicker DTPFecha;
+        public TextBox TxtDiasVencimiento;
+        public TextBox TxtImporte;
+        public TextBox TxtSaldoMXP;
+        public TextBox TxtSaldoUSD;
+        public TextBox TxtAbono;
     }
 }

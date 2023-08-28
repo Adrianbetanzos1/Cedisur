@@ -1,24 +1,22 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Cedisur
 {
+
     public partial class AgregarFacturas : Form
     {
 
-
-
-
-
-        private SqlConnection conexion = new SqlConnection("server=DESKTOP-717JV41\\SQLEXPRESS ; database=cedisur ; integrated security = true");
         public new Form ParentForm;
         public AgregarFacturas()
         {
@@ -27,9 +25,91 @@ namespace Cedisur
 
         private void BtnVolver_Click(object sender, EventArgs e)
         {
-            VerProveedores menu = new();
+            Menu menu = new Menu();
             menu.Show();
             this.Close();
+        }
+
+
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            float dolar;
+            float saldoMXP;
+            float saldoUSD;
+
+            if (string.IsNullOrEmpty(TxtDolar.Text))
+            {
+
+                label21.Text = "Por favor coloque un número donde debe antes de darle click";
+            }
+            else if (string.IsNullOrEmpty(TxtSaldoMXP.Text))
+            {
+                label21.Text = "Coloque el dato del saldo aportado";
+            }
+            else
+            {
+
+                dolar = float.Parse(TxtDolar.Text);
+
+                saldoMXP = float.Parse(TxtSaldoMXP.Text);
+
+                saldoUSD = saldoMXP / dolar;
+
+
+                TxtSaldoUSD.Text = saldoUSD.ToString();
+
+
+            }
+
+        }
+
+
+        private void LimpiarDatos()
+        {
+
+            TxtIDProveedor.Clear();
+            TxtNombreFactura.Clear();
+            DTPFecha.Value = DateTime.Now;
+            TxtDiasVencimiento.Clear();
+
+            TxtImporte.Clear();
+            TxtAbono.Clear();
+            TxtSaldoMXP.Clear();
+            TxtSaldoUSD.Clear();
+           
+
+        }
+
+        private void BtnAgregar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Estas seguro que deseas agregar esta factura?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                using (SqlConnection conexion = new SqlConnection("Server=DESKTOP-717JV41\\SQLEXPRESS; Database=Cedisur;  integrated security= true"))
+                {
+                    SqlCommand cmd = new SqlCommand("Insert into Factura(facturaN, fechaFactura, diasVencimiento, importe, abono, saldoMXP, saldoUSD,ID_proveedor) values (@facturaN, @fechaFactura, @diasVencimiento, @importe, @abono, @saldoMXP, @saldoUSD,@ID_proveedor)");
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Connection = conexion;
+
+                    cmd.Parameters.AddWithValue("@facturaN", TxtNombreFactura.Text);
+                    cmd.Parameters.AddWithValue("@fechaFactura", DTPFecha.Value);
+                    cmd.Parameters.AddWithValue("@diasVencimiento", TxtDiasVencimiento.Text);
+                    cmd.Parameters.AddWithValue("@importe", TxtImporte.Text);
+                    cmd.Parameters.AddWithValue("@abono", TxtAbono.Text);
+                    cmd.Parameters.AddWithValue("@saldoMXP", TxtSaldoMXP.Text);
+                    cmd.Parameters.AddWithValue("@saldoUSD", TxtSaldoUSD.Text);
+
+                    cmd.Parameters.AddWithValue("@ID_proveedor", TxtIDProveedor.Text);
+
+                    conexion.Open();
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Registro agregado correctamente");
+                    conexion.Close();
+                    LimpiarDatos();
+
+                }
+            }
+
         }
 
         private void BtnSalir_Click(object sender, EventArgs e)
@@ -37,71 +117,20 @@ namespace Cedisur
             Application.Exit();
         }
 
-        private void LimpiarDatos()
+        private void TxtAbono_Leave(object sender, EventArgs e)
         {
 
-            TxtImporteMXP.Clear();
-            TxtImporteUSD.Clear();
-            DTPFechaPago.Value = DateTime.Now;
-            CbSPEI.ClearSelected();
-            TxtNumContrato.Clear();
-            TxtNumeroCuenta.Clear();
-
-        }
-
-
-
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            float importeMXP;
-            float importeUSD;
-            float dolar;
-
-
-            if (string.IsNullOrEmpty(TxtDolar.Text))
+            if (string.IsNullOrEmpty(TxtImporte.Text))
             {
-
-                label21.Text = "Por favor coloque un número donde debe antes de darle click";
+                MessageBox.Show("Por favor coloque el importe", "AVISO");
             }
-            else if (string.IsNullOrEmpty(TxtImporteMXP.Text))
-            {
-                label21.Text = "Coloque el dato del saldo aportado";
-            }
-            else
-            {
-                dolar = float.Parse(TxtDolar.Text);
-                importeMXP = float.Parse(TxtImporteMXP.Text);
-                importeUSD = importeMXP / dolar;
-                TxtImporteUSD.Text = importeUSD.ToString();
-            }
+            float abono = float.Parse(TxtAbono.Text);
+            float importe = float.Parse(TxtImporte.Text);
+            float saldo;
 
-        }
+            saldo = +importe - abono;
 
-        private void BtnAgregar_Click(object sender, EventArgs e)
-        {
-            using SqlConnection conexion = new SqlConnection("Server=DESKTOP-717JV41\\SQLEXPRESS; Database=Cedisur;  integrated security= true");
-            SqlCommand cmd = new SqlCommand("Insert into Facturas(facturaN,importePagoMXP,importePagoUSD, fechaPago, SPEI, numCuenta, numContrato,ID_proveedor) values (@facturaN,@importePagoMXP,@importePagoUSD,@fechaPago, @SPEI,@numCuenta, @numContrato,@ID_proveedor)");
-            cmd.CommandType = CommandType.Text;
-            cmd.Connection = conexion;
-
-            cmd.Parameters.AddWithValue("@facturaN", TxtFacturaN.Text);
-            cmd.Parameters.AddWithValue("@importePagoMXP", TxtImporteMXP.Text);
-            cmd.Parameters.AddWithValue("@importePagoUSD", TxtImporteUSD.Text);
-            cmd.Parameters.AddWithValue("@fechaPago", DTPFechaPago.Value);
-            cmd.Parameters.AddWithValue("@SPEI", CbSPEI.SelectedItem);
-            cmd.Parameters.AddWithValue("@numCuenta", TxtNumeroCuenta.Text);
-            cmd.Parameters.AddWithValue("@numContrato", TxtNumContrato.Text);
-            cmd.Parameters.AddWithValue("@ID_proveedor", TxtID.Text);
-
-
-            conexion.Open();
-            cmd.ExecuteNonQuery();
-            MessageBox.Show("Registro agregado correctamente");
-            LimpiarDatos();
-            conexion.Close();
-
-
-
+            TxtSaldoMXP.Text = saldo.ToString();
         }
 
         private void AgregarFacturas_Load(object sender, EventArgs e)
@@ -113,9 +142,11 @@ namespace Cedisur
             if (!generatedNumbers.Contains(newNumber))
             {
                 generatedNumbers.Add(newNumber);
-                TxtFacturaN.Text = "LCEDI" + newNumber.ToString();
+                TxtNombreFactura.Text = "LCEDI" + newNumber.ToString();
 
             }
         }
+
+        
     }
 }

@@ -32,13 +32,18 @@
             panel1 = new Panel();
             BtnSalir = new PictureBox();
             BtnVolver = new Button();
-            DGVFacturas = new DataGridView();
-            BtnBuscar = new Button();
+            DGVfacturas = new DataGridView();
+            BtnPagar = new Button();
+            BtnEditar = new Button();
             label14 = new Label();
             TxtBusqueda = new TextBox();
+            BtnBuscar = new Button();
+            BtnBuscarID = new Button();
+            label1 = new Label();
+            TxtBuscarID = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)BtnSalir).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)DGVFacturas).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DGVfacturas).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -49,7 +54,7 @@
             panel1.Location = new Point(12, 12);
             panel1.Name = "panel1";
             panel1.Size = new Size(1565, 63);
-            panel1.TabIndex = 3;
+            panel1.TabIndex = 2;
             // 
             // BtnSalir
             // 
@@ -74,70 +79,127 @@
             BtnVolver.UseVisualStyleBackColor = false;
             BtnVolver.Click += BtnVolver_Click;
             // 
-            // DGVFacturas
+            // DGVfacturas
             // 
-            DGVFacturas.AllowUserToAddRows = false;
-            DGVFacturas.AllowUserToDeleteRows = false;
-            DGVFacturas.AllowUserToResizeColumns = false;
-            DGVFacturas.AllowUserToResizeRows = false;
-            DGVFacturas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DGVFacturas.Location = new Point(12, 182);
-            DGVFacturas.Name = "DGVFacturas";
-            DGVFacturas.ReadOnly = true;
-            DGVFacturas.RowTemplate.Height = 25;
-            DGVFacturas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            DGVFacturas.Size = new Size(1204, 584);
-            DGVFacturas.TabIndex = 4;
+            DGVfacturas.AllowUserToAddRows = false;
+            DGVfacturas.AllowUserToDeleteRows = false;
+            DGVfacturas.AllowUserToResizeColumns = false;
+            DGVfacturas.AllowUserToResizeRows = false;
+            DGVfacturas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DGVfacturas.Location = new Point(15, 182);
+            DGVfacturas.Name = "DGVfacturas";
+            DGVfacturas.ReadOnly = true;
+            DGVfacturas.RowTemplate.Height = 25;
+            DGVfacturas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            DGVfacturas.Size = new Size(1204, 584);
+            DGVfacturas.TabIndex = 3;
             // 
-            // BtnBuscar
+            // BtnPagar
             // 
-            BtnBuscar.Font = new Font("Rockwell", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            BtnBuscar.Location = new Point(453, 98);
-            BtnBuscar.Name = "BtnBuscar";
-            BtnBuscar.Size = new Size(104, 58);
-            BtnBuscar.TabIndex = 45;
-            BtnBuscar.Text = "Buscar";
-            BtnBuscar.UseVisualStyleBackColor = true;
-            BtnBuscar.Click += BtnBuscar_Click;
+            BtnPagar.Font = new Font("Rockwell", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            BtnPagar.Location = new Point(1333, 557);
+            BtnPagar.Name = "BtnPagar";
+            BtnPagar.Size = new Size(161, 67);
+            BtnPagar.TabIndex = 4;
+            BtnPagar.Text = "Generar pago";
+            BtnPagar.UseVisualStyleBackColor = true;
+            BtnPagar.Click += BtnPagar_Click;
+            // 
+            // BtnEditar
+            // 
+            BtnEditar.Font = new Font("Rockwell", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            BtnEditar.Location = new Point(1333, 315);
+            BtnEditar.Name = "BtnEditar";
+            BtnEditar.Size = new Size(161, 67);
+            BtnEditar.TabIndex = 5;
+            BtnEditar.Text = "Editar datos factura";
+            BtnEditar.UseVisualStyleBackColor = true;
+            BtnEditar.Click += BtnEditar_Click;
             // 
             // label14
             // 
             label14.AutoSize = true;
             label14.Font = new Font("Rockwell", 18F, FontStyle.Bold, GraphicsUnit.Point);
             label14.ForeColor = SystemColors.ButtonFace;
-            label14.Location = new Point(15, 98);
+            label14.Location = new Point(12, 107);
             label14.Name = "label14";
-            label14.Size = new Size(366, 29);
-            label14.TabIndex = 44;
-            label14.Text = "Buscar por número de factura";
+            label14.Size = new Size(241, 29);
+            label14.TabIndex = 41;
+            label14.Text = "Buscar por nombre";
             // 
             // TxtBusqueda
             // 
-            TxtBusqueda.Location = new Point(18, 133);
+            TxtBusqueda.Location = new Point(15, 142);
             TxtBusqueda.Name = "TxtBusqueda";
             TxtBusqueda.Size = new Size(398, 23);
-            TxtBusqueda.TabIndex = 43;
+            TxtBusqueda.TabIndex = 40;
             // 
-            // Facturas
+            // BtnBuscar
+            // 
+            BtnBuscar.Font = new Font("Rockwell", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            BtnBuscar.Location = new Point(450, 107);
+            BtnBuscar.Name = "BtnBuscar";
+            BtnBuscar.Size = new Size(104, 58);
+            BtnBuscar.TabIndex = 42;
+            BtnBuscar.Text = "Buscar";
+            BtnBuscar.UseVisualStyleBackColor = true;
+            BtnBuscar.Click += BtnBuscar_Click;
+            // 
+            // BtnBuscarID
+            // 
+            BtnBuscarID.Font = new Font("Rockwell", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            BtnBuscarID.Location = new Point(1114, 107);
+            BtnBuscarID.Name = "BtnBuscarID";
+            BtnBuscarID.Size = new Size(104, 58);
+            BtnBuscarID.TabIndex = 45;
+            BtnBuscarID.Text = "Buscar";
+            BtnBuscarID.UseVisualStyleBackColor = true;
+            BtnBuscarID.Click += BtnBuscarID_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Rockwell", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = SystemColors.ButtonFace;
+            label1.Location = new Point(676, 107);
+            label1.Name = "label1";
+            label1.Size = new Size(182, 29);
+            label1.TabIndex = 44;
+            label1.Text = "Buscar por ID ";
+            // 
+            // TxtBuscarID
+            // 
+            TxtBuscarID.Location = new Point(679, 142);
+            TxtBuscarID.Name = "TxtBuscarID";
+            TxtBuscarID.Size = new Size(398, 23);
+            TxtBuscarID.TabIndex = 43;
+            // 
+            // VerFacturas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSlateGray;
             ClientSize = new Size(1589, 817);
+            Controls.Add(BtnBuscarID);
+            Controls.Add(label1);
+            Controls.Add(TxtBuscarID);
             Controls.Add(BtnBuscar);
             Controls.Add(label14);
             Controls.Add(TxtBusqueda);
-            Controls.Add(DGVFacturas);
+            Controls.Add(BtnEditar);
+            Controls.Add(BtnPagar);
+            Controls.Add(DGVfacturas);
             Controls.Add(panel1);
-            ForeColor = Color.Black;
+            ForeColor = SystemColors.ControlText;
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Facturas";
+            KeyPreview = true;
+            Name = "VerFacturas";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Facturas";
-            Load += Facturas_Load;
+            Text = "Proveedores";
+            Load += Proveedores_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)BtnSalir).EndInit();
-            ((System.ComponentModel.ISupportInitialize)DGVFacturas).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DGVfacturas).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -147,9 +209,14 @@
         private Panel panel1;
         private PictureBox BtnSalir;
         private Button BtnVolver;
-        private Button BtnBuscar;
+        private Button BtnPagar;
+        private Button BtnEditar;
         private Label label14;
         private TextBox TxtBusqueda;
-        public DataGridView DGVFacturas;
+        private Button BtnBuscar;
+        private Button BtnBuscarID;
+        private Label label1;
+        private TextBox TxtBuscarID;
+        public DataGridView DGVfacturas;
     }
 }

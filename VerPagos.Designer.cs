@@ -1,6 +1,6 @@
 ﻿namespace Cedisur
 {
-    partial class VerProveedores
+    partial class VerPagos
     {
         /// <summary>
         /// Required designer variable.
@@ -28,20 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VerProveedores));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VerPagos));
             panel1 = new Panel();
             BtnSalir = new PictureBox();
             BtnVolver = new Button();
-            DGVproveedores = new DataGridView();
-            BtnEditarPro = new Button();
-            BtnPagar = new Button();
+            DGVpagos = new DataGridView();
             BtnBuscar = new Button();
             label14 = new Label();
             TxtBusqueda = new TextBox();
-            Button1 = new Button();
+            button1 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)BtnSalir).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)DGVproveedores).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DGVpagos).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -77,47 +75,25 @@
             BtnVolver.UseVisualStyleBackColor = false;
             BtnVolver.Click += BtnVolver_Click;
             // 
-            // DGVproveedores
+            // DGVpagos
             // 
-            DGVproveedores.AllowUserToAddRows = false;
-            DGVproveedores.AllowUserToDeleteRows = false;
-            DGVproveedores.AllowUserToResizeColumns = false;
-            DGVproveedores.AllowUserToResizeRows = false;
-            DGVproveedores.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DGVproveedores.Location = new Point(15, 182);
-            DGVproveedores.Name = "DGVproveedores";
-            DGVproveedores.ReadOnly = true;
-            DGVproveedores.RowTemplate.Height = 25;
-            DGVproveedores.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            DGVproveedores.Size = new Size(1204, 584);
-            DGVproveedores.TabIndex = 4;
-            // 
-            // BtnEditarPro
-            // 
-            BtnEditarPro.Font = new Font("Rockwell", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            BtnEditarPro.Location = new Point(1322, 182);
-            BtnEditarPro.Name = "BtnEditarPro";
-            BtnEditarPro.Size = new Size(161, 67);
-            BtnEditarPro.TabIndex = 7;
-            BtnEditarPro.Text = "Editar datos proveedor";
-            BtnEditarPro.UseVisualStyleBackColor = true;
-            BtnEditarPro.Click += BtnEditarPro_Click;
-            // 
-            // BtnPagar
-            // 
-            BtnPagar.Font = new Font("Rockwell", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            BtnPagar.Location = new Point(1322, 422);
-            BtnPagar.Name = "BtnPagar";
-            BtnPagar.Size = new Size(161, 67);
-            BtnPagar.TabIndex = 6;
-            BtnPagar.Text = "Generar factura";
-            BtnPagar.UseVisualStyleBackColor = true;
-            BtnPagar.Click += BtnPagar_Click;
+            DGVpagos.AllowUserToAddRows = false;
+            DGVpagos.AllowUserToDeleteRows = false;
+            DGVpagos.AllowUserToResizeColumns = false;
+            DGVpagos.AllowUserToResizeRows = false;
+            DGVpagos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DGVpagos.Location = new Point(12, 182);
+            DGVpagos.Name = "DGVpagos";
+            DGVpagos.ReadOnly = true;
+            DGVpagos.RowTemplate.Height = 25;
+            DGVpagos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            DGVpagos.Size = new Size(1204, 584);
+            DGVpagos.TabIndex = 4;
             // 
             // BtnBuscar
             // 
             BtnBuscar.Font = new Font("Rockwell", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            BtnBuscar.Location = new Point(495, 104);
+            BtnBuscar.Location = new Point(453, 98);
             BtnBuscar.Name = "BtnBuscar";
             BtnBuscar.Size = new Size(104, 58);
             BtnBuscar.TabIndex = 45;
@@ -130,52 +106,51 @@
             label14.AutoSize = true;
             label14.Font = new Font("Rockwell", 18F, FontStyle.Bold, GraphicsUnit.Point);
             label14.ForeColor = SystemColors.ButtonFace;
-            label14.Location = new Point(57, 104);
+            label14.Location = new Point(15, 98);
             label14.Name = "label14";
-            label14.Size = new Size(404, 29);
+            label14.Size = new Size(340, 29);
             label14.TabIndex = 44;
-            label14.Text = "Buscar por nombre de proveedor";
+            label14.Text = "Buscar por número de pago";
             // 
             // TxtBusqueda
             // 
-            TxtBusqueda.Location = new Point(60, 139);
+            TxtBusqueda.Location = new Point(18, 133);
             TxtBusqueda.Name = "TxtBusqueda";
             TxtBusqueda.Size = new Size(398, 23);
             TxtBusqueda.TabIndex = 43;
             // 
-            // Button1
+            // button1
             // 
-            Button1.Font = new Font("Rockwell", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            Button1.Location = new Point(1322, 699);
-            Button1.Name = "Button1";
-            Button1.Size = new Size(161, 67);
-            Button1.TabIndex = 46;
-            Button1.Text = "Eliminar proveedor";
-            Button1.UseVisualStyleBackColor = true;
-            Button1.Click += Button1_Click;
+            button1.Font = new Font("Rockwell", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.Location = new Point(1307, 250);
+            button1.Name = "button1";
+            button1.Size = new Size(125, 74);
+            button1.TabIndex = 46;
+            button1.Text = "Editar datos del pago";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
-            // VerProveedores
+            // VerPagos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSlateGray;
-            ClientSize = new Size(1573, 778);
-            Controls.Add(Button1);
+            ClientSize = new Size(1589, 817);
+            Controls.Add(button1);
             Controls.Add(BtnBuscar);
             Controls.Add(label14);
             Controls.Add(TxtBusqueda);
-            Controls.Add(BtnEditarPro);
-            Controls.Add(BtnPagar);
-            Controls.Add(DGVproveedores);
+            Controls.Add(DGVpagos);
             Controls.Add(panel1);
+            ForeColor = Color.Black;
             FormBorderStyle = FormBorderStyle.None;
-            Name = "VerProveedores";
+            Name = "VerPagos";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "VerProveedores";
-            Load += VerProveedores_Load;
+            Text = "Facturas";
+            Load += Facturas_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)BtnSalir).EndInit();
-            ((System.ComponentModel.ISupportInitialize)DGVproveedores).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DGVpagos).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -185,12 +160,10 @@
         private Panel panel1;
         private PictureBox BtnSalir;
         private Button BtnVolver;
-        public DataGridView DGVproveedores;
-        private Button BtnEditarPro;
-        private Button BtnPagar;
         private Button BtnBuscar;
         private Label label14;
         private TextBox TxtBusqueda;
-        private Button Button1;
+        public DataGridView DGVpagos;
+        private Button button1;
     }
 }

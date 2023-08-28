@@ -32,6 +32,7 @@
             label1 = new Label();
             BtnCerrarSesion = new PictureBox();
             panel1 = new Panel();
+            BtnPagos = new Button();
             button1 = new Button();
             BtnProveedores = new Button();
             BtnSalir = new PictureBox();
@@ -40,11 +41,15 @@
             BtnAgregar = new Button();
             SubMenuFac = new Panel();
             BtnTodosFac = new Button();
+            SubmenuPagos = new Panel();
+            button2 = new Button();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)BtnCerrarSesion).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)BtnSalir).BeginInit();
             SubmenuPro.SuspendLayout();
             SubMenuFac.SuspendLayout();
+            SubmenuPagos.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -71,6 +76,7 @@
             // panel1
             // 
             panel1.BackColor = SystemColors.AppWorkspace;
+            panel1.Controls.Add(BtnPagos);
             panel1.Controls.Add(button1);
             panel1.Controls.Add(BtnProveedores);
             panel1.Controls.Add(BtnSalir);
@@ -79,6 +85,19 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1047, 43);
             panel1.TabIndex = 2;
+            // 
+            // BtnPagos
+            // 
+            BtnPagos.BackColor = SystemColors.AppWorkspace;
+            BtnPagos.Font = new Font("Rockwell", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            BtnPagos.ForeColor = Color.Black;
+            BtnPagos.Location = new Point(549, 0);
+            BtnPagos.Name = "BtnPagos";
+            BtnPagos.Size = new Size(183, 44);
+            BtnPagos.TabIndex = 6;
+            BtnPagos.Text = "Pagos";
+            BtnPagos.UseVisualStyleBackColor = false;
+            BtnPagos.Click += BtnPagos_Click;
             // 
             // button1
             // 
@@ -176,12 +195,46 @@
             BtnTodosFac.UseVisualStyleBackColor = false;
             BtnTodosFac.Click += BtnTodosFac_Click;
             // 
+            // SubmenuPagos
+            // 
+            SubmenuPagos.BackColor = SystemColors.AppWorkspace;
+            SubmenuPagos.Controls.Add(button2);
+            SubmenuPagos.Controls.Add(label2);
+            SubmenuPagos.Location = new Point(557, 54);
+            SubmenuPagos.Name = "SubmenuPagos";
+            SubmenuPagos.Size = new Size(183, 121);
+            SubmenuPagos.TabIndex = 10;
+            // 
+            // button2
+            // 
+            button2.BackColor = SystemColors.AppWorkspace;
+            button2.Font = new Font("Rockwell", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            button2.ForeColor = Color.Black;
+            button2.Location = new Point(0, 0);
+            button2.Name = "button2";
+            button2.Size = new Size(183, 51);
+            button2.TabIndex = 8;
+            button2.Text = "Ver todos";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(44, 5);
+            label2.Name = "label2";
+            label2.Size = new Size(276, 32);
+            label2.TabIndex = 0;
+            label2.Text = "BIENVENIDO AL MENU";
+            // 
             // Menu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSlateGray;
             ClientSize = new Size(1067, 670);
+            Controls.Add(SubmenuPagos);
             Controls.Add(SubMenuFac);
             Controls.Add(SubmenuPro);
             Controls.Add(panel1);
@@ -195,6 +248,8 @@
             SubmenuPro.ResumeLayout(false);
             SubMenuFac.ResumeLayout(false);
             SubMenuFac.PerformLayout();
+            SubmenuPagos.ResumeLayout(false);
+            SubmenuPagos.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -211,5 +266,9 @@
         private Panel SubMenuFac;
         private Button BtnTodosFac;
         private Button button1;
+        private Button BtnPagos;
+        private Panel SubmenuPagos;
+        private Button button2;
+        private Label label2;
     }
 }

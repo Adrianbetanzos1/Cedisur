@@ -15,7 +15,8 @@ namespace Cedisur
 {
     public partial class VerProveedores : Form
     {
-        private SqlConnection conexion = new SqlConnection("server=DESKTOP-717JV41\\SQLEXPRESS ; database=cedisur ; integrated security = true");
+
+        private readonly SqlConnection conexion = new("server=DESKTOP-717JV41\\SQLEXPRESS ; database=cedisur ; integrated security = true");
 
         public VerProveedores()
         {
@@ -24,7 +25,7 @@ namespace Cedisur
 
         private void BtnVolver_Click(object sender, EventArgs e)
         {
-            Menu menu = new Menu();
+            Menu menu = new();
             menu.Show();
             this.Close();
         }
@@ -34,31 +35,14 @@ namespace Cedisur
             Application.Exit();
         }
 
-       
-
-        
-
-
-
         readonly Proveedor prov = new();
-        private void Proveedores_Load(object sender, EventArgs e)
+        private void VerProveedores_Load(object sender, EventArgs e)
         {
             DGVproveedores.DataSource = prov.MostrarProveedores();
             DGVproveedores.Columns[0].HeaderText = "ID proveedor";
-            DGVproveedores.Columns[1].HeaderText = "Nombre proveedor";
-
-            DGVproveedores.Columns[2].HeaderText = "Fecha Adquisición";
-            DGVproveedores.Columns[3].HeaderText = "Días vencimiento";
-            DGVproveedores.Columns[4].HeaderText = "Importe";
-            DGVproveedores.Columns[5].HeaderText = "Abono";
-            DGVproveedores.Columns[6].HeaderText = "Saldo MXP";
-            DGVproveedores.Columns[7].HeaderText = "Saldo USD";
-            DGVproveedores.Columns[8].HeaderText = "Saldo pendiente";
-            DGVproveedores.Columns[9].HeaderText = "Provisiones Aportadas";
-            
-
+            DGVproveedores.Columns[1].HeaderText = "Nombre del proveedor";
+            DGVproveedores.Columns[2].HeaderText = "Fecha de registro";
         }
-       
 
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
@@ -68,102 +52,76 @@ namespace Cedisur
             }
             else
             {
-                DGVproveedores.DataSource = Proveedor.Mostrar(TxtBusqueda.Text);
+                DGVproveedores.DataSource = Proveedor.MostrarNombreProveedores(TxtBusqueda.Text);
             }
-
         }
 
-        private void BtnBuscarID_Click(object sender, EventArgs e)
+        private void BtnEditarPro_Click(object sender, EventArgs e)
         {
-            if (TxtBuscarID.Text.Equals(""))
+            if (DGVproveedores.RowCount == 0)
             {
-                MessageBox.Show("Necesita ingresar un dato antes", "Advertencia");
+                MessageBox.Show("No hay datos existentes");
             }
             else
             {
-                DGVproveedores.DataSource = Proveedor.MostrarID(TxtBuscarID.Text);
+                var proveedores = new EditarProveedor();
+                proveedores.ParentForm = this;
+                proveedores.TxtIDProveedor.Text = DGVproveedores.SelectedRows[0].Cells[0].Value.ToString();
+                proveedores.TxtNombreProv.Text = DGVproveedores.SelectedRows[0].Cells[1].Value.ToString();
+                proveedores.DTPFecha.Value = (DateTime)DGVproveedores.SelectedRows[0].Cells[2].Value;
+
+                this.Hide();
+                proveedores.ShowDialog();
             }
         }
-
-
-        int LastIdPlusOne
-        {
-            get
-            {
-                int id = 0;
-                if (DGVproveedores.Rows.Count > 0)
-                {
-                    foreach (DataGridViewRow row in DGVproveedores.Rows)
-                    {
-                        var _id = int.Parse(row.Cells[0].Value.ToString());
-                        if (_id > id)
-                        {
-                            id = _id;
-                        }
-                    }
-                }
-                return id + 1;
-            }
-        }
-
-
-        private void BtnEditar_Click(object sender, EventArgs e)
-        {
-            var prov = new EditarProv();
-            prov.ParentForm = this;
-            prov.TxtId.Text = DGVproveedores.SelectedRows[0].Cells[0].Value.ToString();
-            prov.TxtNombrePro.Text = DGVproveedores.SelectedRows[0].Cells[1].Value.ToString();
-            prov.DTPFecha.Value = (DateTime)DGVproveedores.SelectedRows[0].Cells[2].Value;
-            prov.TxtDiasVencimiento.Text = DGVproveedores.SelectedRows[0].Cells[3].Value.ToString();
-            prov.TxtImporte.Text = DGVproveedores.SelectedRows[0].Cells[4].Value.ToString();
-            prov.TxtAbono.Text = DGVproveedores.SelectedRows[0].Cells[5].Value.ToString();
-            prov.TxtSaldoMXP.Text = DGVproveedores.SelectedRows[0].Cells[6].Value.ToString();
-            prov.TxtSaldoUSD.Text = DGVproveedores.SelectedRows[0].Cells[7].Value.ToString();
-            prov.TxtSaldoPendiente.Text = DGVproveedores.SelectedRows[0].Cells[8].Value.ToString();
-            prov.TxtProvTotal.Text = DGVproveedores.SelectedRows[0].Cells[9].Value.ToString();
-            this.Hide();
-            prov.ShowDialog();
-            
-        }
-
-
-
-
 
         private void BtnPagar_Click(object sender, EventArgs e)
         {
-
-            var pago = new AgregarFacturas();
-            pago.ParentForm = this;
-            pago.TxtID.Text = DGVproveedores.SelectedRows[0].Cells[0].Value.ToString();
-
-            conexion.Open();
-            string query = "select nombreProveedor, saldoPendiente " +
-                "from Proveedores " +
-                "where Proveedores.ID_proveedor='" + DGVproveedores.SelectedRows[0].Cells[0].Value.ToString() + "'";
-
-            using (SqlCommand comando = new SqlCommand(query, conexion))
+            if (DGVproveedores.RowCount == 0)
             {
-
-                using (SqlDataReader reader = comando.ExecuteReader())
-                {
-                    if (reader.Read())
-                    {
-                        pago.TxtNombrePro.Text = reader["nombreProveedor"].ToString();
-
-                        pago.txtSaldoPendiente.Text = reader["saldoPendiente"].ToString();
-                    }
-                }
-
-
+                MessageBox.Show("No hay datos existentes");
             }
-            conexion.Close();
-            this.Hide();
-            pago.ShowDialog();
-            
+            else
+            {
+                var factura = new AgregarFacturas();
+                factura.ParentForm = this;
+                factura.TxtIDProveedor.Text = DGVproveedores.SelectedRows[0].Cells[0].Value.ToString();
+                conexion.Open();
+                string query = "select nombreProveedor " +
+                    "from Proveedor " +
+                    "where Proveedor.ID_proveedor='" + DGVproveedores.SelectedRows[0].Cells[0].Value.ToString() + "'";
+
+
+                using (SqlCommand comando = new(query, conexion))
+                {
+
+                    object result = comando.ExecuteScalar();
+
+                    if (result != null)
+                    {
+                        factura.TxtNombrePro.Text = result.ToString();
+                    }
+
+
+
+                }
+                conexion.Close();
+                this.Hide();
+                factura.ShowDialog();
+            }
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Estás seguro que deseas eliminar a este proveedor?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                conexion.Open();
+                string query = "delete from Proveedor where ID_proveedor = " + DGVproveedores.SelectedRows[0].Cells[0].Value.ToString();
+                SqlCommand comando = new(query, conexion);
+                comando.ExecuteNonQuery();
+                MessageBox.Show("Proveedor eliminado correctamente");
+                conexion.Close();
+            }
         }
     }
-
-
-
 }
