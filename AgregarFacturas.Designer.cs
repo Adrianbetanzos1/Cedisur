@@ -57,6 +57,8 @@
             label21 = new Label();
             label10 = new Label();
             TxtNombrePro = new TextBox();
+            label12 = new Label();
+            TxtImporteUSD = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)BtnSalir).BeginInit();
             SuspendLayout();
@@ -185,9 +187,9 @@
             label6.ForeColor = SystemColors.ButtonFace;
             label6.Location = new Point(917, 417);
             label6.Name = "label6";
-            label6.Size = new Size(94, 25);
+            label6.Size = new Size(151, 25);
             label6.TabIndex = 11;
-            label6.Text = "Importe";
+            label6.Text = "Importe MXP";
             // 
             // TxtImporte
             // 
@@ -232,7 +234,6 @@
             TxtSaldoMXP.Name = "TxtSaldoMXP";
             TxtSaldoMXP.Size = new Size(229, 23);
             TxtSaldoMXP.TabIndex = 14;
-            
             // 
             // label9
             // 
@@ -337,12 +338,33 @@
             TxtNombrePro.Size = new Size(268, 23);
             TxtNombrePro.TabIndex = 54;
             // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Rockwell", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label12.ForeColor = SystemColors.ButtonFace;
+            label12.Location = new Point(1141, 417);
+            label12.Name = "label12";
+            label12.Size = new Size(141, 25);
+            label12.TabIndex = 56;
+            label12.Text = "Importe USD";
+            // 
+            // TxtImporteUSD
+            // 
+            TxtImporteUSD.Enabled = false;
+            TxtImporteUSD.Location = new Point(1141, 445);
+            TxtImporteUSD.Name = "TxtImporteUSD";
+            TxtImporteUSD.Size = new Size(166, 23);
+            TxtImporteUSD.TabIndex = 57;
+            // 
             // AgregarFacturas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSlateGray;
             ClientSize = new Size(1589, 817);
+            Controls.Add(label12);
+            Controls.Add(TxtImporteUSD);
             Controls.Add(label10);
             Controls.Add(TxtNombrePro);
             Controls.Add(label21);
@@ -410,5 +432,7 @@
         public TextBox TxtSaldoMXP;
         public TextBox TxtSaldoUSD;
         public TextBox TxtAbono;
+        private Label label12;
+        public TextBox TxtImporteUSD;
     }
 }

@@ -15,6 +15,8 @@ namespace Cedisur
     public partial class EditarProveedor : Form
     {
         private SqlConnection conexion = new SqlConnection("server=DESKTOP-717JV41\\SQLEXPRESS ; database=cedisur ; integrated security = true");
+        
+        //Definimos este formulario como hijo del ver proveedores
         VerProveedores prov = new();
         public new Form ParentForm;
         public EditarProveedor()
@@ -33,12 +35,15 @@ namespace Cedisur
             Application.Exit();
         }
 
+        //Método para modificar los datos del proveedor, utilizando una consulta para modificarla directamente a la base de datos
         private void Modificar()
         {
 
             conexion.Open();
             string selectedDate = DTPFecha.Value.ToString("yyyy-MM-dd");
-            string query = "update Cedisur.dbo.Proveedor set nombreProveedor='" + TxtNombreProv.Text + "', fechaDeRegistro=CAST('" + selectedDate + "' as datetime) where  ID_proveedor= '" + TxtIDProveedor.Text + "'";
+            string query = "update Cedisur.dbo.Proveedor " +
+                "set RfcProveedor= '"+ TxtRfc.Text+"', nombreProveedor='" + TxtNombreProv.Text + "', fechaDeRegistro=CAST('" + selectedDate + "' as datetime)," +
+                " TipoDeProveedor='"+CbTipo.SelectedItem+"', TipoDePago= '"+CbMoneda.SelectedItem+"' where  ID_proveedor= '" + TxtIDProveedor.Text + "'";
             SqlCommand comando = new(query, conexion);
             int cant;
             cant = comando.ExecuteNonQuery();
@@ -56,9 +61,15 @@ namespace Cedisur
 
         }
 
+
+        //Botón para modificar los datos del proveedor
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Estas seguro que deseas modificar los datos este proveedor?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            if (TxtIDProveedor.Text == "" || TxtNombreProv.Text == "" || TxtRfc.Text == "" || CbTipo.CheckedItems.Count == 0 || CbMoneda.CheckedItems.Count == 0)
+            {
+                MessageBox.Show("Colocar los datos faltantes antes de continuar");
+            }
+            else if (MessageBox.Show("¿Estas seguro que deseas modificar los datos este proveedor?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 Modificar();
                 this.Close();

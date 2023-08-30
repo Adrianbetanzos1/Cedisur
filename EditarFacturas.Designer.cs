@@ -57,6 +57,8 @@
             label1 = new Label();
             label10 = new Label();
             TxtIdFactura = new TextBox();
+            label12 = new Label();
+            TxtImporteUSD = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)BtnSalir).BeginInit();
             SuspendLayout();
@@ -338,12 +340,33 @@
             TxtIdFactura.Size = new Size(268, 23);
             TxtIdFactura.TabIndex = 81;
             // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Rockwell", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label12.ForeColor = SystemColors.ButtonFace;
+            label12.Location = new Point(1092, 333);
+            label12.Name = "label12";
+            label12.Size = new Size(141, 25);
+            label12.TabIndex = 83;
+            label12.Text = "Importe USD";
+            // 
+            // TxtImporteUSD
+            // 
+            TxtImporteUSD.Enabled = false;
+            TxtImporteUSD.Location = new Point(1092, 361);
+            TxtImporteUSD.Name = "TxtImporteUSD";
+            TxtImporteUSD.Size = new Size(166, 23);
+            TxtImporteUSD.TabIndex = 84;
+            // 
             // EditarFacturas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSlateGray;
             ClientSize = new Size(1589, 817);
+            Controls.Add(label12);
+            Controls.Add(TxtImporteUSD);
             Controls.Add(label10);
             Controls.Add(TxtIdFactura);
             Controls.Add(label1);
@@ -398,7 +421,6 @@
         private Label label21;
         private Button button1;
         private Label label7;
-        private TextBox TxtDolar;
         private Label label1;
         public TextBox TxtAbono;
         public TextBox TxtSaldoUSD;
@@ -410,5 +432,8 @@
         private Label label10;
         public TextBox TxtIdFactura;
         public DateTimePicker DTPFecha;
+        public TextBox TxtDolar;
+        private Label label12;
+        public TextBox TxtImporteUSD;
     }
 }

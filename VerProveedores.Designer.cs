@@ -39,6 +39,9 @@
             label14 = new Label();
             TxtBusqueda = new TextBox();
             Button1 = new Button();
+            button2 = new Button();
+            label1 = new Label();
+            TxtBusquedaRfc = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)BtnSalir).BeginInit();
             ((System.ComponentModel.ISupportInitialize)DGVproveedores).BeginInit();
@@ -117,7 +120,7 @@
             // BtnBuscar
             // 
             BtnBuscar.Font = new Font("Rockwell", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            BtnBuscar.Location = new Point(495, 104);
+            BtnBuscar.Location = new Point(450, 104);
             BtnBuscar.Name = "BtnBuscar";
             BtnBuscar.Size = new Size(104, 58);
             BtnBuscar.TabIndex = 45;
@@ -130,7 +133,7 @@
             label14.AutoSize = true;
             label14.Font = new Font("Rockwell", 18F, FontStyle.Bold, GraphicsUnit.Point);
             label14.ForeColor = SystemColors.ButtonFace;
-            label14.Location = new Point(57, 104);
+            label14.Location = new Point(12, 104);
             label14.Name = "label14";
             label14.Size = new Size(404, 29);
             label14.TabIndex = 44;
@@ -138,7 +141,7 @@
             // 
             // TxtBusqueda
             // 
-            TxtBusqueda.Location = new Point(60, 139);
+            TxtBusqueda.Location = new Point(15, 139);
             TxtBusqueda.Name = "TxtBusqueda";
             TxtBusqueda.Size = new Size(398, 23);
             TxtBusqueda.TabIndex = 43;
@@ -154,12 +157,44 @@
             Button1.UseVisualStyleBackColor = true;
             Button1.Click += Button1_Click;
             // 
+            // button2
+            // 
+            button2.Font = new Font("Rockwell", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            button2.Location = new Point(1065, 104);
+            button2.Name = "button2";
+            button2.Size = new Size(104, 58);
+            button2.TabIndex = 49;
+            button2.Text = "Buscar";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Rockwell", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = SystemColors.ButtonFace;
+            label1.Location = new Point(627, 104);
+            label1.Name = "label1";
+            label1.Size = new Size(372, 29);
+            label1.TabIndex = 48;
+            label1.Text = "Buscar por RFC del proveedor";
+            // 
+            // TxtBusquedaRfc
+            // 
+            TxtBusquedaRfc.Location = new Point(630, 139);
+            TxtBusquedaRfc.Name = "TxtBusquedaRfc";
+            TxtBusquedaRfc.Size = new Size(398, 23);
+            TxtBusquedaRfc.TabIndex = 47;
+            // 
             // VerProveedores
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSlateGray;
             ClientSize = new Size(1573, 778);
+            Controls.Add(button2);
+            Controls.Add(label1);
+            Controls.Add(TxtBusquedaRfc);
             Controls.Add(Button1);
             Controls.Add(BtnBuscar);
             Controls.Add(label14);
@@ -192,5 +227,8 @@
         private Label label14;
         private TextBox TxtBusqueda;
         private Button Button1;
+        private Button button2;
+        private Label label1;
+        private TextBox TxtBusquedaRfc;
     }
 }
