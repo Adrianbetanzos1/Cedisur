@@ -1,4 +1,5 @@
 ﻿using Cedisur.Clases;
+using Common.Cache;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -35,13 +36,27 @@ namespace Cedisur
             Application.Exit();
         }
 
-        readonly Proveedor prov = new();
+        private void RestringirAccesos()
+        {
+            if (CacheInicioSesionUsuario.Nivel_seguridad == Cargos.usuario)
+            {
+                BtnEditarPro.Enabled = false;
+                Button1.Enabled = false;
+                BtnPagar.Enabled = false;
+
+            }
+        }
+
         private void VerProveedores_Load(object sender, EventArgs e)
         {
-            DGVproveedores.DataSource = prov.MostrarProveedores();
+            RestringirAccesos();
+            DGVproveedores.DataSource = Proveedor.MostrarProveedores();
             DGVproveedores.Columns[0].HeaderText = "ID proveedor";
-            DGVproveedores.Columns[1].HeaderText = "Nombre del proveedor";
-            DGVproveedores.Columns[2].HeaderText = "Fecha de registro";
+            DGVproveedores.Columns[1].HeaderText = "RFC del proveedor";
+            DGVproveedores.Columns[2].HeaderText = "Nombre del proveedor";
+            DGVproveedores.Columns[3].HeaderText = "Fecha de registro";
+            DGVproveedores.Columns[4].HeaderText = "Tipo";
+            DGVproveedores.Columns[5].HeaderText = "Tipo de moneda de pago";
         }
 
         private void BtnBuscar_Click(object sender, EventArgs e)
@@ -64,11 +79,16 @@ namespace Cedisur
             }
             else
             {
-                var proveedores = new EditarProveedor();
-                proveedores.ParentForm = this;
+                var proveedores = new EditarProveedor
+                {
+                    ParentForm = this
+                };
                 proveedores.TxtIDProveedor.Text = DGVproveedores.SelectedRows[0].Cells[0].Value.ToString();
-                proveedores.TxtNombreProv.Text = DGVproveedores.SelectedRows[0].Cells[1].Value.ToString();
-                proveedores.DTPFecha.Value = (DateTime)DGVproveedores.SelectedRows[0].Cells[2].Value;
+                proveedores.TxtRfc.Text = DGVproveedores.SelectedRows[0].Cells[1].Value.ToString();
+                proveedores.TxtNombreProv.Text = DGVproveedores.SelectedRows[0].Cells[2].Value.ToString();
+                proveedores.DTPFecha.Value = (DateTime)DGVproveedores.SelectedRows[0].Cells[3].Value;
+                proveedores.CbTipo.SelectedValue = DGVproveedores.SelectedRows[0].Cells[4].Value.ToString();
+                proveedores.CbMoneda.SelectedValue = DGVproveedores.SelectedRows[0].Cells[5].Value.ToString();
 
                 this.Hide();
                 proveedores.ShowDialog();
@@ -83,8 +103,10 @@ namespace Cedisur
             }
             else
             {
-                var factura = new AgregarFacturas();
-                factura.ParentForm = this;
+                var factura = new AgregarFacturas
+                {
+                    ParentForm = this
+                };
                 factura.TxtIDProveedor.Text = DGVproveedores.SelectedRows[0].Cells[0].Value.ToString();
                 conexion.Open();
                 string query = "select nombreProveedor " +
@@ -113,7 +135,11 @@ namespace Cedisur
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Estás seguro que deseas eliminar a este proveedor?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            if (DGVproveedores.RowCount == 0)
+            {
+                MessageBox.Show("No hay datos existentes");
+            }
+            else if (MessageBox.Show("Estás seguro que deseas eliminar a este proveedor/Acreedor? Los datos y facturas afiliadas a este también se eliminarán", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 conexion.Open();
                 string query = "delete from Proveedor where ID_proveedor = " + DGVproveedores.SelectedRows[0].Cells[0].Value.ToString();
@@ -121,6 +147,23 @@ namespace Cedisur
                 comando.ExecuteNonQuery();
                 MessageBox.Show("Proveedor eliminado correctamente");
                 conexion.Close();
+
+                this.Close();
+                VerProveedores ver = new();
+                ver.Show();
+            }
+
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            if (TxtBusqueda.Text.Equals(""))
+            {
+                MessageBox.Show("Necesita ingresar un dato antes", "Advertencia");
+            }
+            else
+            {
+                DGVproveedores.DataSource = Proveedor.MostrarRFCProveedores(TxtBusquedaRfc.Text);
             }
         }
     }

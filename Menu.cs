@@ -1,4 +1,5 @@
 ﻿using Cedisur.Clases;
+using Common.Cache;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -39,15 +40,17 @@ namespace Cedisur
 
         private void Label2_Click(object sender, EventArgs e)
         {
-            VerFacturas prov = new VerFacturas();
+            VerFacturas prov = new();
             prov.Show();
             this.Hide();
         }
+
         private void CustomizeDesign()
         {
             SubmenuPro.Visible = false;
             SubMenuFac.Visible = false;
             SubmenuPagos.Visible = false;
+            SubmenuUsuarios.Visible = false;
         }
         private void HideSubmenu()
         {
@@ -85,20 +88,23 @@ namespace Cedisur
 
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
+
             AgregarProveedor agregarProveedor = new();
             agregarProveedor.Show();
             this.Hide();
+
+
         }
 
         private void BtnPagar_Click(object sender, EventArgs e)
         {
-            AgregarPagos pagos = new AgregarPagos();
+            AgregarPagos pagos = new();
             pagos.Show();
             this.Hide();
         }
 
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             ShowSubmenu(SubMenuFac);
         }
@@ -115,11 +121,53 @@ namespace Cedisur
             ShowSubmenu(SubmenuPagos);
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
             VerPagos pagos = new();
             pagos.Show();
             this.Hide();
+        }
+
+        private void BtnUsuarios_Click(object sender, EventArgs e)
+        {
+            ShowSubmenu(SubmenuUsuarios);
+        }
+
+        private void BtnAgregarNuevoU_Click(object sender, EventArgs e)
+        {
+            AgregarUsuario agregar = new();
+            agregar.Show();
+            this.Hide();
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            VerUsuarios usuarios = new();
+            usuarios.Show();
+            this.Hide();
+        }
+
+        private void Load_User()
+        {
+            LblNombre.Text = CacheInicioSesionUsuario.NombreCompleto;
+            LblPosicion.Text = CacheInicioSesionUsuario.Nivel_seguridad;
+        }
+
+        private void RestringirAccesos()
+        {
+            if (CacheInicioSesionUsuario.Nivel_seguridad == Cargos.usuario)
+            {
+                BtnAgregar.Enabled = false;
+                
+                BtnUsuarios.Enabled = false;
+
+            }
+        }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+            Load_User();
+            RestringirAccesos();
         }
     }
 }

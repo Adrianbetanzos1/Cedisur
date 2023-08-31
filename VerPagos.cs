@@ -1,4 +1,5 @@
 ﻿using Cedisur.Clases;
+using Common.Cache;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,7 +17,7 @@ namespace Cedisur
     public partial class VerPagos : Form
     {
 
-        private SqlConnection conexion = new SqlConnection("server=DESKTOP-717JV41\\SQLEXPRESS ; database=cedisur ; integrated security = true");
+        private readonly SqlConnection conexion = new("server=DESKTOP-717JV41\\SQLEXPRESS ; database=cedisur ; integrated security = true");
 
         public VerPagos()
         {
@@ -25,7 +26,7 @@ namespace Cedisur
 
         private void BtnVolver_Click(object sender, EventArgs e)
         {
-            Menu menu = new Menu();
+            Menu menu = new();
             menu.Show();
             this.Hide();
         }
@@ -35,9 +36,22 @@ namespace Cedisur
             Application.Exit();
         }
 
-        readonly Pagos pago = new Pagos();
+        private void RestringirAccesos()
+        {
+            if (CacheInicioSesionUsuario.Nivel_seguridad == Cargos.usuario)
+            {
+                
+                Button1.Enabled = false;
+
+            }
+        }
+
+
+
+        readonly Pagos pago = new();
         private void Facturas_Load(object sender, EventArgs e)
         {
+            RestringirAccesos();
             DGVpagos.DataSource = pago.MostrarFacturas();
             DGVpagos.Columns[0].HeaderText = "ID pago";
             DGVpagos.Columns[1].HeaderText = "Número factura";
@@ -49,6 +63,7 @@ namespace Cedisur
             DGVpagos.Columns[7].HeaderText = "Número de contrato";
             DGVpagos.Columns[8].HeaderText = "ID proveedor";
             DGVpagos.Columns[9].HeaderText = "ID factura";
+            DGVpagos.Columns[10].HeaderText = "Tipo de cambio el día del pago";
         }
 
         private void BtnBuscar_Click(object sender, EventArgs e)
@@ -63,9 +78,9 @@ namespace Cedisur
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
-            
+
             if (DGVpagos.RowCount == 0)
             {
                 MessageBox.Show("No hay datos existentes");
@@ -74,25 +89,29 @@ namespace Cedisur
             {
                 var pagos = new EditarPagos();
                 conexion.Open();
-                string query = "select  Proveedor.nombreProveedor, Factura.saldoPendiente " +
-                "from Factura " +
-                "inner join Proveedor on Factura.ID_proveedor = Proveedor.ID_proveedor " +
-                "where ID_factura ='" + DGVpagos.SelectedRows[0].Cells[9].Value.ToString() + "'";
+                string query = "select ID_pago, nombreProveedor, SaldoAnterior, SaldoAnteriorUSD, AbonoAnterior " +
+                    "from Pagos inner join Factura " +
+                    "on Factura.ID_factura = Pagos.ID_factura " +
+                    "inner join Proveedor " +
+                    "on Proveedor.ID_proveedor = Pagos.ID_proveedor " +
+                    "where Pagos.ID_pago ='" + DGVpagos.SelectedRows[0].Cells[0].Value.ToString() + "'";
 
 
 
-                using (SqlCommand comando = new SqlCommand(query, conexion))
+                using (SqlCommand comando = new(query, conexion))
                 {
 
-                    using (SqlDataReader reader = comando.ExecuteReader())
+                    using SqlDataReader reader = comando.ExecuteReader();
+                    if (reader.Read())
                     {
-                        if (reader.Read())
-                        {
 
-                            pagos.TxtNombrePro.Text = reader["nombreProveedor"].ToString();
-                            pagos.txtSaldoPendiente.Text = reader["saldoPendiente"].ToString();
+                        pagos.TxtNombrePro.Text = reader["nombreProveedor"].ToString();
+                        pagos.txtSaldoPendiente.Text = reader["SaldoAnterior"].ToString();
+                        pagos.txtSaldoUSD.Text = reader["SaldoAnteriorUSD"].ToString();
+                        pagos.txtAbono.Text = reader["AbonoAnterior"].ToString();
 
-                        }
+
+
                     }
 
 
@@ -110,12 +129,13 @@ namespace Cedisur
                 pagos.TxtNumeroCuenta.Text = DGVpagos.SelectedRows[0].Cells[6].Value.ToString();
                 pagos.TxtNumContrato.Text = DGVpagos.SelectedRows[0].Cells[7].Value.ToString();
                 pagos.TxtID.Text = DGVpagos.SelectedRows[0].Cells[8].Value.ToString();
-                pagos.TxtIdFactura.Text = DGVpagos.SelectedRows[0].Cells[0].Value.ToString();
+                pagos.TxtIdFactura.Text = DGVpagos.SelectedRows[0].Cells[9].Value.ToString();
+                pagos.TxtDolar.Text = DGVpagos.SelectedRows[0].Cells[10].Value.ToString();
 
                 this.Hide();
                 pagos.ShowDialog();
             }
-            
+
         }
     }
 }

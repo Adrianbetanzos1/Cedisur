@@ -1,3 +1,4 @@
+using Common.Cache;
 using System.DirectoryServices;
 using System.Runtime.InteropServices.ObjectiveC;
 
@@ -11,46 +12,49 @@ namespace Cedisur
         }
 
 
-        private void buttona1_Click(object sender, EventArgs e)
+        private void Buttona1_Click(object sender, EventArgs e)
         {
             if (userTxt.Text != "NombreUsuario")
             {
                 if (passTxt.Text != "Contraseña")
                 {
-                    UserModel usuario = new UserModel();
+                    UserModel usuario = new();
                     var validLogin = usuario.LoginUser(userTxt.Text, passTxt.Text);
                     if (validLogin == true)
                     {
-                        Menu menu = new Menu();
+
+                        Menu menu = new();
+                        MessageBox.Show("Bienvenido " + CacheInicioSesionUsuario.NombreCompleto);
+
                         menu.Show();
-                        menu.FormClosed += cerrarSesion;
+                        menu.FormClosed += CerrarSesion;
                         this.Hide();
-                        
+
 
                     }
                     else
                     {
-                        msgError("Usuario/Contraseña incorrectos");
+                        MsgError("Usuario/Contraseña incorrectos");
                         userTxt.Clear();
                         passTxt.Clear();
                         userTxt.Focus();
                     }
                 }
-                else msgError("Coloque su contraseña");
+                else MsgError("Coloque su contraseña");
 
             }
-            else msgError("Coloque su nombre de usuario");
+            else MsgError("Coloque su nombre de usuario");
 
         }
 
-        private void msgError(string error)
+        private void MsgError(string error)
         {
             LblError.Text = "  " + error;
             LblError.Visible = true;
         }
 
 
-        private void cerrarSesion(object sender, FormClosedEventArgs e)
+        private void CerrarSesion(object? sender, FormClosedEventArgs e)
         {
             userTxt.Clear();
             passTxt.Clear();
@@ -60,12 +64,12 @@ namespace Cedisur
 
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void PictureBox2_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
         }
 
-        private void pictureBox3_Click(object sender, EventArgs e)
+        private void PictureBox3_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }

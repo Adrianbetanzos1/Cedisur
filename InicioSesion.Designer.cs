@@ -40,13 +40,13 @@ namespace Cedisur
             label3 = new Label();
             pictureBox1 = new PictureBox();
             panel1 = new Panel();
-            pictureBox3 = new PictureBox();
-            pictureBox2 = new PictureBox();
+            PictureBox3 = new PictureBox();
+            PictureBox2 = new PictureBox();
             LblError = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PictureBox2).BeginInit();
             SuspendLayout();
             // 
             // userTxt
@@ -103,7 +103,7 @@ namespace Cedisur
             BtnAceptar.TabIndex = 7;
             BtnAceptar.Text = "INICIAR SESIÓN";
             BtnAceptar.UseVisualStyleBackColor = false;
-            BtnAceptar.Click += buttona1_Click;
+            BtnAceptar.Click += Buttona1_Click;
             // 
             // Lbl1
             // 
@@ -141,34 +141,34 @@ namespace Cedisur
             // panel1
             // 
             panel1.BackColor = Color.DarkSlateGray;
-            panel1.Controls.Add(pictureBox3);
-            panel1.Controls.Add(pictureBox2);
+            panel1.Controls.Add(PictureBox3);
+            panel1.Controls.Add(PictureBox2);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(430, 33);
             panel1.TabIndex = 11;
             // 
-            // pictureBox3
+            // PictureBox3
             // 
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(399, 0);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(28, 33);
-            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox3.TabIndex = 13;
-            pictureBox3.TabStop = false;
-            pictureBox3.Click += pictureBox3_Click;
+            PictureBox3.Image = (Image)resources.GetObject("PictureBox3.Image");
+            PictureBox3.Location = new Point(399, 0);
+            PictureBox3.Name = "PictureBox3";
+            PictureBox3.Size = new Size(28, 33);
+            PictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+            PictureBox3.TabIndex = 13;
+            PictureBox3.TabStop = false;
+            PictureBox3.Click += PictureBox3_Click;
             // 
-            // pictureBox2
+            // PictureBox2
             // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(368, 0);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(28, 33);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 12;
-            pictureBox2.TabStop = false;
-            pictureBox2.Click += pictureBox2_Click;
+            PictureBox2.Image = (Image)resources.GetObject("PictureBox2.Image");
+            PictureBox2.Location = new Point(368, 0);
+            PictureBox2.Name = "PictureBox2";
+            PictureBox2.Size = new Size(28, 33);
+            PictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            PictureBox2.TabIndex = 12;
+            PictureBox2.TabStop = false;
+            PictureBox2.Click += PictureBox2_Click;
             // 
             // LblError
             // 
@@ -180,7 +180,7 @@ namespace Cedisur
             LblError.TabIndex = 12;
             LblError.Text = "Introduzca los parametros";
             // 
-            // Form1
+            // InicioSesion
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -197,13 +197,13 @@ namespace Cedisur
             Controls.Add(userTxt);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Form1";
+            Name = "InicioSesion";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -219,8 +219,8 @@ namespace Cedisur
         private Label label3;
         private PictureBox pictureBox1;
         private Panel panel1;
-        private PictureBox pictureBox3;
-        private PictureBox pictureBox2;
+        private PictureBox PictureBox3;
+        private PictureBox PictureBox2;
         private Label LblError;
 
 

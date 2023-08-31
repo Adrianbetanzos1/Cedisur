@@ -9,10 +9,12 @@ namespace Cedisur
 {
     public class UserModel
     {
-        AccesoUsuario AccesoUsuario = new AccesoUsuario();
+        readonly AccesoUsuario AccesoUsuario = new ();
         public bool LoginUser(string user, string contra)
         {
             return AccesoUsuario.Login(user, contra);
         }
+
+
     }
 }
