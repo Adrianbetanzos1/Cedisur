@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "Cedisur/1.0.0": {
         "dependencies": {
+          "Common": "1.0.0",
           "MySql.Data": "8.1.0",
           "System.Data.SqlClient": "4.8.5"
         },
@@ -331,6 +332,11 @@
             "fileVersion": "0.7.1.0"
           }
         }
+      },
+      "Common/1.0.0": {
+        "runtime": {
+          "Common.dll": {}
+        }
       }
     }
   },
@@ -605,6 +611,11 @@
       "sha512": "sha512-Idgg+mJEyAujqDPzA3APy9dNoyw0YQcNA65GgYjktDRtJ+nvx/hv+J+m6Eax3JJMGEYGy04oc5YNP6ZvQ3Y1vQ==",
       "path": "zstdsharp.port/0.7.1",
       "hashPath": "zstdsharp.port.0.7.1.nupkg.sha512"
+    },
+    "Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

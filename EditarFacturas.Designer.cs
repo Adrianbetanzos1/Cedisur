@@ -51,12 +51,14 @@
             label2 = new Label();
             TxtIDPro = new TextBox();
             label21 = new Label();
-            button1 = new Button();
+            Button1 = new Button();
             label7 = new Label();
             TxtDolar = new TextBox();
             label1 = new Label();
             label10 = new Label();
             TxtIdFactura = new TextBox();
+            label12 = new Label();
+            TxtImporteUSD = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)BtnSalir).BeginInit();
             SuspendLayout();
@@ -279,17 +281,17 @@
             label21.TabIndex = 79;
             label21.Text = "Coloque el valor";
             // 
-            // button1
+            // Button1
             // 
-            button1.BackColor = SystemColors.AppWorkspace;
-            button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(1260, 174);
-            button1.Name = "button1";
-            button1.Size = new Size(101, 31);
-            button1.TabIndex = 78;
-            button1.Text = "Convertir";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            Button1.BackColor = SystemColors.AppWorkspace;
+            Button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            Button1.Location = new Point(1260, 174);
+            Button1.Name = "Button1";
+            Button1.Size = new Size(101, 31);
+            Button1.TabIndex = 78;
+            Button1.Text = "Convertir";
+            Button1.UseVisualStyleBackColor = false;
+            Button1.Click += Button1_Click;
             // 
             // label7
             // 
@@ -338,17 +340,38 @@
             TxtIdFactura.Size = new Size(268, 23);
             TxtIdFactura.TabIndex = 81;
             // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Rockwell", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label12.ForeColor = SystemColors.ButtonFace;
+            label12.Location = new Point(1092, 333);
+            label12.Name = "label12";
+            label12.Size = new Size(141, 25);
+            label12.TabIndex = 83;
+            label12.Text = "Importe USD";
+            // 
+            // TxtImporteUSD
+            // 
+            TxtImporteUSD.Enabled = false;
+            TxtImporteUSD.Location = new Point(1092, 361);
+            TxtImporteUSD.Name = "TxtImporteUSD";
+            TxtImporteUSD.Size = new Size(166, 23);
+            TxtImporteUSD.TabIndex = 84;
+            // 
             // EditarFacturas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSlateGray;
             ClientSize = new Size(1589, 817);
+            Controls.Add(label12);
+            Controls.Add(TxtImporteUSD);
             Controls.Add(label10);
             Controls.Add(TxtIdFactura);
             Controls.Add(label1);
             Controls.Add(label21);
-            Controls.Add(button1);
+            Controls.Add(Button1);
             Controls.Add(label7);
             Controls.Add(TxtDolar);
             Controls.Add(label20);
@@ -396,9 +419,8 @@
         private Label label3;
         private Label label2;
         private Label label21;
-        private Button button1;
+        private Button Button1;
         private Label label7;
-        private TextBox TxtDolar;
         private Label label1;
         public TextBox TxtAbono;
         public TextBox TxtSaldoUSD;
@@ -410,5 +432,8 @@
         private Label label10;
         public TextBox TxtIdFactura;
         public DateTimePicker DTPFecha;
+        public TextBox TxtDolar;
+        private Label label12;
+        public TextBox TxtImporteUSD;
     }
 }

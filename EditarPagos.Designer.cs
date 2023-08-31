@@ -45,7 +45,7 @@
             label1 = new Label();
             BtnAgregar = new Button();
             label21 = new Label();
-            button1 = new Button();
+            Button1 = new Button();
             label7 = new Label();
             TxtDolar = new TextBox();
             label17 = new Label();
@@ -64,6 +64,9 @@
             label8 = new Label();
             TxtIdPago = new TextBox();
             label9 = new Label();
+            label11 = new Label();
+            txtSaldoUSD = new TextBox();
+            txtAbono = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)BtnSalir).BeginInit();
             SuspendLayout();
@@ -144,18 +147,18 @@
             label4.AutoSize = true;
             label4.Font = new Font("Rockwell", 18F, FontStyle.Bold, GraphicsUnit.Point);
             label4.ForeColor = SystemColors.ButtonFace;
-            label4.Location = new Point(733, 386);
+            label4.Location = new Point(734, 299);
             label4.Name = "label4";
-            label4.Size = new Size(201, 29);
+            label4.Size = new Size(419, 29);
             label4.TabIndex = 91;
-            label4.Text = "Saldo pendiente";
+            label4.Text = "Saldo pendiente de la factura MXP";
             // 
             // txtSaldoPendiente
             // 
             txtSaldoPendiente.Enabled = false;
-            txtSaldoPendiente.Location = new Point(733, 418);
+            txtSaldoPendiente.Location = new Point(734, 331);
             txtSaldoPendiente.Name = "txtSaldoPendiente";
-            txtSaldoPendiente.Size = new Size(248, 23);
+            txtSaldoPendiente.Size = new Size(354, 23);
             txtSaldoPendiente.TabIndex = 90;
             // 
             // label2
@@ -228,17 +231,17 @@
             label21.TabIndex = 83;
             label21.Text = "Coloque el valor";
             // 
-            // button1
+            // Button1
             // 
-            button1.BackColor = SystemColors.AppWorkspace;
-            button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(1276, 217);
-            button1.Name = "button1";
-            button1.Size = new Size(101, 31);
-            button1.TabIndex = 82;
-            button1.Text = "Convertir";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            Button1.BackColor = SystemColors.AppWorkspace;
+            Button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            Button1.Location = new Point(1276, 217);
+            Button1.Name = "Button1";
+            Button1.Size = new Size(101, 31);
+            Button1.TabIndex = 82;
+            Button1.Text = "Convertir";
+            Button1.UseVisualStyleBackColor = false;
+            Button1.Click += Button1_Click;
             // 
             // label7
             // 
@@ -376,9 +379,9 @@
             label10.ForeColor = SystemColors.ButtonFace;
             label10.Location = new Point(628, 128);
             label10.Name = "label10";
-            label10.Size = new Size(230, 29);
+            label10.Size = new Size(337, 29);
             label10.TabIndex = 67;
-            label10.Text = "GENERAR PAGOS";
+            label10.Text = "EDITAR DATOS DEL PAGO";
             // 
             // label8
             // 
@@ -408,12 +411,42 @@
             label9.Size = new Size(0, 32);
             label9.TabIndex = 96;
             // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Rockwell", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label11.ForeColor = SystemColors.ButtonFace;
+            label11.Location = new Point(734, 386);
+            label11.Name = "label11";
+            label11.Size = new Size(408, 29);
+            label11.TabIndex = 100;
+            label11.Text = "Saldo pendiente de la factura USD";
+            // 
+            // txtSaldoUSD
+            // 
+            txtSaldoUSD.Enabled = false;
+            txtSaldoUSD.Location = new Point(733, 418);
+            txtSaldoUSD.Name = "txtSaldoUSD";
+            txtSaldoUSD.Size = new Size(355, 23);
+            txtSaldoUSD.TabIndex = 99;
+            // 
+            // txtAbono
+            // 
+            txtAbono.Enabled = false;
+            txtAbono.Location = new Point(21, 101);
+            txtAbono.Name = "txtAbono";
+            txtAbono.Size = new Size(354, 23);
+            txtAbono.TabIndex = 101;
+            // 
             // EditarPagos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSlateGray;
             ClientSize = new Size(1573, 778);
+            Controls.Add(txtAbono);
+            Controls.Add(label11);
+            Controls.Add(txtSaldoUSD);
             Controls.Add(label8);
             Controls.Add(TxtIdPago);
             Controls.Add(label9);
@@ -430,7 +463,7 @@
             Controls.Add(label1);
             Controls.Add(BtnAgregar);
             Controls.Add(label21);
-            Controls.Add(button1);
+            Controls.Add(Button1);
             Controls.Add(label7);
             Controls.Add(TxtDolar);
             Controls.Add(label17);
@@ -475,9 +508,8 @@
         private Label label1;
         private Button BtnAgregar;
         private Label label21;
-        private Button button1;
+        private Button Button1;
         private Label label7;
-        private TextBox TxtDolar;
         private Label label17;
         private Label label16;
         private Label label15;
@@ -494,5 +526,9 @@
         private Label label8;
         public TextBox TxtIdPago;
         private Label label9;
+        private Label label11;
+        public TextBox txtSaldoUSD;
+        public TextBox TxtDolar;
+        public TextBox txtAbono;
     }
 }

@@ -50,3 +50,8 @@ C:\Users\flori\source\repos\Cedisur\obj\Debug\net6.0-windows\Cedisur.AgregarProv
 C:\Users\flori\source\repos\Cedisur\obj\Debug\net6.0-windows\Cedisur.VerProveedores.resources
 C:\Users\flori\source\repos\Cedisur\obj\Debug\net6.0-windows\Cedisur.EditarProveedor.resources
 C:\Users\flori\source\repos\Cedisur\obj\Debug\net6.0-windows\Cedisur.EditarPagos.resources
+C:\Users\flori\source\repos\Cedisur\obj\Debug\net6.0-windows\Cedisur.AgregarUsuario.resources
+C:\Users\flori\source\repos\Cedisur\obj\Debug\net6.0-windows\Cedisur.VerUsuarios.resources
+C:\Users\flori\source\repos\Cedisur\obj\Debug\net6.0-windows\Cedisur.EditarUsuarios.resources
+C:\Users\flori\source\repos\Cedisur\bin\Debug\net6.0-windows\Common.dll
+C:\Users\flori\source\repos\Cedisur\bin\Debug\net6.0-windows\Common.pdb

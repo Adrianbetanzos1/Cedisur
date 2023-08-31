@@ -40,6 +40,12 @@
             panel1 = new Panel();
             BtnSalir = new PictureBox();
             BtnVolver = new Button();
+            label7 = new Label();
+            CbMoneda = new CheckedListBox();
+            label6 = new Label();
+            CbTipo = new CheckedListBox();
+            label5 = new Label();
+            TxtRfc = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)BtnSalir).BeginInit();
             SuspendLayout();
@@ -59,7 +65,7 @@
             // 
             BtnAgregar.BackColor = SystemColors.AppWorkspace;
             BtnAgregar.Font = new Font("Rockwell", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            BtnAgregar.Location = new Point(670, 498);
+            BtnAgregar.Location = new Point(670, 592);
             BtnAgregar.Name = "BtnAgregar";
             BtnAgregar.Size = new Size(121, 59);
             BtnAgregar.TabIndex = 35;
@@ -155,12 +161,76 @@
             BtnVolver.UseVisualStyleBackColor = false;
             BtnVolver.Click += BtnVolver_Click;
             // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Rockwell", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.ForeColor = SystemColors.ButtonFace;
+            label7.Location = new Point(1057, 388);
+            label7.Name = "label7";
+            label7.Size = new Size(208, 25);
+            label7.TabIndex = 50;
+            label7.Text = "Moneda de cambio";
+            // 
+            // CbMoneda
+            // 
+            CbMoneda.FormattingEnabled = true;
+            CbMoneda.Items.AddRange(new object[] { "Peso mexicano", "Dolar americano" });
+            CbMoneda.Location = new Point(1057, 416);
+            CbMoneda.Name = "CbMoneda";
+            CbMoneda.Size = new Size(129, 58);
+            CbMoneda.TabIndex = 49;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Rockwell", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.ForeColor = SystemColors.ButtonFace;
+            label6.Location = new Point(550, 388);
+            label6.Name = "label6";
+            label6.Size = new Size(58, 25);
+            label6.TabIndex = 48;
+            label6.Text = "Tipo";
+            // 
+            // CbTipo
+            // 
+            CbTipo.FormattingEnabled = true;
+            CbTipo.Items.AddRange(new object[] { "Proveedor", "Acreedor" });
+            CbTipo.Location = new Point(550, 416);
+            CbTipo.Name = "CbTipo";
+            CbTipo.Size = new Size(129, 58);
+            CbTipo.TabIndex = 47;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Rockwell", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.ForeColor = SystemColors.ButtonFace;
+            label5.Location = new Point(104, 388);
+            label5.Name = "label5";
+            label5.Size = new Size(203, 25);
+            label5.TabIndex = 46;
+            label5.Text = "RFC del proveedor";
+            // 
+            // TxtRfc
+            // 
+            TxtRfc.Location = new Point(104, 416);
+            TxtRfc.Name = "TxtRfc";
+            TxtRfc.Size = new Size(268, 23);
+            TxtRfc.TabIndex = 45;
+            // 
             // EditarProveedor
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSlateGray;
             ClientSize = new Size(1573, 778);
+            Controls.Add(label7);
+            Controls.Add(CbMoneda);
+            Controls.Add(label6);
+            Controls.Add(CbTipo);
+            Controls.Add(label5);
+            Controls.Add(TxtRfc);
             Controls.Add(label1);
             Controls.Add(BtnAgregar);
             Controls.Add(label4);
@@ -193,5 +263,11 @@
         public DateTimePicker DTPFecha;
         public TextBox TxtNombreProv;
         public TextBox TxtIDProveedor;
+        private Label label7;
+        private Label label6;
+        private Label label5;
+        public CheckedListBox CbMoneda;
+        public CheckedListBox CbTipo;
+        public TextBox TxtRfc;
     }
 }

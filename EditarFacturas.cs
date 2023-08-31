@@ -14,31 +14,34 @@ namespace Cedisur
 {
     public partial class EditarFacturas : Form
     {
-        private SqlConnection conexion = new SqlConnection("server=DESKTOP-717JV41\\SQLEXPRESS ; database=cedisur ; integrated security = true");
-        VerFacturas factura = new();
-
-        public new Form ParentForm;
-        public EditarFacturas() => InitializeComponent();
-
-
-
+        private readonly SqlConnection conexion = new("server=DESKTOP-717JV41\\SQLEXPRESS ; database=cedisur ; integrated security = true");
+        readonly VerFacturas factura = new();
+        
+        public new Form? ParentForm;
+        public EditarFacturas()
+        {
+            InitializeComponent();
+        }
 
         private void BtnVolver_Click(object sender, EventArgs e)
         {
-
             this.Close();
             factura.Show();
 
         }
 
 
-
+        //Método para modificar los datos de la factura
         private void Modificar()
         {
 
             conexion.Open();
             string selectedDate = DTPFecha.Value.ToString("yyyy-MM-dd");
-            string query = "update Cedisur.dbo.Factura set facturaN='" + TxtNombreFactura.Text + "', fechaFactura=CAST('" + selectedDate + "' as datetime), diasVencimiento='" + TxtDiasVencimiento.Text + "',importe='" + TxtImporte.Text + "', abono='" + TxtAbono.Text + "', saldoMXP='" + TxtSaldoMXP.Text + "', saldoUSD='" + TxtSaldoUSD.Text + "' where  ID_factura= '" + TxtIdFactura.Text + "'";
+            string query = "update Cedisur.dbo.Factura set facturaN='" + TxtNombreFactura.Text + "', " +
+                "fechaFactura=CAST('" + selectedDate + "' as datetime), diasVencimiento='" + TxtDiasVencimiento.Text + "'," +
+                "importeMXP='" + TxtImporte.Text + "', importeUSD='" + TxtImporteUSD.Text + "', abono='" + TxtAbono.Text + "'," +
+                "saldoMXP='" + TxtSaldoMXP.Text + "', saldoUSD='" + TxtSaldoUSD.Text + "', SaldoAnterior= '" + TxtSaldoMXP.Text + "', " +
+                "SaldoAnteriorUSD= '" + TxtSaldoUSD.Text + "', AbonoAnterior= '" + TxtAbono.Text + "' where  ID_factura= '" + TxtIdFactura.Text + "'";
             SqlCommand comando = new(query, conexion);
             int cant;
             cant = comando.ExecuteNonQuery();
@@ -61,61 +64,80 @@ namespace Cedisur
             Application.Exit();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        //Botón para calcular el valor del importe, saldo en USD
+        private void Button1_Click(object sender, EventArgs e)
         {
-            float dolar;
-            float saldoMXP;
-            float saldoUSD;
+            float dolar = float.Parse(TxtDolar.Text);
+            float saldoMXP = float.Parse(TxtSaldoMXP.Text);
+            float saldoUSD = saldoMXP / dolar;
+            float importeMXP = float.Parse(TxtImporte.Text);
+            float importeUSD = importeMXP / dolar;
 
-            if (string.IsNullOrEmpty(TxtDolar.Text))
+            if (string.IsNullOrEmpty(TxtDolar.Text) || string.IsNullOrEmpty(TxtSaldoMXP.Text) || string.IsNullOrEmpty(TxtImporte.Text))
             {
 
                 label21.Text = "Por favor coloque un número donde debe antes de darle click";
             }
-            else if (string.IsNullOrEmpty(TxtSaldoMXP.Text))
-            {
-                label21.Text = "Coloque el dato del saldo aportado";
-            }
             else
             {
 
-                dolar = float.Parse(TxtDolar.Text);
-
-                saldoMXP = float.Parse(TxtSaldoMXP.Text);
-
-                saldoUSD = saldoMXP / dolar;
-
-
                 TxtSaldoUSD.Text = saldoUSD.ToString();
-
+                TxtImporteUSD.Text = importeUSD.ToString();
 
             }
+
         }
 
+        //Método para asignar el saldo pendiente de acuerdo al abono y el importe
         private void TxtAbono_Leave(object sender, EventArgs e)
         {
+
 
             if (string.IsNullOrEmpty(TxtImporte.Text))
             {
                 MessageBox.Show("Por favor coloque el importe", "AVISO");
             }
-            float abono = float.Parse(TxtAbono.Text);
-            float importe = float.Parse(TxtImporte.Text);
-            float saldo;
+            else if (string.IsNullOrEmpty(TxtAbono.Text))
+            {
+                TxtAbono.Text = "0";
+                TxtSaldoUSD.Text = TxtImporteUSD.Text;
+                TxtSaldoMXP.Text = TxtImporte.Text;
+            }
+            else if (float.Parse(TxtAbono.Text) > float.Parse(TxtImporte.Text))
+            {
+                MessageBox.Show("No puede proseguir debido a que el abono es mayor al importe", "Advertencia");
+            }
 
-            saldo = +importe - abono;
+            else
+            {
+                float saldo = +float.Parse(TxtImporte.Text) - float.Parse(TxtAbono.Text);
+                TxtSaldoMXP.Text = saldo.ToString();
+            }
 
-            TxtSaldoMXP.Text = saldo.ToString();
         }
 
+        //Botón para modificar los datos de la factura que se seleccionó
         private void BtnModificar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Estas seguro que deseas editar los datos de esta factura?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+
+            if (string.IsNullOrEmpty(TxtNombreFactura.Text) || string.IsNullOrEmpty(TxtAbono.Text) || string.IsNullOrEmpty(TxtDiasVencimiento.Text) || string.IsNullOrEmpty(TxtImporte.Text) || TxtDolar.Text == "")
+            {
+                MessageBox.Show("Colocar los datos faltantes antes de continuar");
+            }
+            else if (float.Parse(TxtAbono.Text) > float.Parse(TxtImporte.Text))
+            {
+                MessageBox.Show("No puede proseguir debido a que el abono es mayor al importe", "Advertencia");
+
+            }
+            else if (MessageBox.Show("Estas seguro que deseas editar los datos de esta factura?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 Modificar();
                 this.Close();
                 factura.Show();
             }
+
+
+
         }
 
     }
