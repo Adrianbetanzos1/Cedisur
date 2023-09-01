@@ -36,6 +36,8 @@ namespace Cedisur
             Application.Exit();
         }
 
+
+        //Método asociado para restringir el acceso a los usuarios a la hora de seleccionar acciones
         private void RestringirAccesos()
         {
             if (CacheInicioSesionUsuario.Nivel_seguridad == Cargos.usuario)
@@ -47,6 +49,7 @@ namespace Cedisur
             }
         }
 
+        //Método que carga los valores del DGV con sus header text establecidos
         private void VerProveedores_Load(object sender, EventArgs e)
         {
             RestringirAccesos();
@@ -59,6 +62,8 @@ namespace Cedisur
             DGVproveedores.Columns[5].HeaderText = "Tipo de moneda de pago";
         }
 
+
+        //Método para buscar según el nombre del proveedor
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
             if (TxtBusqueda.Text.Equals(""))
@@ -70,6 +75,8 @@ namespace Cedisur
                 DGVproveedores.DataSource = Proveedor.MostrarNombreProveedores(TxtBusqueda.Text);
             }
         }
+
+        //Método para mandar los datos seleccionados al formulario para editarlos.
 
         private void BtnEditarPro_Click(object sender, EventArgs e)
         {
@@ -95,6 +102,8 @@ namespace Cedisur
             }
         }
 
+
+        //Métodos para llevar los datos seleccionados para generar una factura a ese proveedor
         private void BtnPagar_Click(object sender, EventArgs e)
         {
             if (DGVproveedores.RowCount == 0)
@@ -133,6 +142,8 @@ namespace Cedisur
             }
         }
 
+
+        //Método para eliminar los datos seleccionados.
         private void Button1_Click(object sender, EventArgs e)
         {
             if (DGVproveedores.RowCount == 0)
@@ -155,6 +166,7 @@ namespace Cedisur
 
         }
 
+        //Método para buscar según el RFC del proveedor
         private void Button2_Click(object sender, EventArgs e)
         {
             if (TxtBusqueda.Text.Equals(""))

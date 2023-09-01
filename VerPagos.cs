@@ -53,7 +53,7 @@ namespace Cedisur
         {
             RestringirAccesos();
             DGVpagos.DataSource = pago.MostrarFacturas();
-            DGVpagos.Columns[0].HeaderText = "ID pago";
+            DGVpagos.Columns[0].HeaderText = "Número de pago";
             DGVpagos.Columns[1].HeaderText = "Número factura";
             DGVpagos.Columns[2].HeaderText = "Importe MXP";
             DGVpagos.Columns[3].HeaderText = "Importe USD";
@@ -66,6 +66,7 @@ namespace Cedisur
             DGVpagos.Columns[10].HeaderText = "Tipo de cambio el día del pago";
         }
 
+        //Método para buscar según su número de pago
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
             if (TxtBusqueda.Text.Equals(""))
@@ -78,6 +79,8 @@ namespace Cedisur
             }
         }
 
+
+        //Método para editar un pago, de modo que envie los datos correspondientes al formulario encargado
         private void Button1_Click(object sender, EventArgs e)
         {
 

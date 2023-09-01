@@ -62,6 +62,8 @@
             label6 = new Label();
             TxtIdFactura = new TextBox();
             txtABono = new TextBox();
+            label8 = new Label();
+            txtSaldoUSD = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)BtnSalir).BeginInit();
             SuspendLayout();
@@ -209,6 +211,7 @@
             TxtImporteMXP.Name = "TxtImporteMXP";
             TxtImporteMXP.Size = new Size(233, 23);
             TxtImporteMXP.TabIndex = 34;
+            TxtImporteMXP.Leave += TxtImporteMXP_Leave;
             // 
             // label10
             // 
@@ -261,6 +264,7 @@
             TxtDolar.Name = "TxtDolar";
             TxtDolar.Size = new Size(101, 23);
             TxtDolar.TabIndex = 50;
+            TxtDolar.Leave += TxtDolar_Leave;
             // 
             // BtnAgregar
             // 
@@ -326,16 +330,16 @@
             label4.AutoSize = true;
             label4.Font = new Font("Rockwell", 18F, FontStyle.Bold, GraphicsUnit.Point);
             label4.ForeColor = SystemColors.ButtonFace;
-            label4.Location = new Point(655, 346);
+            label4.Location = new Point(655, 259);
             label4.Name = "label4";
-            label4.Size = new Size(354, 29);
+            label4.Size = new Size(419, 29);
             label4.TabIndex = 62;
-            label4.Text = "Saldo pendiente de la factura";
+            label4.Text = "Saldo pendiente de la factura MXP";
             // 
             // txtSaldoPendiente
             // 
             txtSaldoPendiente.Enabled = false;
-            txtSaldoPendiente.Location = new Point(654, 378);
+            txtSaldoPendiente.Location = new Point(654, 291);
             txtSaldoPendiente.Name = "txtSaldoPendiente";
             txtSaldoPendiente.Size = new Size(355, 23);
             txtSaldoPendiente.TabIndex = 61;
@@ -381,10 +385,30 @@
             // txtABono
             // 
             txtABono.Enabled = false;
-            txtABono.Location = new Point(671, 273);
+            txtABono.Location = new Point(12, 74);
             txtABono.Name = "txtABono";
             txtABono.Size = new Size(355, 23);
             txtABono.TabIndex = 67;
+            txtABono.Visible = false;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Rockwell", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.ForeColor = SystemColors.ButtonFace;
+            label8.Location = new Point(655, 346);
+            label8.Name = "label8";
+            label8.Size = new Size(408, 29);
+            label8.TabIndex = 69;
+            label8.Text = "Saldo pendiente de la factura USD";
+            // 
+            // txtSaldoUSD
+            // 
+            txtSaldoUSD.Enabled = false;
+            txtSaldoUSD.Location = new Point(654, 378);
+            txtSaldoUSD.Name = "txtSaldoUSD";
+            txtSaldoUSD.Size = new Size(355, 23);
+            txtSaldoUSD.TabIndex = 68;
             // 
             // AgregarPagos
             // 
@@ -392,6 +416,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSlateGray;
             ClientSize = new Size(1589, 817);
+            Controls.Add(label8);
+            Controls.Add(txtSaldoUSD);
             Controls.Add(txtABono);
             Controls.Add(label6);
             Controls.Add(TxtIdFactura);
@@ -427,7 +453,6 @@
             Name = "AgregarPagos";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AgregarFacturas";
-       
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)BtnSalir).EndInit();
             ResumeLayout(false);
@@ -469,5 +494,7 @@
         private Label label6;
         public TextBox TxtIdFactura;
         public TextBox txtABono;
+        private Label label8;
+        public TextBox txtSaldoUSD;
     }
 }

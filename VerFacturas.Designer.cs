@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VerFacturas));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             panel1 = new Panel();
             label2 = new Label();
             BtnSalir = new PictureBox();
@@ -45,6 +45,7 @@
             BtnBuscarID = new Button();
             label1 = new Label();
             TxtBuscarID = new TextBox();
+            BtnReporte = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)BtnSalir).BeginInit();
             ((System.ComponentModel.ISupportInitialize)DGVfacturas).BeginInit();
@@ -102,30 +103,30 @@
             DGVfacturas.AllowUserToResizeColumns = false;
             DGVfacturas.AllowUserToResizeRows = false;
             DGVfacturas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Rockwell", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            DGVfacturas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.Control;
+            dataGridViewCellStyle4.Font = new Font("Rockwell", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            DGVfacturas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             DGVfacturas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Rockwell", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            DGVfacturas.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = SystemColors.Window;
+            dataGridViewCellStyle5.Font = new Font("Rockwell", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
+            DGVfacturas.DefaultCellStyle = dataGridViewCellStyle5;
             DGVfacturas.Location = new Point(15, 216);
             DGVfacturas.Name = "DGVfacturas";
             DGVfacturas.ReadOnly = true;
             DGVfacturas.RowHeadersVisible = false;
             DGVfacturas.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(192, 192, 0);
-            DGVfacturas.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(192, 192, 0);
+            DGVfacturas.RowsDefaultCellStyle = dataGridViewCellStyle6;
             DGVfacturas.RowTemplate.Height = 25;
             DGVfacturas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             DGVfacturas.Size = new Size(1204, 550);
@@ -134,7 +135,7 @@
             // BtnPagar
             // 
             BtnPagar.Font = new Font("Rockwell", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            BtnPagar.Location = new Point(1333, 557);
+            BtnPagar.Location = new Point(1333, 699);
             BtnPagar.Name = "BtnPagar";
             BtnPagar.Size = new Size(161, 67);
             BtnPagar.TabIndex = 4;
@@ -145,7 +146,7 @@
             // BtnEditar
             // 
             BtnEditar.Font = new Font("Rockwell", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            BtnEditar.Location = new Point(1333, 315);
+            BtnEditar.Location = new Point(1333, 448);
             BtnEditar.Name = "BtnEditar";
             BtnEditar.Size = new Size(161, 67);
             BtnEditar.TabIndex = 5;
@@ -200,9 +201,9 @@
             label1.ForeColor = SystemColors.ButtonFace;
             label1.Location = new Point(676, 107);
             label1.Name = "label1";
-            label1.Size = new Size(182, 29);
+            label1.Size = new Size(347, 29);
             label1.TabIndex = 44;
-            label1.Text = "Buscar por ID ";
+            label1.Text = "Buscar por ID del proveedor";
             // 
             // TxtBuscarID
             // 
@@ -211,12 +212,23 @@
             TxtBuscarID.Size = new Size(398, 23);
             TxtBuscarID.TabIndex = 43;
             // 
+            // BtnReporte
+            // 
+            BtnReporte.Font = new Font("Rockwell", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            BtnReporte.Location = new Point(1333, 216);
+            BtnReporte.Name = "BtnReporte";
+            BtnReporte.Size = new Size(161, 67);
+            BtnReporte.TabIndex = 46;
+            BtnReporte.Text = "Generar reporte";
+            BtnReporte.UseVisualStyleBackColor = true;
+            // 
             // VerFacturas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSlateGray;
             ClientSize = new Size(1589, 817);
+            Controls.Add(BtnReporte);
             Controls.Add(BtnBuscarID);
             Controls.Add(label1);
             Controls.Add(TxtBuscarID);
@@ -257,5 +269,6 @@
         private TextBox TxtBuscarID;
         public DataGridView DGVfacturas;
         private Label label2;
+        private Button BtnReporte;
     }
 }

@@ -158,7 +158,7 @@ namespace Cedisur
             if (CacheInicioSesionUsuario.Nivel_seguridad == Cargos.usuario)
             {
                 BtnAgregar.Enabled = false;
-                
+
                 BtnUsuarios.Enabled = false;
 
             }

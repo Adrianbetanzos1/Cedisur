@@ -33,6 +33,8 @@ namespace Cedisur
         }
 
         readonly Usuarios usuarios = new();
+
+        //Método que carga los valores del DGV con sus header text establecidos
         private void VerUsuarios_Load(object sender, EventArgs e)
         {
 
@@ -46,6 +48,7 @@ namespace Cedisur
 
         }
 
+        //Método para eliminar los datos seleccionados.
         private void Button1_Click(object sender, EventArgs e)
         {
             if (DGVusuarios.RowCount == 0)
@@ -70,6 +73,7 @@ namespace Cedisur
 
         }
 
+        //Método para mandar los datos seleccionados al formulario para editarlos.
         private void BtnEditarPro_Click(object sender, EventArgs e)
         {
             if (DGVusuarios.RowCount == 0)
@@ -93,6 +97,8 @@ namespace Cedisur
                 usuarios.ShowDialog();
             }
         }
+
+        //Método para buscar según el nombre del usuario
 
         private void BtnBuscar_Click(object sender, EventArgs e)
         {

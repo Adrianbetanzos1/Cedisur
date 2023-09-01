@@ -40,6 +40,12 @@
             TxtIDProveedor = new TextBox();
             BtnAgregar = new Button();
             label1 = new Label();
+            label5 = new Label();
+            TxtRfc = new TextBox();
+            CbTipo = new CheckedListBox();
+            label6 = new Label();
+            label7 = new Label();
+            CbMoneda = new CheckedListBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)BtnSalir).BeginInit();
             SuspendLayout();
@@ -51,13 +57,13 @@
             panel1.Controls.Add(BtnVolver);
             panel1.Location = new Point(12, 12);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1444, 67);
+            panel1.Size = new Size(1549, 67);
             panel1.TabIndex = 2;
             // 
             // BtnSalir
             // 
             BtnSalir.Image = (Image)resources.GetObject("BtnSalir.Image");
-            BtnSalir.Location = new Point(1361, 21);
+            BtnSalir.Location = new Point(1502, 16);
             BtnSalir.Name = "BtnSalir";
             BtnSalir.Size = new Size(29, 27);
             BtnSalir.SizeMode = PictureBoxSizeMode.Zoom;
@@ -130,12 +136,13 @@
             TxtIDProveedor.Name = "TxtIDProveedor";
             TxtIDProveedor.Size = new Size(268, 23);
             TxtIDProveedor.TabIndex = 20;
+            TxtIDProveedor.Leave += TxtIDProveedor_Leave;
             // 
             // BtnAgregar
             // 
             BtnAgregar.BackColor = SystemColors.AppWorkspace;
             BtnAgregar.Font = new Font("Rockwell", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            BtnAgregar.Location = new Point(670, 514);
+            BtnAgregar.Location = new Point(550, 559);
             BtnAgregar.Name = "BtnAgregar";
             BtnAgregar.Size = new Size(121, 59);
             BtnAgregar.TabIndex = 26;
@@ -154,12 +161,76 @@
             label1.TabIndex = 27;
             label1.Text = "AGREGAR PROVEEDOR";
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Rockwell", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.ForeColor = SystemColors.ButtonFace;
+            label5.Location = new Point(104, 381);
+            label5.Name = "label5";
+            label5.Size = new Size(203, 25);
+            label5.TabIndex = 29;
+            label5.Text = "RFC del proveedor";
+            // 
+            // TxtRfc
+            // 
+            TxtRfc.Location = new Point(104, 409);
+            TxtRfc.Name = "TxtRfc";
+            TxtRfc.Size = new Size(268, 23);
+            TxtRfc.TabIndex = 28;
+            // 
+            // CbTipo
+            // 
+            CbTipo.FormattingEnabled = true;
+            CbTipo.Items.AddRange(new object[] { "Proveedor", "Acreedor" });
+            CbTipo.Location = new Point(550, 409);
+            CbTipo.Name = "CbTipo";
+            CbTipo.Size = new Size(129, 58);
+            CbTipo.TabIndex = 41;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Rockwell", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.ForeColor = SystemColors.ButtonFace;
+            label6.Location = new Point(550, 381);
+            label6.Name = "label6";
+            label6.Size = new Size(58, 25);
+            label6.TabIndex = 42;
+            label6.Text = "Tipo";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Rockwell", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.ForeColor = SystemColors.ButtonFace;
+            label7.Location = new Point(1057, 381);
+            label7.Name = "label7";
+            label7.Size = new Size(208, 25);
+            label7.TabIndex = 44;
+            label7.Text = "Moneda de cambio";
+            // 
+            // CbMoneda
+            // 
+            CbMoneda.FormattingEnabled = true;
+            CbMoneda.Items.AddRange(new object[] { "Peso mexicano", "Dolar americano" });
+            CbMoneda.Location = new Point(1057, 409);
+            CbMoneda.Name = "CbMoneda";
+            CbMoneda.Size = new Size(129, 58);
+            CbMoneda.TabIndex = 43;
+            // 
             // AgregarProveedor
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSlateGray;
             ClientSize = new Size(1573, 778);
+            Controls.Add(label7);
+            Controls.Add(CbMoneda);
+            Controls.Add(label6);
+            Controls.Add(CbTipo);
+            Controls.Add(label5);
+            Controls.Add(TxtRfc);
             Controls.Add(label1);
             Controls.Add(BtnAgregar);
             Controls.Add(label4);
@@ -193,5 +264,11 @@
         private TextBox TxtIDProveedor;
         private Button BtnAgregar;
         private Label label1;
+        private Label label5;
+        private TextBox TxtRfc;
+        private CheckedListBox CbTipo;
+        private Label label6;
+        private Label label7;
+        private CheckedListBox CbMoneda;
     }
 }

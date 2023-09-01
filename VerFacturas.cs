@@ -90,7 +90,7 @@ namespace Cedisur
             }
             else
             {
-                DGVfacturas.DataSource = Facturas.MostrarID(TxtBuscarID.Text);
+                DGVfacturas.DataSource = Facturas.MostrarIDProveedor(TxtBuscarID.Text);
             }
         }
 

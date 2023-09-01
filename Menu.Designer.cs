@@ -40,8 +40,8 @@
             BtnProveedores = new Button();
             BtnSalir = new PictureBox();
             SubmenuPro = new Panel();
-            BtnTodos = new Button();
             BtnAgregar = new Button();
+            BtnTodos = new Button();
             SubMenuFac = new Panel();
             BtnTodosFac = new Button();
             SubmenuPagos = new Panel();
@@ -63,7 +63,7 @@
             // BtnCerrarSesion
             // 
             BtnCerrarSesion.Image = (Image)resources.GetObject("BtnCerrarSesion.Image");
-            BtnCerrarSesion.Location = new Point(15, 14);
+            BtnCerrarSesion.Location = new Point(14, 29);
             BtnCerrarSesion.Name = "BtnCerrarSesion";
             BtnCerrarSesion.Size = new Size(29, 27);
             BtnCerrarSesion.SizeMode = PictureBoxSizeMode.Zoom;
@@ -176,7 +176,7 @@
             // BtnSalir
             // 
             BtnSalir.Image = (Image)resources.GetObject("BtnSalir.Image");
-            BtnSalir.Location = new Point(1390, 14);
+            BtnSalir.Location = new Point(1388, 29);
             BtnSalir.Name = "BtnSalir";
             BtnSalir.Size = new Size(29, 27);
             BtnSalir.SizeMode = PictureBoxSizeMode.Zoom;
@@ -194,19 +194,6 @@
             SubmenuPro.Size = new Size(183, 121);
             SubmenuPro.TabIndex = 3;
             // 
-            // BtnTodos
-            // 
-            BtnTodos.BackColor = SystemColors.AppWorkspace;
-            BtnTodos.Font = new Font("Rockwell", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            BtnTodos.ForeColor = Color.Black;
-            BtnTodos.Location = new Point(0, 71);
-            BtnTodos.Name = "BtnTodos";
-            BtnTodos.Size = new Size(183, 51);
-            BtnTodos.TabIndex = 8;
-            BtnTodos.Text = "Ver todos";
-            BtnTodos.UseVisualStyleBackColor = false;
-            BtnTodos.Click += BtnTodos_Click;
-            // 
             // BtnAgregar
             // 
             BtnAgregar.BackColor = SystemColors.AppWorkspace;
@@ -219,6 +206,19 @@
             BtnAgregar.Text = "Agregar";
             BtnAgregar.UseVisualStyleBackColor = false;
             BtnAgregar.Click += BtnAgregar_Click;
+            // 
+            // BtnTodos
+            // 
+            BtnTodos.BackColor = SystemColors.AppWorkspace;
+            BtnTodos.Font = new Font("Rockwell", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            BtnTodos.ForeColor = Color.Black;
+            BtnTodos.Location = new Point(0, 71);
+            BtnTodos.Name = "BtnTodos";
+            BtnTodos.Size = new Size(183, 51);
+            BtnTodos.TabIndex = 8;
+            BtnTodos.Text = "Ver todos";
+            BtnTodos.UseVisualStyleBackColor = false;
+            BtnTodos.Click += BtnTodos_Click;
             // 
             // SubMenuFac
             // 
