@@ -16,7 +16,7 @@ namespace Cedisur
     {
         private readonly SqlConnection conexion = new("server=DESKTOP-717JV41\\SQLEXPRESS ; database=cedisur ; integrated security = true");
         readonly VerFacturas factura = new();
-        
+
         public new Form? ParentForm;
         public EditarFacturas()
         {
@@ -39,9 +39,9 @@ namespace Cedisur
             string selectedDate = DTPFecha.Value.ToString("yyyy-MM-dd");
             string query = "update Cedisur.dbo.Factura set facturaN='" + TxtNombreFactura.Text + "', " +
                 "fechaFactura=CAST('" + selectedDate + "' as datetime), diasVencimiento='" + TxtDiasVencimiento.Text + "'," +
-                "importeMXP='" + TxtImporte.Text + "', importeUSD='" + TxtImporteUSD.Text + "', abono='" + TxtAbono.Text + "'," +
-                "saldoMXP='" + TxtSaldoMXP.Text + "', saldoUSD='" + TxtSaldoUSD.Text + "', SaldoAnterior= '" + TxtSaldoMXP.Text + "', " +
-                "SaldoAnteriorUSD= '" + TxtSaldoUSD.Text + "', AbonoAnterior= '" + TxtAbono.Text + "' where  ID_factura= '" + TxtIdFactura.Text + "'";
+                "importeMXP='" + float.Parse(TxtImporte.Text).ToString("F2") + "', importeUSD='" + float.Parse(TxtImporteUSD.Text).ToString("F2") + "', abono='" + float.Parse(TxtAbono.Text).ToString("F2") + "'," +
+                "saldoMXP='" + float.Parse(TxtSaldoMXP.Text).ToString("F2") + "', saldoUSD='" + float.Parse(TxtSaldoUSD.Text).ToString("F2") + "', SaldoAnterior= '" + float.Parse(TxtSaldoMXP.Text).ToString("F2") + "', " +
+                "SaldoAnteriorUSD= '" + float.Parse(TxtSaldoUSD.Text).ToString("F2") + "', AbonoAnterior= '" + float.Parse(TxtAbono.Text).ToString("F2") + "' where  ID_factura= '" + TxtIdFactura.Text + "'";
             SqlCommand comando = new(query, conexion);
             int cant;
             cant = comando.ExecuteNonQuery();
@@ -91,23 +91,24 @@ namespace Cedisur
         //Método para asignar el saldo pendiente de acuerdo al abono y el importe
         private void TxtAbono_Leave(object sender, EventArgs e)
         {
-
-
-            if (string.IsNullOrEmpty(TxtImporte.Text))
-            {
-                MessageBox.Show("Por favor coloque el importe", "AVISO");
-            }
-            else if (string.IsNullOrEmpty(TxtAbono.Text))
+            
+            if (string.IsNullOrEmpty(TxtAbono.Text))
             {
                 TxtAbono.Text = "0";
                 TxtSaldoUSD.Text = TxtImporteUSD.Text;
                 TxtSaldoMXP.Text = TxtImporte.Text;
             }
+            else if (!float.TryParse(TxtAbono.Text, out float _))
+            {
+                
+                MessageBox.Show("Ingrese un valor númerico");
+                TxtAbono.Focus();
+                
+            }
             else if (float.Parse(TxtAbono.Text) > float.Parse(TxtImporte.Text))
             {
                 MessageBox.Show("No puede proseguir debido a que el abono es mayor al importe", "Advertencia");
             }
-
             else
             {
                 float saldo = +float.Parse(TxtImporte.Text) - float.Parse(TxtAbono.Text);
@@ -140,5 +141,40 @@ namespace Cedisur
 
         }
 
+
+        //Valida que sea un valor númerico el que se está poniendo
+        private void TxtDiasVencimiento_Leave(object sender, EventArgs e)
+        {
+            if (!float.TryParse(TxtDiasVencimiento.Text, out float _))
+            {
+                MessageBox.Show("Ingrese un valor númerico");
+                TxtDiasVencimiento.Focus();
+            }
+        }
+
+        //Valida que sea un valor númerico el que se está poniendo
+        private void TxtDolar_Leave(object sender, EventArgs e)
+        {
+            if (!float.TryParse(TxtDolar.Text, out float _))
+            {
+                MessageBox.Show("Ingrese un valor númerico");
+                TxtDolar.Focus();
+            }
+        }
+
+
+        //Valida que sea un valor númerico el que se está poniendo
+        private void TxtImporte_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(TxtImporte.Text))
+            {
+                MessageBox.Show("Por favor coloque el importe", "AVISO");
+            }
+            else if(!float.TryParse(TxtImporte.Text, out float _))
+            {
+                MessageBox.Show("Ingrese un valor númerico");
+                TxtImporte.Focus();
+            }
+        }
     }
 }

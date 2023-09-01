@@ -260,6 +260,7 @@
             TxtDolar.Name = "TxtDolar";
             TxtDolar.Size = new Size(101, 23);
             TxtDolar.TabIndex = 80;
+            TxtDolar.Leave += TxtDolar_Leave;
             // 
             // label17
             // 
@@ -371,6 +372,7 @@
             TxtImporteMXP.Name = "TxtImporteMXP";
             TxtImporteMXP.Size = new Size(233, 23);
             TxtImporteMXP.TabIndex = 68;
+            TxtImporteMXP.Leave += TxtImporteMXP_Leave;
             // 
             // label10
             // 
@@ -437,6 +439,7 @@
             txtAbono.Name = "txtAbono";
             txtAbono.Size = new Size(354, 23);
             txtAbono.TabIndex = 101;
+            txtAbono.Visible = false;
             // 
             // EditarPagos
             // 

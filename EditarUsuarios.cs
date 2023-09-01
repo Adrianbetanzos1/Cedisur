@@ -101,7 +101,7 @@ namespace Cedisur
 
         //Requisitos contraseña
 
-
+        //Botón para modificar los datos del usuario seleccionado
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
 

@@ -11,10 +11,10 @@ namespace Cedisur.EmailServices
 {
     public abstract class MasterMailServer
     {
-        private SmtpClient SmtpClient;
+        private SmtpClient? SmtpClient;
         protected string? SenderMail { get; set; }
         protected string? Contraseña { get; set; }
-        protected string? Host { get; set; }
+        protected string? Hosts { get; set; }
         protected int Port { get; set; }
         protected bool Ssl { get; set; }
 
@@ -23,7 +23,7 @@ namespace Cedisur.EmailServices
             SmtpClient = new()
             {
                 Credentials = new NetworkCredential(SenderMail, Contraseña),
-                Host = Host,
+                //Host = Hosts,
                 Port = Port,
                 EnableSsl = Ssl
             };
@@ -37,7 +37,7 @@ namespace Cedisur.EmailServices
             var mailMessage = new MailMessage();
             try
             {
-                mailMessage.From = new MailAddress(SenderMail);
+               // mailMessage.From = new MailAddress( SenderMail);
                 foreach (string mail in recipientMail)
                 {
                     mailMessage.To.Add(mail);
@@ -45,12 +45,12 @@ namespace Cedisur.EmailServices
                 mailMessage.Subject = asunto;
                 mailMessage.Body = cuerpo;
                 mailMessage.Priority = MailPriority.Normal;
-                SmtpClient.Send(mailMessage);
+                //SmtpClient.Send(mailMessage);
 
             }
             catch(Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
             finally
             {

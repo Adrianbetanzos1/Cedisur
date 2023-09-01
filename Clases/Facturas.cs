@@ -58,10 +58,10 @@ namespace Cedisur.Clases
         }
 
 
-        public static DataTable MostrarID(string args)
+        public static DataTable MostrarIDProveedor(string args)
         {
             using SqlConnection conexion = new ("Server=DESKTOP-717JV41\\SQLEXPRESS; Database=Cedisur;  integrated security= true");
-            string consulta = "select * from Factura where ID_factura like '%" + args + "%'";
+            string consulta = "select * from Factura where ID_proveedor like '%" + args + "%'";
             SqlDataAdapter da = new(consulta, conexion);
 
             DataTable dt = new();

@@ -193,6 +193,7 @@
             TxtImporte.Name = "TxtImporte";
             TxtImporte.Size = new Size(166, 23);
             TxtImporte.TabIndex = 69;
+            TxtImporte.Leave += TxtImporte_Leave;
             // 
             // label5
             // 
@@ -211,6 +212,7 @@
             TxtDiasVencimiento.Name = "TxtDiasVencimiento";
             TxtDiasVencimiento.Size = new Size(166, 23);
             TxtDiasVencimiento.TabIndex = 61;
+            TxtDiasVencimiento.Leave += TxtDiasVencimiento_Leave;
             // 
             // label4
             // 
@@ -310,6 +312,7 @@
             TxtDolar.Name = "TxtDolar";
             TxtDolar.Size = new Size(101, 23);
             TxtDolar.TabIndex = 76;
+            TxtDolar.Leave += TxtDolar_Leave;
             // 
             // label1
             // 

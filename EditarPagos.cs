@@ -103,6 +103,8 @@ namespace Cedisur
             command.ExecuteNonQuery();
         }
 
+
+        //Método para obtener la suma del abono que ya se ha realizado
         private float ObtenerSumaTotalActualAbono()
         {
             float sumaTotalAbono = 0;
@@ -139,13 +141,10 @@ namespace Cedisur
 
 
 
-
-
-
-
-
         //Termina 
 
+
+        //Método para modificar los datos de los pagos, rectificando los datos anteriores de la factura
         private void Modificar()
         {
             using SqlConnection connection = new(conexion);
@@ -166,8 +165,8 @@ namespace Cedisur
 
 
             string selectedDate = DTPFechaPago.Value.ToString("yyyy-MM-dd");
-            string query = "update Cedisur.dbo.Pagos set importePagoMXP='" + TxtImporteMXP.Text + "'," +
-            " importePagoUSD = '" + TxtImporteUSD.Text + "' ,fechaPago=CAST('" + selectedDate + "' as datetime)," +
+            string query = "update Cedisur.dbo.Pagos set importePagoMXP='" + float.Parse(TxtImporteMXP.Text).ToString("F2") + "'," +
+            " importePagoUSD = '" + float.Parse(TxtImporteUSD.Text).ToString("F2") + "' ,fechaPago=CAST('" + selectedDate + "' as datetime)," +
             " SPEI='" + CbSPEI.SelectedItem + "', numCuenta='" + TxtNumeroCuenta.Text + "', numContrato='" + TxtNumContrato.Text + "' " +
             ",TipoDeCambio= '" + TxtDolar.Text + "' where  ID_pago= '" + TxtIdPago.Text + "'";
             SqlCommand comando = new(query, connection);
@@ -185,6 +184,7 @@ namespace Cedisur
             connection.Close();
         }
 
+        //Botón encargado de generar el valor del dolar 
         private void Button1_Click(object sender, EventArgs e)
         {
             float dolar;
@@ -216,6 +216,8 @@ namespace Cedisur
             }
         }
 
+
+        //Se encargar de modificar los datos, antes validando si los campos son correctos
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(TxtImporteMXP.Text) || string.IsNullOrEmpty(TxtImporteUSD.Text) || string.IsNullOrEmpty(TxtNumContrato.Text) || string.IsNullOrEmpty(TxtNumeroCuenta.Text) || CbSPEI.CheckedItems.Count == 0)
@@ -236,8 +238,25 @@ namespace Cedisur
 
         }
 
+        //Valida que sea un valor númerico el que se está poniendo
+        private void TxtImporteMXP_Leave(object sender, EventArgs e)
+        {
+            if (!float.TryParse(TxtImporteMXP.Text, out _))
+            {
+                MessageBox.Show("Ingrese un valor númerico");
+                TxtImporteMXP.Focus();
+            }
+        }
 
-
+        //Valida que sea un valor númerico el que se está poniendo
+        private void TxtDolar_Leave(object sender, EventArgs e)
+        {
+            if (!float.TryParse(TxtDolar.Text, out float _))
+            {
+                MessageBox.Show("Ingrese un valor númerico");
+                TxtDolar.Focus();
+            }
+        }
     }
 
 }
