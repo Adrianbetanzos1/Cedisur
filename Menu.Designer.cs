@@ -1,4 +1,4 @@
-﻿namespace Cedisur
+﻿namespace CedisurB
 {
     partial class Menu
     {
@@ -29,339 +29,309 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
-            BtnCerrarSesion = new PictureBox();
-            panel1 = new Panel();
-            pictureBox1 = new PictureBox();
-            LblPosicion = new Label();
-            LblNombre = new Label();
-            BtnUsuarios = new Button();
-            BtnPagos = new Button();
-            button1 = new Button();
-            BtnProveedores = new Button();
-            BtnSalir = new PictureBox();
-            SubmenuPro = new Panel();
-            BtnAgregar = new Button();
-            BtnTodos = new Button();
-            SubMenuFac = new Panel();
-            BtnTodosFac = new Button();
-            SubmenuPagos = new Panel();
-            button2 = new Button();
-            label2 = new Label();
-            SubmenuUsuarios = new Panel();
-            button3 = new Button();
-            BtnAgregarNuevoU = new Button();
-            ((System.ComponentModel.ISupportInitialize)BtnCerrarSesion).BeginInit();
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)BtnSalir).BeginInit();
-            SubmenuPro.SuspendLayout();
-            SubMenuFac.SuspendLayout();
-            SubmenuPagos.SuspendLayout();
-            SubmenuUsuarios.SuspendLayout();
-            SuspendLayout();
-            // 
-            // BtnCerrarSesion
-            // 
-            BtnCerrarSesion.Image = (Image)resources.GetObject("BtnCerrarSesion.Image");
-            BtnCerrarSesion.Location = new Point(14, 29);
-            BtnCerrarSesion.Name = "BtnCerrarSesion";
-            BtnCerrarSesion.Size = new Size(29, 27);
-            BtnCerrarSesion.SizeMode = PictureBoxSizeMode.Zoom;
-            BtnCerrarSesion.TabIndex = 1;
-            BtnCerrarSesion.TabStop = false;
-            BtnCerrarSesion.Click += BtnCerrarSesion_Click;
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.LblPosicion = new System.Windows.Forms.Label();
+            this.BtnCerrarSesion = new System.Windows.Forms.PictureBox();
+            this.LblNombre = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.BtnProveedores = new System.Windows.Forms.Button();
+            this.BtnFacturas = new System.Windows.Forms.Button();
+            this.BtnPagos = new System.Windows.Forms.Button();
+            this.BtnUsuarios = new System.Windows.Forms.Button();
+            this.SubmenuPro = new System.Windows.Forms.Panel();
+            this.SubMenuFac = new System.Windows.Forms.Panel();
+            this.SubmenuPagos = new System.Windows.Forms.Panel();
+            this.SubmenuUsuarios = new System.Windows.Forms.Panel();
+            this.BtnAgregar = new System.Windows.Forms.Button();
+            this.BtnTodos = new System.Windows.Forms.Button();
+            this.BtnTodosFac = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.BtnAgregarNuevoU = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnCerrarSesion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.SubmenuPro.SuspendLayout();
+            this.SubMenuFac.SuspendLayout();
+            this.SubmenuPagos.SuspendLayout();
+            this.SubmenuUsuarios.SuspendLayout();
+            this.SuspendLayout();
             // 
             // panel1
             // 
-            panel1.BackColor = SystemColors.AppWorkspace;
-            panel1.Controls.Add(pictureBox1);
-            panel1.Controls.Add(LblPosicion);
-            panel1.Controls.Add(LblNombre);
-            panel1.Controls.Add(BtnUsuarios);
-            panel1.Controls.Add(BtnPagos);
-            panel1.Controls.Add(button1);
-            panel1.Controls.Add(BtnProveedores);
-            panel1.Controls.Add(BtnSalir);
-            panel1.Controls.Add(BtnCerrarSesion);
-            panel1.Location = new Point(8, 4);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1437, 77);
-            panel1.TabIndex = 2;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.BackgroundImageLayout = ImageLayout.None;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(66, 14);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(47, 42);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 12;
-            pictureBox1.TabStop = false;
+            this.panel1.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel1.Controls.Add(this.BtnUsuarios);
+            this.panel1.Controls.Add(this.BtnPagos);
+            this.panel1.Controls.Add(this.BtnFacturas);
+            this.panel1.Controls.Add(this.BtnProveedores);
+            this.panel1.Controls.Add(this.LblPosicion);
+            this.panel1.Controls.Add(this.BtnCerrarSesion);
+            this.panel1.Controls.Add(this.LblNombre);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1433, 52);
+            this.panel1.TabIndex = 1;
             // 
             // LblPosicion
             // 
-            LblPosicion.AutoSize = true;
-            LblPosicion.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            LblPosicion.ForeColor = SystemColors.ActiveCaptionText;
-            LblPosicion.Location = new Point(119, 35);
-            LblPosicion.Name = "LblPosicion";
-            LblPosicion.Size = new Size(75, 21);
-            LblPosicion.TabIndex = 13;
-            LblPosicion.Text = "Posición";
+            this.LblPosicion.AutoSize = true;
+            this.LblPosicion.BackColor = System.Drawing.Color.Transparent;
+            this.LblPosicion.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblPosicion.ForeColor = System.Drawing.Color.Black;
+            this.LblPosicion.Location = new System.Drawing.Point(169, 27);
+            this.LblPosicion.Name = "LblPosicion";
+            this.LblPosicion.Size = new System.Drawing.Size(95, 19);
+            this.LblPosicion.TabIndex = 5;
+            this.LblPosicion.Text = "POSICION";
+            // 
+            // BtnCerrarSesion
+            // 
+            this.BtnCerrarSesion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BtnCerrarSesion.Image = ((System.Drawing.Image)(resources.GetObject("BtnCerrarSesion.Image")));
+            this.BtnCerrarSesion.Location = new System.Drawing.Point(0, 8);
+            this.BtnCerrarSesion.Name = "BtnCerrarSesion";
+            this.BtnCerrarSesion.Size = new System.Drawing.Size(59, 37);
+            this.BtnCerrarSesion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.BtnCerrarSesion.TabIndex = 4;
+            this.BtnCerrarSesion.TabStop = false;
+            this.BtnCerrarSesion.Click += new System.EventHandler(this.BtnCerrarSesion_Click);
             // 
             // LblNombre
             // 
-            LblNombre.AutoSize = true;
-            LblNombre.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            LblNombre.ForeColor = SystemColors.ActiveCaptionText;
-            LblNombre.Location = new Point(121, 14);
-            LblNombre.Name = "LblNombre";
-            LblNombre.Size = new Size(73, 21);
-            LblNombre.TabIndex = 12;
-            LblNombre.Text = "Nombre";
+            this.LblNombre.AutoSize = true;
+            this.LblNombre.BackColor = System.Drawing.Color.Transparent;
+            this.LblNombre.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblNombre.ForeColor = System.Drawing.Color.Black;
+            this.LblNombre.Location = new System.Drawing.Point(169, 8);
+            this.LblNombre.Name = "LblNombre";
+            this.LblNombre.Size = new System.Drawing.Size(83, 19);
+            this.LblNombre.TabIndex = 3;
+            this.LblNombre.Text = "USUARIO";
             // 
-            // BtnUsuarios
+            // pictureBox1
             // 
-            BtnUsuarios.BackColor = SystemColors.AppWorkspace;
-            BtnUsuarios.Font = new Font("Rockwell", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            BtnUsuarios.ForeColor = Color.Black;
-            BtnUsuarios.Location = new Point(1182, 0);
-            BtnUsuarios.Name = "BtnUsuarios";
-            BtnUsuarios.Size = new Size(183, 77);
-            BtnUsuarios.TabIndex = 7;
-            BtnUsuarios.Text = "Usuarios";
-            BtnUsuarios.UseVisualStyleBackColor = false;
-            BtnUsuarios.Click += BtnUsuarios_Click;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(77, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(86, 52);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
-            // BtnPagos
+            // pictureBox2
             // 
-            BtnPagos.BackColor = SystemColors.AppWorkspace;
-            BtnPagos.Font = new Font("Rockwell", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            BtnPagos.ForeColor = Color.Black;
-            BtnPagos.Location = new Point(932, 0);
-            BtnPagos.Name = "BtnPagos";
-            BtnPagos.Size = new Size(183, 77);
-            BtnPagos.TabIndex = 6;
-            BtnPagos.Text = "Pagos";
-            BtnPagos.UseVisualStyleBackColor = false;
-            BtnPagos.Click += BtnPagos_Click;
-            // 
-            // button1
-            // 
-            button1.BackColor = SystemColors.AppWorkspace;
-            button1.Font = new Font("Rockwell", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.ForeColor = Color.Black;
-            button1.Location = new Point(698, 0);
-            button1.Name = "button1";
-            button1.Size = new Size(183, 77);
-            button1.TabIndex = 5;
-            button1.Text = "Facturas";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += Button1_Click;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(1356, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(58, 42);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // BtnProveedores
             // 
-            BtnProveedores.BackColor = SystemColors.AppWorkspace;
-            BtnProveedores.Font = new Font("Rockwell", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            BtnProveedores.ForeColor = Color.Black;
-            BtnProveedores.Location = new Point(459, 0);
-            BtnProveedores.Name = "BtnProveedores";
-            BtnProveedores.Size = new Size(183, 77);
-            BtnProveedores.TabIndex = 4;
-            BtnProveedores.Text = "Proveedores";
-            BtnProveedores.UseVisualStyleBackColor = false;
-            BtnProveedores.Click += BtnProveedores_Click;
+            this.BtnProveedores.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnProveedores.Location = new System.Drawing.Point(367, 0);
+            this.BtnProveedores.Name = "BtnProveedores";
+            this.BtnProveedores.Size = new System.Drawing.Size(183, 52);
+            this.BtnProveedores.TabIndex = 2;
+            this.BtnProveedores.Text = "PROVEEDORES";
+            this.BtnProveedores.UseVisualStyleBackColor = true;
+            this.BtnProveedores.Click += new System.EventHandler(this.BtnProveedores_Click);
             // 
-            // BtnSalir
+            // BtnFacturas
             // 
-            BtnSalir.Image = (Image)resources.GetObject("BtnSalir.Image");
-            BtnSalir.Location = new Point(1388, 29);
-            BtnSalir.Name = "BtnSalir";
-            BtnSalir.Size = new Size(29, 27);
-            BtnSalir.SizeMode = PictureBoxSizeMode.Zoom;
-            BtnSalir.TabIndex = 2;
-            BtnSalir.TabStop = false;
-            BtnSalir.Click += BtnSalir_Click;
+            this.BtnFacturas.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnFacturas.Location = new System.Drawing.Point(625, 0);
+            this.BtnFacturas.Name = "BtnFacturas";
+            this.BtnFacturas.Size = new System.Drawing.Size(183, 52);
+            this.BtnFacturas.TabIndex = 6;
+            this.BtnFacturas.Text = "FACTURAS";
+            this.BtnFacturas.UseVisualStyleBackColor = true;
+            this.BtnFacturas.Click += new System.EventHandler(this.BtnFacturas_Click);
+            // 
+            // BtnPagos
+            // 
+            this.BtnPagos.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnPagos.Location = new System.Drawing.Point(875, 0);
+            this.BtnPagos.Name = "BtnPagos";
+            this.BtnPagos.Size = new System.Drawing.Size(183, 52);
+            this.BtnPagos.TabIndex = 7;
+            this.BtnPagos.Text = "PAGOS";
+            this.BtnPagos.UseVisualStyleBackColor = true;
+            this.BtnPagos.Click += new System.EventHandler(this.BtnPagos_Click);
+            // 
+            // BtnUsuarios
+            // 
+            this.BtnUsuarios.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnUsuarios.Location = new System.Drawing.Point(1136, 0);
+            this.BtnUsuarios.Name = "BtnUsuarios";
+            this.BtnUsuarios.Size = new System.Drawing.Size(183, 52);
+            this.BtnUsuarios.TabIndex = 8;
+            this.BtnUsuarios.Text = "USUARIOS";
+            this.BtnUsuarios.UseVisualStyleBackColor = true;
+            this.BtnUsuarios.Click += new System.EventHandler(this.BtnUsuarios_Click);
             // 
             // SubmenuPro
             // 
-            SubmenuPro.BackColor = SystemColors.AppWorkspace;
-            SubmenuPro.Controls.Add(BtnAgregar);
-            SubmenuPro.Controls.Add(BtnTodos);
-            SubmenuPro.Location = new Point(467, 72);
-            SubmenuPro.Name = "SubmenuPro";
-            SubmenuPro.Size = new Size(183, 121);
-            SubmenuPro.TabIndex = 3;
-            // 
-            // BtnAgregar
-            // 
-            BtnAgregar.BackColor = SystemColors.AppWorkspace;
-            BtnAgregar.Font = new Font("Rockwell", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            BtnAgregar.ForeColor = Color.Black;
-            BtnAgregar.Location = new Point(0, 0);
-            BtnAgregar.Name = "BtnAgregar";
-            BtnAgregar.Size = new Size(183, 51);
-            BtnAgregar.TabIndex = 5;
-            BtnAgregar.Text = "Agregar";
-            BtnAgregar.UseVisualStyleBackColor = false;
-            BtnAgregar.Click += BtnAgregar_Click;
-            // 
-            // BtnTodos
-            // 
-            BtnTodos.BackColor = SystemColors.AppWorkspace;
-            BtnTodos.Font = new Font("Rockwell", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            BtnTodos.ForeColor = Color.Black;
-            BtnTodos.Location = new Point(0, 71);
-            BtnTodos.Name = "BtnTodos";
-            BtnTodos.Size = new Size(183, 51);
-            BtnTodos.TabIndex = 8;
-            BtnTodos.Text = "Ver todos";
-            BtnTodos.UseVisualStyleBackColor = false;
-            BtnTodos.Click += BtnTodos_Click;
+            this.SubmenuPro.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.SubmenuPro.Controls.Add(this.BtnTodos);
+            this.SubmenuPro.Controls.Add(this.BtnAgregar);
+            this.SubmenuPro.Location = new System.Drawing.Point(380, 60);
+            this.SubmenuPro.Name = "SubmenuPro";
+            this.SubmenuPro.Size = new System.Drawing.Size(182, 140);
+            this.SubmenuPro.TabIndex = 2;
             // 
             // SubMenuFac
             // 
-            SubMenuFac.BackColor = SystemColors.AppWorkspace;
-            SubMenuFac.Controls.Add(BtnTodosFac);
-            SubMenuFac.Location = new Point(706, 73);
-            SubMenuFac.Name = "SubMenuFac";
-            SubMenuFac.Size = new Size(183, 121);
-            SubMenuFac.TabIndex = 9;
-            // 
-            // BtnTodosFac
-            // 
-            BtnTodosFac.BackColor = SystemColors.AppWorkspace;
-            BtnTodosFac.Font = new Font("Rockwell", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            BtnTodosFac.ForeColor = Color.Black;
-            BtnTodosFac.Location = new Point(0, -1);
-            BtnTodosFac.Name = "BtnTodosFac";
-            BtnTodosFac.Size = new Size(183, 51);
-            BtnTodosFac.TabIndex = 8;
-            BtnTodosFac.Text = "Ver todas";
-            BtnTodosFac.UseVisualStyleBackColor = false;
-            BtnTodosFac.Click += BtnTodosFac_Click;
+            this.SubMenuFac.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.SubMenuFac.Controls.Add(this.BtnTodosFac);
+            this.SubMenuFac.Location = new System.Drawing.Point(637, 60);
+            this.SubMenuFac.Name = "SubMenuFac";
+            this.SubMenuFac.Size = new System.Drawing.Size(182, 140);
+            this.SubMenuFac.TabIndex = 3;
             // 
             // SubmenuPagos
             // 
-            SubmenuPagos.BackColor = SystemColors.AppWorkspace;
-            SubmenuPagos.Controls.Add(button2);
-            SubmenuPagos.Location = new Point(940, 73);
-            SubmenuPagos.Name = "SubmenuPagos";
-            SubmenuPagos.Size = new Size(183, 121);
-            SubmenuPagos.TabIndex = 10;
-            // 
-            // button2
-            // 
-            button2.BackColor = SystemColors.AppWorkspace;
-            button2.Font = new Font("Rockwell", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.ForeColor = Color.Black;
-            button2.Location = new Point(0, -1);
-            button2.Name = "button2";
-            button2.Size = new Size(183, 51);
-            button2.TabIndex = 8;
-            button2.Text = "Ver todos";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += Button2_Click;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(547, 341);
-            label2.Name = "label2";
-            label2.Size = new Size(330, 40);
-            label2.TabIndex = 0;
-            label2.Text = "BIENVENIDO AL MENU";
+            this.SubmenuPagos.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.SubmenuPagos.Controls.Add(this.button2);
+            this.SubmenuPagos.Location = new System.Drawing.Point(888, 60);
+            this.SubmenuPagos.Name = "SubmenuPagos";
+            this.SubmenuPagos.Size = new System.Drawing.Size(182, 140);
+            this.SubmenuPagos.TabIndex = 4;
             // 
             // SubmenuUsuarios
             // 
-            SubmenuUsuarios.BackColor = SystemColors.AppWorkspace;
-            SubmenuUsuarios.Controls.Add(button3);
-            SubmenuUsuarios.Controls.Add(BtnAgregarNuevoU);
-            SubmenuUsuarios.Location = new Point(1190, 73);
-            SubmenuUsuarios.Name = "SubmenuUsuarios";
-            SubmenuUsuarios.Size = new Size(183, 121);
-            SubmenuUsuarios.TabIndex = 11;
+            this.SubmenuUsuarios.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.SubmenuUsuarios.Controls.Add(this.button3);
+            this.SubmenuUsuarios.Controls.Add(this.BtnAgregarNuevoU);
+            this.SubmenuUsuarios.Location = new System.Drawing.Point(1149, 60);
+            this.SubmenuUsuarios.Name = "SubmenuUsuarios";
+            this.SubmenuUsuarios.Size = new System.Drawing.Size(182, 140);
+            this.SubmenuUsuarios.TabIndex = 5;
             // 
-            // button3
+            // BtnAgregar
             // 
-            button3.BackColor = SystemColors.AppWorkspace;
-            button3.Font = new Font("Rockwell", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.ForeColor = Color.Black;
-            button3.Location = new Point(0, 70);
-            button3.Name = "button3";
-            button3.Size = new Size(183, 51);
-            button3.TabIndex = 9;
-            button3.Text = "Ver todos";
-            button3.UseVisualStyleBackColor = false;
-            button3.Click += Button3_Click;
+            this.BtnAgregar.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAgregar.Location = new System.Drawing.Point(0, 10);
+            this.BtnAgregar.Name = "BtnAgregar";
+            this.BtnAgregar.Size = new System.Drawing.Size(183, 52);
+            this.BtnAgregar.TabIndex = 9;
+            this.BtnAgregar.Text = "AGREGAR";
+            this.BtnAgregar.UseVisualStyleBackColor = true;
+            this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
+            // 
+            // BtnTodos
+            // 
+            this.BtnTodos.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnTodos.Location = new System.Drawing.Point(0, 88);
+            this.BtnTodos.Name = "BtnTodos";
+            this.BtnTodos.Size = new System.Drawing.Size(183, 52);
+            this.BtnTodos.TabIndex = 10;
+            this.BtnTodos.Text = "VER TODOS";
+            this.BtnTodos.UseVisualStyleBackColor = true;
+            this.BtnTodos.Click += new System.EventHandler(this.BtnTodos_Click);
+            // 
+            // BtnTodosFac
+            // 
+            this.BtnTodosFac.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnTodosFac.Location = new System.Drawing.Point(0, 10);
+            this.BtnTodosFac.Name = "BtnTodosFac";
+            this.BtnTodosFac.Size = new System.Drawing.Size(183, 52);
+            this.BtnTodosFac.TabIndex = 11;
+            this.BtnTodosFac.Text = "VER TODAS";
+            this.BtnTodosFac.UseVisualStyleBackColor = true;
+            this.BtnTodosFac.Click += new System.EventHandler(this.BtnTodosFac_Click);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(-1, 10);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(183, 52);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "VER TODOS";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // BtnAgregarNuevoU
             // 
-            BtnAgregarNuevoU.BackColor = SystemColors.AppWorkspace;
-            BtnAgregarNuevoU.Font = new Font("Rockwell", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            BtnAgregarNuevoU.ForeColor = Color.Black;
-            BtnAgregarNuevoU.Location = new Point(0, -1);
-            BtnAgregarNuevoU.Name = "BtnAgregarNuevoU";
-            BtnAgregarNuevoU.Size = new Size(183, 51);
-            BtnAgregarNuevoU.TabIndex = 8;
-            BtnAgregarNuevoU.Text = "Agregar";
-            BtnAgregarNuevoU.UseVisualStyleBackColor = false;
-            BtnAgregarNuevoU.Click += BtnAgregarNuevoU_Click;
+            this.BtnAgregarNuevoU.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAgregarNuevoU.Location = new System.Drawing.Point(0, 10);
+            this.BtnAgregarNuevoU.Name = "BtnAgregarNuevoU";
+            this.BtnAgregarNuevoU.Size = new System.Drawing.Size(183, 52);
+            this.BtnAgregarNuevoU.TabIndex = 13;
+            this.BtnAgregarNuevoU.Text = "AGREGAR";
+            this.BtnAgregarNuevoU.UseVisualStyleBackColor = true;
+            this.BtnAgregarNuevoU.Click += new System.EventHandler(this.BtnAgregarNuevoU_Click);
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(0, 88);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(183, 52);
+            this.button3.TabIndex = 14;
+            this.button3.Text = "VER TODOS";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Menu
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.DarkSlateGray;
-            ClientSize = new Size(1457, 670);
-            Controls.Add(SubmenuUsuarios);
-            Controls.Add(SubmenuPagos);
-            Controls.Add(SubMenuFac);
-            Controls.Add(SubmenuPro);
-            Controls.Add(label2);
-            Controls.Add(panel1);
-            FormBorderStyle = FormBorderStyle.None;
-            Name = "Menu";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "Menu";
-            Load += Menu_Load;
-            ((System.ComponentModel.ISupportInitialize)BtnCerrarSesion).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)BtnSalir).EndInit();
-            SubmenuPro.ResumeLayout(false);
-            SubMenuFac.ResumeLayout(false);
-            SubmenuPagos.ResumeLayout(false);
-            SubmenuUsuarios.ResumeLayout(false);
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.ClientSize = new System.Drawing.Size(1457, 670);
+            this.Controls.Add(this.SubmenuUsuarios);
+            this.Controls.Add(this.SubmenuPagos);
+            this.Controls.Add(this.SubMenuFac);
+            this.Controls.Add(this.SubmenuPro);
+            this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "Menu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Menu";
+            this.Load += new System.EventHandler(this.Menu_Load_1);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnCerrarSesion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.SubmenuPro.ResumeLayout(false);
+            this.SubMenuFac.ResumeLayout(false);
+            this.SubmenuPagos.ResumeLayout(false);
+            this.SubmenuUsuarios.ResumeLayout(false);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
-        private PictureBox BtnCerrarSesion;
-        private Panel panel1;
-        private PictureBox BtnSalir;
-        private Button BtnProveedores;
-        private Panel SubmenuPro;
-        private Button BtnTodos;
-        private Button BtnAgregar;
-        private Panel SubMenuFac;
-        private Button BtnTodosFac;
-        private Button button1;
-        private Button BtnPagos;
-        private Panel SubmenuPagos;
-        private Button button2;
-        private Label label2;
-        private Button BtnUsuarios;
-        private Panel SubmenuUsuarios;
-        private Button BtnAgregarNuevoU;
-        private Button button3;
-        private Label LblNombre;
-        private Label LblPosicion;
-        private PictureBox pictureBox1;
+
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox BtnCerrarSesion;
+        private System.Windows.Forms.Label LblNombre;
+        private System.Windows.Forms.Label LblPosicion;
+        private System.Windows.Forms.Button BtnProveedores;
+        private System.Windows.Forms.Button BtnUsuarios;
+        private System.Windows.Forms.Button BtnPagos;
+        private System.Windows.Forms.Button BtnFacturas;
+        private System.Windows.Forms.Panel SubmenuPro;
+        private System.Windows.Forms.Button BtnTodos;
+        private System.Windows.Forms.Button BtnAgregar;
+        private System.Windows.Forms.Panel SubMenuFac;
+        private System.Windows.Forms.Button BtnTodosFac;
+        private System.Windows.Forms.Panel SubmenuPagos;
+        private System.Windows.Forms.Panel SubmenuUsuarios;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button BtnAgregarNuevoU;
     }
 }

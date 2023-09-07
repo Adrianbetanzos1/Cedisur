@@ -9,18 +9,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Cedisur
+namespace CedisurB
 {
     public partial class EditarUsuarios : Form
     {
 
-        private readonly SqlConnection conexion = new("server=DESKTOP-717JV41\\SQLEXPRESS ; database=cedisur ; integrated security = true");
+        private readonly SqlConnection conexion = new SqlConnection("server=DESKTOP-717JV41\\SQLEXPRESS ; database=cedisur ; integrated security = true");
 
         //Definimos este formulario como hijo del ver usuarios
-        readonly VerUsuarios usuarios = new();
-        public new Form? ParentForm;
+        readonly VerUsuarios usuarios = new VerUsuarios();
+        public new Form ParentForm;
         public EditarUsuarios()
-        => InitializeComponent();
+        {
+            InitializeComponent();
+        }
 
         private void BtnVolver_Click(object sender, EventArgs e)
         {
@@ -28,7 +30,7 @@ namespace Cedisur
             usuarios.Show();
         }
 
-        private void BtnSalir_Click(object sender, EventArgs e)
+        private void pictureBox2_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
@@ -41,7 +43,7 @@ namespace Cedisur
             string query = "update Cedisur.dbo.Usuarios " +
                 "set NombreCompleto= '" + TxtNombreCompleto.Text + "', NombreUsuario='" + TxtNombre.Text + "'" +
                 " ,Contraseña='" + TxtContraseña.Text + "', Nivel_seguridad= '" + CbTipoAutorizacion.SelectedItem + "', Email= '" + TxtEmail.Text + "' where  ID_usuario= '" + TxtIDUsuario.Text + "'";
-            SqlCommand comando = new(query, conexion);
+            SqlCommand comando = new SqlCommand(query, conexion);
             int cant;
             cant = comando.ExecuteNonQuery();
 
@@ -54,7 +56,6 @@ namespace Cedisur
                 MessageBox.Show("Registro no modificado correctamente");
             }
             conexion.Close();
-
 
         }
 
@@ -97,14 +98,12 @@ namespace Cedisur
         {
             return password == confirmPassword;
         }
-
-
         //Requisitos contraseña
 
-        //Botón para modificar los datos del usuario seleccionado
+
+
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
-
             if (!IsStrongPassword(TxtContraseña.Text))
             {
             }
@@ -123,5 +122,11 @@ namespace Cedisur
                 usuarios.Show();
             }
         }
+
+
+       
+
+
+
     }
 }

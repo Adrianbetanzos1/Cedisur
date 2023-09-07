@@ -1,59 +1,28 @@
-﻿using Microsoft.VisualBasic;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Cedisur
+namespace CedisurB
 {
-
     public partial class AgregarFacturas : Form
     {
-
-        public new Form? ParentForm;
-        public AgregarFacturas() => InitializeComponent();
-        //Botón para regresar al menú anterior
-        private void BtnVolver_Click(object sender, EventArgs e)
+        public new Form ParentForm;
+        public AgregarFacturas()
         {
-            Menu menu = new();
-            menu.Show();
-            this.Close();
+            InitializeComponent();
         }
 
-
-
-        //Boton para convertir de pesos a dolares
-        private void Button1_Click(object sender, EventArgs e)
+        private void pictureBox2_Click(object sender, EventArgs e)
         {
-
-
-            if (string.IsNullOrEmpty(TxtDolar.Text) || string.IsNullOrEmpty(TxtSaldoMXP.Text) || string.IsNullOrEmpty(TxtImporte.Text))
-            {
-
-                label21.Text = "Por favor coloque un número donde debe antes de darle click";
-            }
-            else
-            {
-                float dolar = float.Parse(TxtDolar.Text);
-                float saldoMXP = float.Parse(TxtSaldoMXP.Text);
-                float saldoUSD = saldoMXP / dolar;
-                float importeMXP = float.Parse(TxtImporte.Text);
-                float importeUSD = importeMXP / dolar;
-
-                TxtSaldoUSD.Text = saldoUSD.ToString();
-                TxtImporteUSD.Text = importeUSD.ToString();
-
-            }
-
+            Application.Exit();
         }
-
 
         private void LimpiarDatos()
         {
@@ -72,10 +41,8 @@ namespace Cedisur
 
         }
 
-        //Método para agregar los datos de las facturas conectada a la base de datos
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
-
             if (string.IsNullOrEmpty(TxtNombreFactura.Text) || string.IsNullOrEmpty(TxtAbono.Text) || string.IsNullOrEmpty(TxtDiasVencimiento.Text) || string.IsNullOrEmpty(TxtImporte.Text) || string.IsNullOrEmpty(TxtImporteUSD.Text) || string.IsNullOrEmpty(TxtSaldoUSD.Text) || TxtDolar.Text == "")
             {
                 MessageBox.Show("Colocar los datos faltantes antes de continuar");
@@ -87,43 +54,40 @@ namespace Cedisur
             }
             else if (MessageBox.Show("Estas seguro que deseas agregar esta factura? ", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                using SqlConnection conexion = new("Server=DESKTOP-717JV41\\SQLEXPRESS; Database=Cedisur;  integrated security= true");
-                SqlCommand cmd = new("Insert into Factura(facturaN, fechaFactura, diasVencimiento, importeMXP,importeUSD, abono, saldoMXP, saldoUSD,ID_proveedor, TipoDeCambio, SaldoAnterior, SaldoAnteriorUSD,AbonoAnterior) values (@facturaN, @fechaFactura, @diasVencimiento, @importe,@importeUSD, @abono, @saldoMXP, @saldoUSD,@ID_proveedor,@TipoDeCambio, @saldoAnterior, @saldoAnteriorUSD, @abonoAnterior)")
+                using (SqlConnection conexion = new SqlConnection("Server=DESKTOP-717JV41\\SQLEXPRESS; Database=Cedisur;  integrated security= true"))
                 {
-                    CommandType = CommandType.Text,
-                    Connection = conexion
-                };
+                    SqlCommand cmd = new SqlCommand("Insert into Factura(facturaN, fechaFactura, diasVencimiento, importeMXP,importeUSD, abono, saldoMXP, saldoUSD,ID_proveedor, TipoDeCambio, SaldoAnterior, SaldoAnteriorUSD,AbonoAnterior) values (@facturaN, @fechaFactura, @diasVencimiento, @importe,@importeUSD, @abono, @saldoMXP, @saldoUSD,@ID_proveedor,@TipoDeCambio, @saldoAnterior, @saldoAnteriorUSD, @abonoAnterior)")
+                    {
+                        CommandType = CommandType.Text,
+                        Connection = conexion
+                    };
 
-                cmd.Parameters.AddWithValue("@facturaN", TxtNombreFactura.Text);
-                cmd.Parameters.AddWithValue("@fechaFactura", DTPFecha.Value);
-                cmd.Parameters.AddWithValue("@diasVencimiento", TxtDiasVencimiento.Text);
-                cmd.Parameters.AddWithValue("@importe", float.Parse(TxtImporte.Text).ToString("F2"));
-                cmd.Parameters.AddWithValue("@importeUSD", float.Parse(TxtImporteUSD.Text).ToString("F2"));
-                cmd.Parameters.AddWithValue("@abono", float.Parse(TxtAbono.Text).ToString("F2"));
-                cmd.Parameters.AddWithValue("@saldoMXP", float.Parse(TxtSaldoMXP.Text).ToString("F2"));
-                cmd.Parameters.AddWithValue("@saldoUSD", float.Parse(TxtSaldoUSD.Text).ToString("F2"));
-                cmd.Parameters.AddWithValue("@ID_proveedor", TxtIDProveedor.Text);
-                cmd.Parameters.AddWithValue("@TipoDeCambio", TxtDolar.Text);
-                cmd.Parameters.AddWithValue("@saldoAnterior", float.Parse(TxtSaldoMXP.Text).ToString("F2"));
-                cmd.Parameters.AddWithValue("@saldoAnteriorUSD", float.Parse(TxtSaldoUSD.Text).ToString("F2"));
-                cmd.Parameters.AddWithValue("@abonoAnterior", float.Parse(TxtAbono.Text).ToString("F2"));
+                    cmd.Parameters.AddWithValue("@facturaN", TxtNombreFactura.Text);
+                    cmd.Parameters.AddWithValue("@fechaFactura", DTPFecha.Value);
+                    cmd.Parameters.AddWithValue("@diasVencimiento", TxtDiasVencimiento.Text);
+                    cmd.Parameters.AddWithValue("@importe", float.Parse(TxtImporte.Text).ToString("F2"));
+                    cmd.Parameters.AddWithValue("@importeUSD", float.Parse(TxtImporteUSD.Text).ToString("F2"));
+                    cmd.Parameters.AddWithValue("@abono", float.Parse(TxtAbono.Text).ToString("F2"));
+                    cmd.Parameters.AddWithValue("@saldoMXP", float.Parse(TxtSaldoMXP.Text).ToString("F2"));
+                    cmd.Parameters.AddWithValue("@saldoUSD", float.Parse(TxtSaldoUSD.Text).ToString("F2"));
+                    cmd.Parameters.AddWithValue("@ID_proveedor", TxtIDProveedor.Text);
+                    cmd.Parameters.AddWithValue("@TipoDeCambio", TxtDolar.Text);
+                    cmd.Parameters.AddWithValue("@saldoAnterior", float.Parse(TxtSaldoMXP.Text).ToString("F2"));
+                    cmd.Parameters.AddWithValue("@saldoAnteriorUSD", float.Parse(TxtSaldoUSD.Text).ToString("F2"));
+                    cmd.Parameters.AddWithValue("@abonoAnterior", float.Parse(TxtAbono.Text).ToString("F2"));
 
-                conexion.Open();
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Registro agregado correctamente");
-                conexion.Close();
-                LimpiarDatos();
+                    conexion.Open();
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Registro agregado correctamente");
+                    conexion.Close();
+                    LimpiarDatos();
+                }
+                    
             }
-
-        }
-
-        private void BtnSalir_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
 
         //Botón para calcular el saldo restante de la factura
-        private void TxtAbono_Leave(object sender, EventArgs e)
+        private void TxtAbono_Leave_1(object sender, EventArgs e)
         {
             if (!float.TryParse(TxtAbono.Text, out float _))
             {
@@ -149,12 +113,11 @@ namespace Cedisur
 
         }
 
-
         //Al iniciar el formulario, se genera el número de factura
-        private void AgregarFacturas_Load(object sender, EventArgs e)
+        private void AgregarFacturas_Load_1(object sender, EventArgs e)
         {
-            List<int> generatedNumbers = new();
-            Random random = new();
+            List<int> generatedNumbers = new List<int>();
+            Random random = new Random();
             int newNumber = random.Next(10000, 100000);
 
             if (!generatedNumbers.Contains(newNumber))
@@ -165,18 +128,24 @@ namespace Cedisur
             }
         }
 
+
         //Valida que sea un valor númerico el que se está poniendo
-        private void TxtDiasVencimiento_Leave(object sender, EventArgs e)
+        private void TxtDiasVencimiento_Leave_1(object sender, EventArgs e)
         {
             if (!float.TryParse(TxtDiasVencimiento.Text, out float _))
             {
                 MessageBox.Show("Ingrese un valor númerico");
                 TxtDiasVencimiento.Focus();
             }
+            else
+            {
+                TxtImporte.Focus();
+            }
         }
 
+
         //Valida que sea un valor númerico el que se está poniendo
-        private void TxtImporte_Leave(object sender, EventArgs e)
+        private void TxtImporte_Leave_1(object sender, EventArgs e)
         {
 
             if (string.IsNullOrEmpty(TxtImporte.Text))
@@ -189,11 +158,16 @@ namespace Cedisur
                 MessageBox.Show("Ingrese un valor númerico");
                 TxtImporte.Focus();
             }
+            else
+            {
+                TxtAbono.Focus();
+            }
 
         }
 
+
         //Valida que sea un valor númerico el que se está poniendo
-        private void TxtDolar_Leave(object sender, EventArgs e)
+        private void TxtDolar_Leave_1(object sender, EventArgs e)
         {
             if (!float.TryParse(TxtDolar.Text, out float _))
             {
@@ -201,5 +175,35 @@ namespace Cedisur
                 TxtDolar.Focus();
             }
         }
+
+        private void BtnVolver_Click(object sender, EventArgs e)
+        {
+            Menu menu = new Menu();
+            menu.Show();
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(TxtDolar.Text) || string.IsNullOrEmpty(TxtSaldoMXP.Text) || string.IsNullOrEmpty(TxtImporte.Text))
+            {
+
+                label21.Text = "Por favor coloque un número donde debe antes de darle click";
+            }
+            else
+            {
+                float dolar = float.Parse(TxtDolar.Text);
+                float saldoMXP = float.Parse(TxtSaldoMXP.Text);
+                float saldoUSD = saldoMXP / dolar;
+                float importeMXP = float.Parse(TxtImporte.Text);
+                float importeUSD = importeMXP / dolar;
+
+                TxtSaldoUSD.Text = saldoUSD.ToString();
+                TxtImporteUSD.Text = importeUSD.ToString();
+
+            }
+        }
+
+        
     }
 }

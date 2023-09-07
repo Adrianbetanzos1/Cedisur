@@ -1,4 +1,4 @@
-﻿namespace Cedisur
+﻿namespace CedisurB
 {
     partial class VerUsuarios
     {
@@ -29,206 +29,181 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VerUsuarios));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            panel1 = new Panel();
-            label2 = new Label();
-            BtnSalir = new PictureBox();
-            BtnVolver = new Button();
-            Button1 = new Button();
-            BtnEditarPro = new Button();
-            DGVusuarios = new DataGridView();
-            BtnBuscar = new Button();
-            label14 = new Label();
-            TxtBusqueda = new TextBox();
-            label1 = new Label();
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)BtnSalir).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)DGVusuarios).BeginInit();
-            SuspendLayout();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.BtnVolver = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.DGVusuarios = new System.Windows.Forms.DataGridView();
+            this.Button1 = new System.Windows.Forms.Button();
+            this.BtnEditar = new System.Windows.Forms.Button();
+            this.BtnBuscar = new System.Windows.Forms.Button();
+            this.TxtBusqueda = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVusuarios)).BeginInit();
+            this.SuspendLayout();
             // 
             // panel1
             // 
-            panel1.BackColor = SystemColors.AppWorkspace;
-            panel1.Controls.Add(label2);
-            panel1.Controls.Add(BtnSalir);
-            panel1.Controls.Add(BtnVolver);
-            panel1.Location = new Point(12, 12);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1565, 63);
-            panel1.TabIndex = 4;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Rockwell", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.ForeColor = SystemColors.ActiveCaptionText;
-            label2.Location = new Point(742, 15);
-            label2.Name = "label2";
-            label2.Size = new Size(136, 29);
-            label2.TabIndex = 50;
-            label2.Text = "USUARIOS";
-            // 
-            // BtnSalir
-            // 
-            BtnSalir.Image = (Image)resources.GetObject("BtnSalir.Image");
-            BtnSalir.Location = new Point(1511, 15);
-            BtnSalir.Name = "BtnSalir";
-            BtnSalir.Size = new Size(29, 27);
-            BtnSalir.SizeMode = PictureBoxSizeMode.Zoom;
-            BtnSalir.TabIndex = 37;
-            BtnSalir.TabStop = false;
-            BtnSalir.Click += BtnSalir_Click;
-            // 
-            // BtnVolver
-            // 
-            BtnVolver.BackColor = SystemColors.AppWorkspace;
-            BtnVolver.Font = new Font("Rockwell", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            BtnVolver.Location = new Point(3, 3);
-            BtnVolver.Name = "BtnVolver";
-            BtnVolver.Size = new Size(96, 53);
-            BtnVolver.TabIndex = 2;
-            BtnVolver.Text = "Volver al menú";
-            BtnVolver.UseVisualStyleBackColor = false;
-            BtnVolver.Click += BtnVolver_Click;
-            // 
-            // Button1
-            // 
-            Button1.Font = new Font("Rockwell", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            Button1.Location = new Point(1322, 422);
-            Button1.Name = "Button1";
-            Button1.Size = new Size(161, 67);
-            Button1.TabIndex = 50;
-            Button1.Text = "Eliminar datos seleccionados\r\n";
-            Button1.UseVisualStyleBackColor = true;
-            Button1.Click += Button1_Click;
-            // 
-            // BtnEditarPro
-            // 
-            BtnEditarPro.Font = new Font("Rockwell", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            BtnEditarPro.Location = new Point(1322, 182);
-            BtnEditarPro.Name = "BtnEditarPro";
-            BtnEditarPro.Size = new Size(161, 67);
-            BtnEditarPro.TabIndex = 49;
-            BtnEditarPro.Text = "Editar datos\r\n";
-            BtnEditarPro.UseVisualStyleBackColor = true;
-            BtnEditarPro.Click += BtnEditarPro_Click;
-            // 
-            // DGVusuarios
-            // 
-            DGVusuarios.AllowUserToAddRows = false;
-            DGVusuarios.AllowUserToDeleteRows = false;
-            DGVusuarios.AllowUserToResizeColumns = false;
-            DGVusuarios.AllowUserToResizeRows = false;
-            DGVusuarios.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Rockwell", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = Color.Yellow;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            DGVusuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            DGVusuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Rockwell", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = Color.Yellow;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            DGVusuarios.DefaultCellStyle = dataGridViewCellStyle2;
-            DGVusuarios.Location = new Point(15, 216);
-            DGVusuarios.Name = "DGVusuarios";
-            DGVusuarios.ReadOnly = true;
-            DGVusuarios.RowHeadersVisible = false;
-            DGVusuarios.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(192, 192, 0);
-            DGVusuarios.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            DGVusuarios.RowTemplate.Height = 25;
-            DGVusuarios.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            DGVusuarios.Size = new Size(1204, 550);
-            DGVusuarios.TabIndex = 47;
-            // 
-            // BtnBuscar
-            // 
-            BtnBuscar.Font = new Font("Rockwell", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            BtnBuscar.Location = new Point(453, 114);
-            BtnBuscar.Name = "BtnBuscar";
-            BtnBuscar.Size = new Size(104, 58);
-            BtnBuscar.TabIndex = 53;
-            BtnBuscar.Text = "Buscar";
-            BtnBuscar.UseVisualStyleBackColor = true;
-            BtnBuscar.Click += BtnBuscar_Click;
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Font = new Font("Rockwell", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label14.ForeColor = SystemColors.ButtonFace;
-            label14.Location = new Point(688, 114);
-            label14.Name = "label14";
-            label14.Size = new Size(0, 29);
-            label14.TabIndex = 70;
-            // 
-            // TxtBusqueda
-            // 
-            TxtBusqueda.Location = new Point(18, 149);
-            TxtBusqueda.Name = "TxtBusqueda";
-            TxtBusqueda.Size = new Size(398, 23);
-            TxtBusqueda.TabIndex = 51;
+            this.panel1.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.BtnVolver);
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1549, 52);
+            this.panel1.TabIndex = 10;
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Rockwell", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = SystemColors.ButtonFace;
-            label1.Location = new Point(18, 114);
-            label1.Name = "label1";
-            label1.Size = new Size(358, 29);
-            label1.TabIndex = 71;
-            label1.Text = "Buscar por nombre completo";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Rockwell", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.Location = new System.Drawing.Point(623, 3);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(200, 43);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "USUARIOS";
+            // 
+            // BtnVolver
+            // 
+            this.BtnVolver.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnVolver.Location = new System.Drawing.Point(0, 0);
+            this.BtnVolver.Name = "BtnVolver";
+            this.BtnVolver.Size = new System.Drawing.Size(115, 52);
+            this.BtnVolver.TabIndex = 8;
+            this.BtnVolver.Text = "Volver al menú";
+            this.BtnVolver.UseVisualStyleBackColor = true;
+            this.BtnVolver.Click += new System.EventHandler(this.BtnVolver_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(1488, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(58, 42);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // DGVusuarios
+            // 
+            this.DGVusuarios.AllowUserToAddRows = false;
+            this.DGVusuarios.AllowUserToDeleteRows = false;
+            this.DGVusuarios.AllowUserToResizeColumns = false;
+            this.DGVusuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Rockwell", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVusuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.DGVusuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVusuarios.Location = new System.Drawing.Point(12, 177);
+            this.DGVusuarios.Name = "DGVusuarios";
+            this.DGVusuarios.ReadOnly = true;
+            this.DGVusuarios.RowHeadersVisible = false;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.DGVusuarios.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.DGVusuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DGVusuarios.Size = new System.Drawing.Size(1204, 550);
+            this.DGVusuarios.TabIndex = 47;
+            // 
+            // Button1
+            // 
+            this.Button1.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button1.Location = new System.Drawing.Point(1303, 420);
+            this.Button1.Name = "Button1";
+            this.Button1.Size = new System.Drawing.Size(155, 76);
+            this.Button1.TabIndex = 49;
+            this.Button1.Text = "Eliminar datos seleccionados";
+            this.Button1.UseVisualStyleBackColor = true;
+            this.Button1.Click += new System.EventHandler(this.Button1_Click);
+            // 
+            // BtnEditar
+            // 
+            this.BtnEditar.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnEditar.Location = new System.Drawing.Point(1303, 177);
+            this.BtnEditar.Name = "BtnEditar";
+            this.BtnEditar.Size = new System.Drawing.Size(155, 81);
+            this.BtnEditar.TabIndex = 48;
+            this.BtnEditar.Text = "Editar datos";
+            this.BtnEditar.UseVisualStyleBackColor = true;
+            this.BtnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
+            // 
+            // BtnBuscar
+            // 
+            this.BtnBuscar.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnBuscar.Location = new System.Drawing.Point(436, 97);
+            this.BtnBuscar.Name = "BtnBuscar";
+            this.BtnBuscar.Size = new System.Drawing.Size(128, 52);
+            this.BtnBuscar.TabIndex = 52;
+            this.BtnBuscar.Text = "Buscar";
+            this.BtnBuscar.UseVisualStyleBackColor = true;
+            // 
+            // TxtBusqueda
+            // 
+            this.TxtBusqueda.Location = new System.Drawing.Point(17, 129);
+            this.TxtBusqueda.Name = "TxtBusqueda";
+            this.TxtBusqueda.Size = new System.Drawing.Size(333, 20);
+            this.TxtBusqueda.TabIndex = 51;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Transparent;
+            this.label4.Location = new System.Drawing.Point(12, 101);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(391, 25);
+            this.label4.TabIndex = 50;
+            this.label4.Text = "BUSCAR POR NOMBRE COMPLETO";
             // 
             // VerUsuarios
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.DarkSlateGray;
-            ClientSize = new Size(1573, 778);
-            Controls.Add(label1);
-            Controls.Add(BtnBuscar);
-            Controls.Add(label14);
-            Controls.Add(TxtBusqueda);
-            Controls.Add(Button1);
-            Controls.Add(BtnEditarPro);
-            Controls.Add(DGVusuarios);
-            Controls.Add(panel1);
-            FormBorderStyle = FormBorderStyle.None;
-            Name = "VerUsuarios";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "VerUsuarios";
-            Load += VerUsuarios_Load;
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)BtnSalir).EndInit();
-            ((System.ComponentModel.ISupportInitialize)DGVusuarios).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.ClientSize = new System.Drawing.Size(1557, 739);
+            this.Controls.Add(this.BtnBuscar);
+            this.Controls.Add(this.TxtBusqueda);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.Button1);
+            this.Controls.Add(this.BtnEditar);
+            this.Controls.Add(this.DGVusuarios);
+            this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "VerUsuarios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "VerUsuarios";
+            this.Load += new System.EventHandler(this.VerUsuarios_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVusuarios)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
 
-        private Panel panel1;
-        private Label label2;
-        private PictureBox BtnSalir;
-        private Button BtnVolver;
-        private Button Button1;
-        private Button BtnEditarPro;
-        public DataGridView DGVusuarios;
-        private Button BtnBuscar;
-        private Label label14;
-        private TextBox TxtBusqueda;
-        private Label label1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button BtnVolver;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        public System.Windows.Forms.DataGridView DGVusuarios;
+        private System.Windows.Forms.Button Button1;
+        private System.Windows.Forms.Button BtnEditar;
+        private System.Windows.Forms.Button BtnBuscar;
+        private System.Windows.Forms.TextBox TxtBusqueda;
+        private System.Windows.Forms.Label label4;
     }
 }

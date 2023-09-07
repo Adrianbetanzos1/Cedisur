@@ -1,5 +1,4 @@
-﻿using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,14 +9,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Cedisur
+namespace CedisurB
 {
     public partial class EditarFacturas : Form
     {
-        private readonly SqlConnection conexion = new("server=DESKTOP-717JV41\\SQLEXPRESS ; database=cedisur ; integrated security = true");
-        readonly VerFacturas factura = new();
+        private readonly SqlConnection conexion = new SqlConnection("server=DESKTOP-717JV41\\SQLEXPRESS ; database=cedisur ; integrated security = true");
+        readonly VerFacturas factura = new VerFacturas();
 
-        public new Form? ParentForm;
+        public new Form ParentForm;
         public EditarFacturas()
         {
             InitializeComponent();
@@ -27,9 +26,7 @@ namespace Cedisur
         {
             this.Close();
             factura.Show();
-
         }
-
 
         //Método para modificar los datos de la factura
         private void Modificar()
@@ -42,7 +39,7 @@ namespace Cedisur
                 "importeMXP='" + float.Parse(TxtImporte.Text).ToString("F2") + "', importeUSD='" + float.Parse(TxtImporteUSD.Text).ToString("F2") + "', abono='" + float.Parse(TxtAbono.Text).ToString("F2") + "'," +
                 "saldoMXP='" + float.Parse(TxtSaldoMXP.Text).ToString("F2") + "', saldoUSD='" + float.Parse(TxtSaldoUSD.Text).ToString("F2") + "', SaldoAnterior= '" + float.Parse(TxtSaldoMXP.Text).ToString("F2") + "', " +
                 "SaldoAnteriorUSD= '" + float.Parse(TxtSaldoUSD.Text).ToString("F2") + "', AbonoAnterior= '" + float.Parse(TxtAbono.Text).ToString("F2") + "' where  ID_factura= '" + TxtIdFactura.Text + "'";
-            SqlCommand comando = new(query, conexion);
+            SqlCommand comando = new SqlCommand(query, conexion);
             int cant;
             cant = comando.ExecuteNonQuery();
 
@@ -59,13 +56,7 @@ namespace Cedisur
 
         }
 
-        private void BtnSalir_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        //Botón para calcular el valor del importe, saldo en USD
-        private void Button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             float dolar = float.Parse(TxtDolar.Text);
             float saldoMXP = float.Parse(TxtSaldoMXP.Text);
@@ -85,13 +76,15 @@ namespace Cedisur
                 TxtImporteUSD.Text = importeUSD.ToString();
 
             }
-
         }
 
-        //Método para asignar el saldo pendiente de acuerdo al abono y el importe
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
         private void TxtAbono_Leave(object sender, EventArgs e)
         {
-            
             if (string.IsNullOrEmpty(TxtAbono.Text))
             {
                 TxtAbono.Text = "0";
@@ -100,10 +93,10 @@ namespace Cedisur
             }
             else if (!float.TryParse(TxtAbono.Text, out float _))
             {
-                
+
                 MessageBox.Show("Ingrese un valor númerico");
                 TxtAbono.Focus();
-                
+
             }
             else if (float.Parse(TxtAbono.Text) > float.Parse(TxtImporte.Text))
             {
@@ -114,13 +107,10 @@ namespace Cedisur
                 float saldo = +float.Parse(TxtImporte.Text) - float.Parse(TxtAbono.Text);
                 TxtSaldoMXP.Text = saldo.ToString();
             }
-
         }
 
-        //Botón para modificar los datos de la factura que se seleccionó
-        private void BtnModificar_Click(object sender, EventArgs e)
+        private void BtnAgregar_Click(object sender, EventArgs e)
         {
-
             if (string.IsNullOrEmpty(TxtNombreFactura.Text) || string.IsNullOrEmpty(TxtAbono.Text) || string.IsNullOrEmpty(TxtDiasVencimiento.Text) || string.IsNullOrEmpty(TxtImporte.Text) || TxtDolar.Text == "")
             {
                 MessageBox.Show("Colocar los datos faltantes antes de continuar");
@@ -136,13 +126,8 @@ namespace Cedisur
                 this.Close();
                 factura.Show();
             }
-
-
-
         }
 
-
-        //Valida que sea un valor númerico el que se está poniendo
         private void TxtDiasVencimiento_Leave(object sender, EventArgs e)
         {
             if (!float.TryParse(TxtDiasVencimiento.Text, out float _))
@@ -150,9 +135,12 @@ namespace Cedisur
                 MessageBox.Show("Ingrese un valor númerico");
                 TxtDiasVencimiento.Focus();
             }
+            else
+            {
+                TxtImporte.Focus();
+            }
         }
 
-        //Valida que sea un valor númerico el que se está poniendo
         private void TxtDolar_Leave(object sender, EventArgs e)
         {
             if (!float.TryParse(TxtDolar.Text, out float _))
@@ -162,18 +150,20 @@ namespace Cedisur
             }
         }
 
-
-        //Valida que sea un valor númerico el que se está poniendo
         private void TxtImporte_Leave(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(TxtImporte.Text))
             {
                 MessageBox.Show("Por favor coloque el importe", "AVISO");
             }
-            else if(!float.TryParse(TxtImporte.Text, out float _))
+            else if (!float.TryParse(TxtImporte.Text, out float _))
             {
                 MessageBox.Show("Ingrese un valor númerico");
                 TxtImporte.Focus();
+            }
+            else
+            {
+                TxtSaldoMXP.Focus();
             }
         }
     }

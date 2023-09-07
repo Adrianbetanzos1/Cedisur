@@ -1,16 +1,14 @@
-﻿using System.DirectoryServices;
-
-namespace Cedisur
+﻿namespace CedisurB
 {
     partial class InicioSesion
     {
         /// <summary>
-        ///  Required designer variable.
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        ///  Clean up any resources being used.
+        /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
@@ -25,204 +23,190 @@ namespace Cedisur
         #region Windows Form Designer generated code
 
         /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InicioSesion));
-            userTxt = new TextBox();
-            passTxt = new TextBox();
-            label1 = new Label();
-            label2 = new Label();
-            BtnAceptar = new Herramientas.ButtonA();
-            Lbl1 = new Label();
-            label3 = new Label();
-            pictureBox1 = new PictureBox();
-            panel1 = new Panel();
-            PictureBox3 = new PictureBox();
-            PictureBox2 = new PictureBox();
-            LblError = new Label();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)PictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)PictureBox2).BeginInit();
-            SuspendLayout();
-            // 
-            // userTxt
-            // 
-            userTxt.Location = new Point(38, 251);
-            userTxt.Name = "userTxt";
-            userTxt.Size = new Size(350, 23);
-            userTxt.TabIndex = 0;
-            // 
-            // passTxt
-            // 
-            passTxt.Location = new Point(38, 315);
-            passTxt.Name = "passTxt";
-            passTxt.PasswordChar = '*';
-            passTxt.Size = new Size(350, 23);
-            passTxt.TabIndex = 1;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = Color.Transparent;
-            label1.Location = new Point(38, 291);
-            label1.Name = "label1";
-            label1.Size = new Size(117, 21);
-            label1.TabIndex = 2;
-            label1.Text = "CONTRASEÑA";
-            label1.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.ForeColor = Color.Transparent;
-            label2.Location = new Point(38, 227);
-            label2.Name = "label2";
-            label2.Size = new Size(81, 21);
-            label2.TabIndex = 3;
-            label2.Text = "USUARIO";
-            label2.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // BtnAceptar
-            // 
-            BtnAceptar.BackColor = Color.DarkSlateGray;
-            BtnAceptar.FlatAppearance.BorderSize = 0;
-            BtnAceptar.FlatStyle = FlatStyle.Flat;
-            BtnAceptar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            BtnAceptar.ForeColor = Color.White;
-            BtnAceptar.Location = new Point(38, 455);
-            BtnAceptar.Name = "BtnAceptar";
-            BtnAceptar.Size = new Size(350, 50);
-            BtnAceptar.TabIndex = 7;
-            BtnAceptar.Text = "INICIAR SESIÓN";
-            BtnAceptar.UseVisualStyleBackColor = false;
-            BtnAceptar.Click += Buttona1_Click;
-            // 
-            // Lbl1
-            // 
-            Lbl1.AutoSize = true;
-            Lbl1.BackColor = Color.Transparent;
-            Lbl1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            Lbl1.ForeColor = Color.Transparent;
-            Lbl1.Location = new Point(135, 624);
-            Lbl1.Name = "Lbl1";
-            Lbl1.Size = new Size(177, 21);
-            Lbl1.TabIndex = 8;
-            Lbl1.Text = "Olvidó su contraseña?";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.ForeColor = SystemColors.ButtonHighlight;
-            label3.Location = new Point(41, 609);
-            label3.Name = "label3";
-            label3.Size = new Size(347, 15);
-            label3.TabIndex = 9;
-            label3.Text = "____________________________________________________________________";
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.BackgroundImageLayout = ImageLayout.None;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(83, 51);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(261, 163);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 10;
-            pictureBox1.TabStop = false;
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.userTxt = new System.Windows.Forms.TextBox();
+            this.passTxt = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.LblError = new System.Windows.Forms.Label();
+            this.BtnAceptar = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.SuspendLayout();
             // 
             // panel1
             // 
-            panel1.BackColor = Color.DarkSlateGray;
-            panel1.Controls.Add(PictureBox3);
-            panel1.Controls.Add(PictureBox2);
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(430, 33);
-            panel1.TabIndex = 11;
+            this.panel1.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.panel1.Controls.Add(this.pictureBox3);
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Location = new System.Drawing.Point(1, 1);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(413, 52);
+            this.panel1.TabIndex = 0;
             // 
-            // PictureBox3
+            // pictureBox3
             // 
-            PictureBox3.Image = (Image)resources.GetObject("PictureBox3.Image");
-            PictureBox3.Location = new Point(399, 0);
-            PictureBox3.Name = "PictureBox3";
-            PictureBox3.Size = new Size(28, 33);
-            PictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
-            PictureBox3.TabIndex = 13;
-            PictureBox3.TabStop = false;
-            PictureBox3.Click += PictureBox3_Click;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(308, 11);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(41, 34);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 3;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
-            // PictureBox2
+            // pictureBox2
             // 
-            PictureBox2.Image = (Image)resources.GetObject("PictureBox2.Image");
-            PictureBox2.Location = new Point(368, 0);
-            PictureBox2.Name = "PictureBox2";
-            PictureBox2.Size = new Size(28, 33);
-            PictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            PictureBox2.TabIndex = 12;
-            PictureBox2.TabStop = false;
-            PictureBox2.Click += PictureBox2_Click;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(355, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(58, 42);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(48, 59);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(292, 223);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Transparent;
+            this.label1.Location = new System.Drawing.Point(24, 285);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(83, 19);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "USUARIO";
+            // 
+            // userTxt
+            // 
+            this.userTxt.Location = new System.Drawing.Point(28, 307);
+            this.userTxt.Name = "userTxt";
+            this.userTxt.Size = new System.Drawing.Size(333, 20);
+            this.userTxt.TabIndex = 3;
+            // 
+            // passTxt
+            // 
+            this.passTxt.Location = new System.Drawing.Point(28, 364);
+            this.passTxt.Name = "passTxt";
+            this.passTxt.PasswordChar = '*';
+            this.passTxt.Size = new System.Drawing.Size(333, 20);
+            this.passTxt.TabIndex = 5;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Transparent;
+            this.label2.Location = new System.Drawing.Point(24, 342);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(127, 19);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "CONTRASEÑA";
             // 
             // LblError
             // 
-            LblError.AutoSize = true;
-            LblError.ForeColor = SystemColors.ButtonFace;
-            LblError.Location = new Point(39, 370);
-            LblError.Name = "LblError";
-            LblError.Size = new Size(144, 15);
-            LblError.TabIndex = 12;
-            LblError.Text = "Introduzca los parametros";
+            this.LblError.AutoSize = true;
+            this.LblError.BackColor = System.Drawing.Color.Transparent;
+            this.LblError.Font = new System.Drawing.Font("Rockwell", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblError.ForeColor = System.Drawing.Color.Transparent;
+            this.LblError.Location = new System.Drawing.Point(25, 400);
+            this.LblError.Name = "LblError";
+            this.LblError.Size = new System.Drawing.Size(163, 14);
+            this.LblError.TabIndex = 7;
+            this.LblError.Text = "Introduzca los parametros";
+            // 
+            // BtnAceptar
+            // 
+            this.BtnAceptar.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.BtnAceptar.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAceptar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BtnAceptar.Location = new System.Drawing.Point(38, 455);
+            this.BtnAceptar.Name = "BtnAceptar";
+            this.BtnAceptar.Size = new System.Drawing.Size(350, 50);
+            this.BtnAceptar.TabIndex = 8;
+            this.BtnAceptar.Text = "INICIAR SESIÓN";
+            this.BtnAceptar.UseVisualStyleBackColor = false;
+            this.BtnAceptar.Click += new System.EventHandler(this.BtnAceptar_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Rockwell", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Transparent;
+            this.label3.Location = new System.Drawing.Point(45, 577);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(331, 14);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "______________________________________________________\r\n";
             // 
             // InicioSesion
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Silver;
-            ClientSize = new Size(430, 680);
-            Controls.Add(LblError);
-            Controls.Add(panel1);
-            Controls.Add(pictureBox1);
-            Controls.Add(label3);
-            Controls.Add(Lbl1);
-            Controls.Add(BtnAceptar);
-            Controls.Add(passTxt);
-            Controls.Add(label2);
-            Controls.Add(userTxt);
-            Controls.Add(label1);
-            FormBorderStyle = FormBorderStyle.None;
-            Name = "InicioSesion";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)PictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)PictureBox2).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Silver;
+            this.ClientSize = new System.Drawing.Size(414, 641);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.BtnAceptar);
+            this.Controls.Add(this.LblError);
+            this.Controls.Add(this.passTxt);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.userTxt);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "InicioSesion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Form1";
+            this.Load += new System.EventHandler(this.InicioSesion_Load);
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
 
-        private TextBox userTxt;
-        private TextBox passTxt;
-        private Label label1;
-        private Label label2;
-        private Herramientas.ButtonA BtnAceptar;
-        private Label Lbl1;
-        private Label label3;
-        private PictureBox pictureBox1;
-        private Panel panel1;
-        private PictureBox PictureBox3;
-        private PictureBox PictureBox2;
-        private Label LblError;
-
-
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox userTxt;
+        private System.Windows.Forms.TextBox passTxt;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label LblError;
+        private System.Windows.Forms.Button BtnAceptar;
+        private System.Windows.Forms.Label label3;
     }
 }
+

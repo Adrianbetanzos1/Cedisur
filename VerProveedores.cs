@@ -1,5 +1,4 @@
-﻿using Cedisur.Clases;
-using Common.Cache;
+﻿using CedisurB.Clases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,30 +9,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
-namespace Cedisur
+namespace CedisurB
 {
     public partial class VerProveedores : Form
     {
 
-        private readonly SqlConnection conexion = new("server=DESKTOP-717JV41\\SQLEXPRESS ; database=cedisur ; integrated security = true");
+        private readonly SqlConnection conexion = new SqlConnection("server=DESKTOP-717JV41\\SQLEXPRESS ; database=cedisur ; integrated security = true");
 
         public VerProveedores()
         {
             InitializeComponent();
-        }
-
-        private void BtnVolver_Click(object sender, EventArgs e)
-        {
-            Menu menu = new();
-            menu.Show();
-            this.Close();
-        }
-
-        private void BtnSalir_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
 
 
@@ -62,9 +48,7 @@ namespace Cedisur
             DGVproveedores.Columns[5].HeaderText = "Tipo de moneda de pago";
         }
 
-
-        //Método para buscar según el nombre del proveedor
-        private void BtnBuscar_Click(object sender, EventArgs e)
+        private void BtnBuscar_Click_1(object sender, EventArgs e)
         {
             if (TxtBusqueda.Text.Equals(""))
             {
@@ -76,32 +60,17 @@ namespace Cedisur
             }
         }
 
-        //Método para mandar los datos seleccionados al formulario para editarlos.
-
-        private void BtnEditarPro_Click(object sender, EventArgs e)
+        private void BtnVolver_Click(object sender, EventArgs e)
         {
-            if (DGVproveedores.RowCount == 0)
-            {
-                MessageBox.Show("No hay datos existentes");
-            }
-            else
-            {
-                var proveedores = new EditarProveedor
-                {
-                    ParentForm = this
-                };
-                proveedores.TxtIDProveedor.Text = DGVproveedores.SelectedRows[0].Cells[0].Value.ToString();
-                proveedores.TxtRfc.Text = DGVproveedores.SelectedRows[0].Cells[1].Value.ToString();
-                proveedores.TxtNombreProv.Text = DGVproveedores.SelectedRows[0].Cells[2].Value.ToString();
-                proveedores.DTPFecha.Value = (DateTime)DGVproveedores.SelectedRows[0].Cells[3].Value;
-                proveedores.CbTipo.SelectedValue = DGVproveedores.SelectedRows[0].Cells[4].Value.ToString();
-                proveedores.CbMoneda.SelectedValue = DGVproveedores.SelectedRows[0].Cells[5].Value.ToString();
-
-                this.Hide();
-                proveedores.ShowDialog();
-            }
+            Menu menu = new Menu();
+            menu.Show();
+            this.Close();
         }
 
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
 
         //Métodos para llevar los datos seleccionados para generar una factura a ese proveedor
         private void BtnPagar_Click(object sender, EventArgs e)
@@ -123,7 +92,7 @@ namespace Cedisur
                     "where Proveedor.ID_proveedor='" + DGVproveedores.SelectedRows[0].Cells[0].Value.ToString() + "'";
 
 
-                using (SqlCommand comando = new(query, conexion))
+                using (SqlCommand comando = new SqlCommand(query, conexion))
                 {
 
                     object result = comando.ExecuteScalar();
@@ -132,8 +101,6 @@ namespace Cedisur
                     {
                         factura.TxtNombrePro.Text = result.ToString();
                     }
-
-
 
                 }
                 conexion.Close();
@@ -154,20 +121,20 @@ namespace Cedisur
             {
                 conexion.Open();
                 string query = "delete from Proveedor where ID_proveedor = " + DGVproveedores.SelectedRows[0].Cells[0].Value.ToString();
-                SqlCommand comando = new(query, conexion);
+                SqlCommand comando = new SqlCommand(query, conexion);
                 comando.ExecuteNonQuery();
                 MessageBox.Show("Proveedor eliminado correctamente");
                 conexion.Close();
 
                 this.Close();
-                VerProveedores ver = new();
+                VerProveedores ver = new VerProveedores();
                 ver.Show();
             }
 
         }
 
         //Método para buscar según el RFC del proveedor
-        private void Button2_Click(object sender, EventArgs e)
+        private void Button2_Click_1(object sender, EventArgs e)
         {
             if (TxtBusqueda.Text.Equals(""))
             {
@@ -178,5 +145,31 @@ namespace Cedisur
                 DGVproveedores.DataSource = Proveedor.MostrarRFCProveedores(TxtBusquedaRfc.Text);
             }
         }
+
+        private void BtnEditarPro_Click(object sender, EventArgs e)
+        {
+            if (DGVproveedores.RowCount == 0)
+            {
+                MessageBox.Show("No hay datos existentes");
+            }
+            else
+            {
+                var proveedores = new EditarProveedores
+                {
+                    ParentForm = this
+                };
+                proveedores.TxtIDProveedor.Text = DGVproveedores.SelectedRows[0].Cells[0].Value.ToString();
+                proveedores.TxtRfc.Text = DGVproveedores.SelectedRows[0].Cells[1].Value.ToString();
+                proveedores.TxtNombreProv.Text = DGVproveedores.SelectedRows[0].Cells[2].Value.ToString();
+                proveedores.DTPFecha.Value = (DateTime)DGVproveedores.SelectedRows[0].Cells[3].Value;
+                proveedores.CbTipo.SelectedValue = DGVproveedores.SelectedRows[0].Cells[4].Value.ToString();
+                proveedores.CbMoneda.SelectedValue = DGVproveedores.SelectedRows[0].Cells[5].Value.ToString();
+
+                this.Hide();
+                proveedores.ShowDialog();
+            }
+        }
+
+        
     }
 }

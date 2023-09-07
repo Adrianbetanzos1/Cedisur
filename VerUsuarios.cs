@@ -1,4 +1,4 @@
-﻿using Cedisur.Clases;
+﻿using CedisurB.Clases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,34 +10,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Cedisur
+namespace CedisurB
 {
     public partial class VerUsuarios : Form
     {
-        private readonly SqlConnection conexion = new("server=DESKTOP-717JV41\\SQLEXPRESS ; database=cedisur ; integrated security = true");
+        private readonly SqlConnection conexion = new SqlConnection("server=DESKTOP-717JV41\\SQLEXPRESS ; database=cedisur ; integrated security = true");
+
         public VerUsuarios()
         {
             InitializeComponent();
         }
 
-        private void BtnVolver_Click(object sender, EventArgs e)
-        {
-            Menu menu = new();
-            menu.Show();
-            this.Close();
-        }
 
-        private void BtnSalir_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        readonly Usuarios usuarios = new();
-
-        //Método que carga los valores del DGV con sus header text establecidos
         private void VerUsuarios_Load(object sender, EventArgs e)
         {
-
             DGVusuarios.DataSource = Usuarios.MostrarUsuario();
             DGVusuarios.Columns[0].HeaderText = "ID usuario";
             DGVusuarios.Columns[1].HeaderText = "Nombre completo del usuario";
@@ -45,10 +31,8 @@ namespace Cedisur
             DGVusuarios.Columns[3].HeaderText = "Contraseña";
             DGVusuarios.Columns[4].HeaderText = "Nivel de seguridad";
             DGVusuarios.Columns[5].HeaderText = "Email";
-
         }
 
-        //Método para eliminar los datos seleccionados.
         private void Button1_Click(object sender, EventArgs e)
         {
             if (DGVusuarios.RowCount == 0)
@@ -59,22 +43,30 @@ namespace Cedisur
             {
                 conexion.Open();
                 string query = "delete from Usuarios where ID_usuario = " + DGVusuarios.SelectedRows[0].Cells[0].Value.ToString();
-                SqlCommand comando = new(query, conexion);
+                SqlCommand comando = new SqlCommand(query, conexion);
                 comando.ExecuteNonQuery();
                 MessageBox.Show("Usuario eliminado correctamente");
                 conexion.Close();
 
                 this.Close();
-                VerUsuarios verUsuarios = new();
+                VerUsuarios verUsuarios = new VerUsuarios();
                 verUsuarios.Show();
-
             }
-
-
         }
 
-        //Método para mandar los datos seleccionados al formulario para editarlos.
-        private void BtnEditarPro_Click(object sender, EventArgs e)
+        private void BtnVolver_Click(object sender, EventArgs e)
+        {
+            Menu menu = new Menu();
+            menu.Show();
+            this.Close();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void BtnEditar_Click(object sender, EventArgs e)
         {
             if (DGVusuarios.RowCount == 0)
             {
@@ -97,21 +89,5 @@ namespace Cedisur
                 usuarios.ShowDialog();
             }
         }
-
-        //Método para buscar según el nombre del usuario
-
-        private void BtnBuscar_Click(object sender, EventArgs e)
-        {
-            if (TxtBusqueda.Text.Equals(""))
-            {
-                MessageBox.Show("Necesita ingresar un dato antes", "Advertencia");
-            }
-            else
-            {
-                DGVusuarios.DataSource = usuarios.MostrarUsuariosNombre(TxtBusqueda.Text);
-            }
-        }
-
-        
     }
 }

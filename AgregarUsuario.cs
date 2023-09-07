@@ -1,5 +1,4 @@
-﻿using Google.Protobuf.WellKnownTypes;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Cedisur
+namespace CedisurB
 {
     public partial class AgregarUsuario : Form
     {
@@ -19,31 +18,17 @@ namespace Cedisur
             InitializeComponent();
         }
 
-        private void BtnVolver_Click(object sender, EventArgs e)
-        {
-            Menu menu = new();
-            menu.Show();
-            this.Close();
-        }
-
-        private void BtnSalir_Click(object sender, EventArgs e)
+        private void pictureBox2_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-
-        private void LimpiarDatos()
+        private void BtnVolver_Click(object sender, EventArgs e)
         {
-            TxtNombreCompleto.Clear();
-            TxtNombre.Clear();
-            TxtContraseña.Clear();
-            TxtConfirmar.Clear();
-            CbTipoAutorizacion.ClearSelected();
-            TxtEmail.Clear();
-
-
+            Menu menu = new Menu();
+            menu.Show();
+            this.Close();
         }
-
 
         // Verifica si una contraseña cumple con los requisitos mínimos
 
@@ -86,10 +71,16 @@ namespace Cedisur
         }
 
 
-        //Requisitos contraseña
+        private void LimpiarDatos()
+        {
+            TxtNombreCompleto.Clear();
+            TxtNombre.Clear();
+            TxtContraseña.Clear();
+            TxtConfirmar.Clear();
+            CbTipoAutorizacion.ClearSelected();
+            TxtEmail.Clear();
 
-
-        //Método para validar todos los campos y agregar un nuevo usuario
+        }
 
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
@@ -106,27 +97,29 @@ namespace Cedisur
             }
             else if (MessageBox.Show("Estas seguro que deseas agregar este nuevo usuario?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                using SqlConnection conexion = new("Server=DESKTOP-717JV41\\SQLEXPRESS; Database=Cedisur;  integrated security= true");
-                SqlCommand cmd = new("Insert into Usuarios(NombreCompleto, NombreUsuario, Contraseña, Nivel_seguridad,Email) values (@nombreCompleto, @nombreUsuario, @Contraseña, @nivelSeguridad,@Email)")
+                using (SqlConnection conexion = new SqlConnection("Server=DESKTOP-717JV41\\SQLEXPRESS; Database=Cedisur;  integrated security= true"))
                 {
-                    CommandType = CommandType.Text,
-                    Connection = conexion
-                };
+                    SqlCommand cmd = new SqlCommand("Insert into Usuarios(NombreCompleto, NombreUsuario, Contraseña, Nivel_seguridad,Email) values (@nombreCompleto, @nombreUsuario, @Contraseña, @nivelSeguridad,@Email)")
+                    {
+                        CommandType = CommandType.Text,
+                        Connection = conexion
+                    };
 
-                cmd.Parameters.AddWithValue("@nombreCompleto", TxtNombreCompleto.Text);
-                cmd.Parameters.AddWithValue("@nombreUsuario", TxtNombre.Text);
-                cmd.Parameters.AddWithValue("@Contraseña", TxtContraseña.Text);
-                cmd.Parameters.AddWithValue("@nivelSeguridad", CbTipoAutorizacion.SelectedItem);
-                cmd.Parameters.AddWithValue("@Email", TxtEmail.Text);
+                    cmd.Parameters.AddWithValue("@nombreCompleto", TxtNombreCompleto.Text);
+                    cmd.Parameters.AddWithValue("@nombreUsuario", TxtNombre.Text);
+                    cmd.Parameters.AddWithValue("@Contraseña", TxtContraseña.Text);
+                    cmd.Parameters.AddWithValue("@nivelSeguridad", CbTipoAutorizacion.SelectedItem);
+                    cmd.Parameters.AddWithValue("@Email", TxtEmail.Text);
 
-                conexion.Open();
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Registro agregado correctamente");
-                conexion.Close();
-                LimpiarDatos();
+                    conexion.Open();
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Registro agregado correctamente");
+                    conexion.Close();
+                    LimpiarDatos();
+
+                }
+                    
             }
         }
-
-        
     }
 }

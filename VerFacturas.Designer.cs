@@ -1,4 +1,4 @@
-﻿namespace Cedisur
+﻿namespace CedisurB
 {
     partial class VerFacturas
     {
@@ -29,246 +29,236 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VerFacturas));
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            panel1 = new Panel();
-            label2 = new Label();
-            BtnSalir = new PictureBox();
-            BtnVolver = new Button();
-            DGVfacturas = new DataGridView();
-            BtnPagar = new Button();
-            BtnEditar = new Button();
-            label14 = new Label();
-            TxtBusqueda = new TextBox();
-            BtnBuscar = new Button();
-            BtnBuscarID = new Button();
-            label1 = new Label();
-            TxtBuscarID = new TextBox();
-            BtnReporte = new Button();
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)BtnSalir).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)DGVfacturas).BeginInit();
-            SuspendLayout();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.BtnVolver = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.BtnBuscarID = new System.Windows.Forms.Button();
+            this.TxtBuscarID = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.BtnBuscar = new System.Windows.Forms.Button();
+            this.TxtBusqueda = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.DGVfacturas = new System.Windows.Forms.DataGridView();
+            this.BtnReporte = new System.Windows.Forms.Button();
+            this.BtnPagar = new System.Windows.Forms.Button();
+            this.BtnEditar = new System.Windows.Forms.Button();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVfacturas)).BeginInit();
+            this.SuspendLayout();
             // 
             // panel1
             // 
-            panel1.BackColor = SystemColors.AppWorkspace;
-            panel1.Controls.Add(label2);
-            panel1.Controls.Add(BtnSalir);
-            panel1.Controls.Add(BtnVolver);
-            panel1.Location = new Point(12, 12);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1565, 63);
-            panel1.TabIndex = 2;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Rockwell", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.ForeColor = SystemColors.ActiveCaptionText;
-            label2.Location = new Point(626, 15);
-            label2.Name = "label2";
-            label2.Size = new Size(306, 29);
-            label2.TabIndex = 51;
-            label2.Text = "FACTURAS GENERADAS";
-            // 
-            // BtnSalir
-            // 
-            BtnSalir.Image = (Image)resources.GetObject("BtnSalir.Image");
-            BtnSalir.Location = new Point(1511, 15);
-            BtnSalir.Name = "BtnSalir";
-            BtnSalir.Size = new Size(29, 27);
-            BtnSalir.SizeMode = PictureBoxSizeMode.Zoom;
-            BtnSalir.TabIndex = 37;
-            BtnSalir.TabStop = false;
-            BtnSalir.Click += BtnSalir_Click;
-            // 
-            // BtnVolver
-            // 
-            BtnVolver.BackColor = SystemColors.AppWorkspace;
-            BtnVolver.Font = new Font("Rockwell", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            BtnVolver.Location = new Point(3, 3);
-            BtnVolver.Name = "BtnVolver";
-            BtnVolver.Size = new Size(96, 53);
-            BtnVolver.TabIndex = 2;
-            BtnVolver.Text = "Volver al menú";
-            BtnVolver.UseVisualStyleBackColor = false;
-            BtnVolver.Click += BtnVolver_Click;
-            // 
-            // DGVfacturas
-            // 
-            DGVfacturas.AllowUserToAddRows = false;
-            DGVfacturas.AllowUserToDeleteRows = false;
-            DGVfacturas.AllowUserToResizeColumns = false;
-            DGVfacturas.AllowUserToResizeRows = false;
-            DGVfacturas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = SystemColors.Control;
-            dataGridViewCellStyle4.Font = new Font("Rockwell", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            DGVfacturas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            DGVfacturas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = SystemColors.Window;
-            dataGridViewCellStyle5.Font = new Font("Rockwell", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
-            DGVfacturas.DefaultCellStyle = dataGridViewCellStyle5;
-            DGVfacturas.Location = new Point(15, 216);
-            DGVfacturas.Name = "DGVfacturas";
-            DGVfacturas.ReadOnly = true;
-            DGVfacturas.RowHeadersVisible = false;
-            DGVfacturas.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(192, 192, 0);
-            DGVfacturas.RowsDefaultCellStyle = dataGridViewCellStyle6;
-            DGVfacturas.RowTemplate.Height = 25;
-            DGVfacturas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            DGVfacturas.Size = new Size(1204, 550);
-            DGVfacturas.TabIndex = 3;
-            // 
-            // BtnPagar
-            // 
-            BtnPagar.Font = new Font("Rockwell", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            BtnPagar.Location = new Point(1333, 699);
-            BtnPagar.Name = "BtnPagar";
-            BtnPagar.Size = new Size(161, 67);
-            BtnPagar.TabIndex = 4;
-            BtnPagar.Text = "Generar pago";
-            BtnPagar.UseVisualStyleBackColor = true;
-            BtnPagar.Click += BtnPagar_Click;
-            // 
-            // BtnEditar
-            // 
-            BtnEditar.Font = new Font("Rockwell", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            BtnEditar.Location = new Point(1333, 448);
-            BtnEditar.Name = "BtnEditar";
-            BtnEditar.Size = new Size(161, 67);
-            BtnEditar.TabIndex = 5;
-            BtnEditar.Text = "Editar datos factura";
-            BtnEditar.UseVisualStyleBackColor = true;
-            BtnEditar.Click += BtnEditar_Click;
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Font = new Font("Rockwell", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label14.ForeColor = SystemColors.ButtonFace;
-            label14.Location = new Point(12, 107);
-            label14.Name = "label14";
-            label14.Size = new Size(241, 29);
-            label14.TabIndex = 41;
-            label14.Text = "Buscar por nombre";
-            // 
-            // TxtBusqueda
-            // 
-            TxtBusqueda.Location = new Point(15, 142);
-            TxtBusqueda.Name = "TxtBusqueda";
-            TxtBusqueda.Size = new Size(398, 23);
-            TxtBusqueda.TabIndex = 40;
-            // 
-            // BtnBuscar
-            // 
-            BtnBuscar.Font = new Font("Rockwell", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            BtnBuscar.Location = new Point(450, 107);
-            BtnBuscar.Name = "BtnBuscar";
-            BtnBuscar.Size = new Size(104, 58);
-            BtnBuscar.TabIndex = 42;
-            BtnBuscar.Text = "Buscar";
-            BtnBuscar.UseVisualStyleBackColor = true;
-            BtnBuscar.Click += BtnBuscar_Click;
-            // 
-            // BtnBuscarID
-            // 
-            BtnBuscarID.Font = new Font("Rockwell", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            BtnBuscarID.Location = new Point(1114, 107);
-            BtnBuscarID.Name = "BtnBuscarID";
-            BtnBuscarID.Size = new Size(104, 58);
-            BtnBuscarID.TabIndex = 45;
-            BtnBuscarID.Text = "Buscar";
-            BtnBuscarID.UseVisualStyleBackColor = true;
-            BtnBuscarID.Click += BtnBuscarID_Click;
+            this.panel1.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.BtnVolver);
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1549, 52);
+            this.panel1.TabIndex = 8;
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Rockwell", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = SystemColors.ButtonFace;
-            label1.Location = new Point(676, 107);
-            label1.Name = "label1";
-            label1.Size = new Size(347, 29);
-            label1.TabIndex = 44;
-            label1.Text = "Buscar por ID del proveedor";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Rockwell", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.Location = new System.Drawing.Point(623, 3);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(444, 43);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "FACTURAS GENERADAS";
+            // 
+            // BtnVolver
+            // 
+            this.BtnVolver.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnVolver.Location = new System.Drawing.Point(0, 0);
+            this.BtnVolver.Name = "BtnVolver";
+            this.BtnVolver.Size = new System.Drawing.Size(115, 52);
+            this.BtnVolver.TabIndex = 8;
+            this.BtnVolver.Text = "Volver al menú";
+            this.BtnVolver.UseVisualStyleBackColor = true;
+            this.BtnVolver.Click += new System.EventHandler(this.BtnVolver_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(1488, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(58, 42);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // BtnBuscarID
+            // 
+            this.BtnBuscarID.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnBuscarID.Location = new System.Drawing.Point(1064, 91);
+            this.BtnBuscarID.Name = "BtnBuscarID";
+            this.BtnBuscarID.Size = new System.Drawing.Size(128, 52);
+            this.BtnBuscarID.TabIndex = 44;
+            this.BtnBuscarID.Text = "Buscar";
+            this.BtnBuscarID.UseVisualStyleBackColor = true;
+            this.BtnBuscarID.Click += new System.EventHandler(this.BtnBuscarID_Click);
             // 
             // TxtBuscarID
             // 
-            TxtBuscarID.Location = new Point(679, 142);
-            TxtBuscarID.Name = "TxtBuscarID";
-            TxtBuscarID.Size = new Size(398, 23);
-            TxtBuscarID.TabIndex = 43;
+            this.TxtBuscarID.Location = new System.Drawing.Point(645, 123);
+            this.TxtBuscarID.Name = "TxtBuscarID";
+            this.TxtBuscarID.Size = new System.Drawing.Size(333, 20);
+            this.TxtBuscarID.TabIndex = 43;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Transparent;
+            this.label2.Location = new System.Drawing.Point(640, 95);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(375, 25);
+            this.label2.TabIndex = 42;
+            this.label2.Text = "BUSCAR POR ID DEL PROVEEDOR";
+            // 
+            // BtnBuscar
+            // 
+            this.BtnBuscar.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnBuscar.Location = new System.Drawing.Point(436, 91);
+            this.BtnBuscar.Name = "BtnBuscar";
+            this.BtnBuscar.Size = new System.Drawing.Size(128, 52);
+            this.BtnBuscar.TabIndex = 41;
+            this.BtnBuscar.Text = "Buscar";
+            this.BtnBuscar.UseVisualStyleBackColor = true;
+            this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
+            // 
+            // TxtBusqueda
+            // 
+            this.TxtBusqueda.Location = new System.Drawing.Point(17, 123);
+            this.TxtBusqueda.Name = "TxtBusqueda";
+            this.TxtBusqueda.Size = new System.Drawing.Size(333, 20);
+            this.TxtBusqueda.TabIndex = 40;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Transparent;
+            this.label4.Location = new System.Drawing.Point(12, 95);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(256, 25);
+            this.label4.TabIndex = 39;
+            this.label4.Text = "BUSCAR POR NOMBRE";
+            // 
+            // DGVfacturas
+            // 
+            this.DGVfacturas.AllowUserToAddRows = false;
+            this.DGVfacturas.AllowUserToDeleteRows = false;
+            this.DGVfacturas.AllowUserToResizeColumns = false;
+            this.DGVfacturas.AllowUserToResizeRows = false;
+            this.DGVfacturas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Rockwell", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVfacturas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.DGVfacturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVfacturas.Location = new System.Drawing.Point(17, 203);
+            this.DGVfacturas.Name = "DGVfacturas";
+            this.DGVfacturas.ReadOnly = true;
+            this.DGVfacturas.RowHeadersVisible = false;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.DGVfacturas.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.DGVfacturas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DGVfacturas.Size = new System.Drawing.Size(1204, 550);
+            this.DGVfacturas.TabIndex = 45;
             // 
             // BtnReporte
             // 
-            BtnReporte.Font = new Font("Rockwell", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            BtnReporte.Location = new Point(1333, 216);
-            BtnReporte.Name = "BtnReporte";
-            BtnReporte.Size = new Size(161, 67);
-            BtnReporte.TabIndex = 46;
-            BtnReporte.Text = "Generar reporte";
-            BtnReporte.UseVisualStyleBackColor = true;
+            this.BtnReporte.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnReporte.Location = new System.Drawing.Point(1331, 199);
+            this.BtnReporte.Name = "BtnReporte";
+            this.BtnReporte.Size = new System.Drawing.Size(155, 81);
+            this.BtnReporte.TabIndex = 48;
+            this.BtnReporte.Text = "Generar reporte";
+            this.BtnReporte.UseVisualStyleBackColor = true;
+            this.BtnReporte.Click += new System.EventHandler(this.BtnReporte_Click);
+            // 
+            // BtnPagar
+            // 
+            this.BtnPagar.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnPagar.Location = new System.Drawing.Point(1331, 673);
+            this.BtnPagar.Name = "BtnPagar";
+            this.BtnPagar.Size = new System.Drawing.Size(155, 76);
+            this.BtnPagar.TabIndex = 47;
+            this.BtnPagar.Text = "Generar pago";
+            this.BtnPagar.UseVisualStyleBackColor = true;
+            this.BtnPagar.Click += new System.EventHandler(this.BtnPagar_Click);
+            // 
+            // BtnEditar
+            // 
+            this.BtnEditar.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnEditar.Location = new System.Drawing.Point(1331, 430);
+            this.BtnEditar.Name = "BtnEditar";
+            this.BtnEditar.Size = new System.Drawing.Size(155, 81);
+            this.BtnEditar.TabIndex = 46;
+            this.BtnEditar.Text = "Editar datos factura";
+            this.BtnEditar.UseVisualStyleBackColor = true;
+            this.BtnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
             // 
             // VerFacturas
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.DarkSlateGray;
-            ClientSize = new Size(1589, 817);
-            Controls.Add(BtnReporte);
-            Controls.Add(BtnBuscarID);
-            Controls.Add(label1);
-            Controls.Add(TxtBuscarID);
-            Controls.Add(BtnBuscar);
-            Controls.Add(label14);
-            Controls.Add(TxtBusqueda);
-            Controls.Add(BtnEditar);
-            Controls.Add(BtnPagar);
-            Controls.Add(DGVfacturas);
-            Controls.Add(panel1);
-            ForeColor = SystemColors.ControlText;
-            FormBorderStyle = FormBorderStyle.None;
-            KeyPreview = true;
-            Name = "VerFacturas";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "Proveedores";
-            Load += Proveedores_Load;
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)BtnSalir).EndInit();
-            ((System.ComponentModel.ISupportInitialize)DGVfacturas).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.ClientSize = new System.Drawing.Size(1573, 778);
+            this.Controls.Add(this.BtnReporte);
+            this.Controls.Add(this.BtnPagar);
+            this.Controls.Add(this.BtnEditar);
+            this.Controls.Add(this.DGVfacturas);
+            this.Controls.Add(this.BtnBuscarID);
+            this.Controls.Add(this.TxtBuscarID);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.BtnBuscar);
+            this.Controls.Add(this.TxtBusqueda);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "VerFacturas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "VerFacturas";
+            this.Load += new System.EventHandler(this.VerFacturas_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVfacturas)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
 
-        private Panel panel1;
-        private PictureBox BtnSalir;
-        private Button BtnVolver;
-        private Button BtnPagar;
-        private Button BtnEditar;
-        private Label label14;
-        private TextBox TxtBusqueda;
-        private Button BtnBuscar;
-        private Button BtnBuscarID;
-        private Label label1;
-        private TextBox TxtBuscarID;
-        public DataGridView DGVfacturas;
-        private Label label2;
-        private Button BtnReporte;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button BtnVolver;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button BtnBuscarID;
+        private System.Windows.Forms.TextBox TxtBuscarID;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button BtnBuscar;
+        private System.Windows.Forms.TextBox TxtBusqueda;
+        private System.Windows.Forms.Label label4;
+        public System.Windows.Forms.DataGridView DGVfacturas;
+        private System.Windows.Forms.Button BtnReporte;
+        private System.Windows.Forms.Button BtnPagar;
+        private System.Windows.Forms.Button BtnEditar;
     }
 }

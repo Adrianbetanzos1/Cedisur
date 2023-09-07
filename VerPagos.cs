@@ -1,5 +1,4 @@
-﻿using Cedisur.Clases;
-using Common.Cache;
+﻿using CedisurB.Clases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,12 +11,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
-namespace Cedisur
+namespace CedisurB
 {
     public partial class VerPagos : Form
     {
-
-        private readonly SqlConnection conexion = new("server=DESKTOP-717JV41\\SQLEXPRESS ; database=cedisur ; integrated security = true");
+        private readonly SqlConnection conexion = new SqlConnection("server=DESKTOP-717JV41\\SQLEXPRESS ; database=cedisur ; integrated security = true");
 
         public VerPagos()
         {
@@ -26,30 +24,40 @@ namespace Cedisur
 
         private void BtnVolver_Click(object sender, EventArgs e)
         {
-            Menu menu = new();
+            Menu menu = new Menu();
             menu.Show();
             this.Hide();
         }
 
-        private void BtnSalir_Click(object sender, EventArgs e)
+        private void pictureBox2_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void BtnBuscar_Click(object sender, EventArgs e)
+        {
+            if (TxtBusqueda.Text.Equals(""))
+            {
+                MessageBox.Show("Necesita ingresar un dato antes", "Advertencia");
+            }
+            else
+            {
+                DGVpagos.DataSource = Pagos.MostrarPago(TxtBusqueda.Text);
+            }
         }
 
         private void RestringirAccesos()
         {
             if (CacheInicioSesionUsuario.Nivel_seguridad == Cargos.usuario)
             {
-                
+
                 Button1.Enabled = false;
 
             }
         }
 
-
-
-        readonly Pagos pago = new();
-        private void Facturas_Load(object sender, EventArgs e)
+        readonly Pagos pago = new Pagos();
+        private void VerPagos_Load(object sender, EventArgs e)
         {
             RestringirAccesos();
             DGVpagos.DataSource = pago.MostrarFacturas();
@@ -64,26 +72,12 @@ namespace Cedisur
             DGVpagos.Columns[8].HeaderText = "ID proveedor";
             DGVpagos.Columns[9].HeaderText = "ID factura";
             DGVpagos.Columns[10].HeaderText = "Tipo de cambio el día del pago";
+
+
         }
 
-        //Método para buscar según su número de pago
-        private void BtnBuscar_Click(object sender, EventArgs e)
-        {
-            if (TxtBusqueda.Text.Equals(""))
-            {
-                MessageBox.Show("Necesita ingresar un dato antes", "Advertencia");
-            }
-            else
-            {
-                DGVpagos.DataSource = Pagos.MostrarPago(TxtBusqueda.Text);
-            }
-        }
-
-
-        //Método para editar un pago, de modo que envie los datos correspondientes al formulario encargado
         private void Button1_Click(object sender, EventArgs e)
         {
-
             if (DGVpagos.RowCount == 0)
             {
                 MessageBox.Show("No hay datos existentes");
@@ -101,23 +95,22 @@ namespace Cedisur
 
 
 
-                using (SqlCommand comando = new(query, conexion))
+                using (SqlCommand comando = new SqlCommand(query, conexion))
                 {
 
-                    using SqlDataReader reader = comando.ExecuteReader();
-                    if (reader.Read())
+                    using (SqlDataReader reader = comando.ExecuteReader())
                     {
+                        if (reader.Read())
+                        {
 
-                        pagos.TxtNombrePro.Text = reader["nombreProveedor"].ToString();
-                        pagos.txtSaldoPendiente.Text = reader["SaldoAnterior"].ToString();
-                        pagos.txtSaldoUSD.Text = reader["SaldoAnteriorUSD"].ToString();
-                        pagos.txtAbono.Text = reader["AbonoAnterior"].ToString();
+                            pagos.TxtNombrePro.Text = reader["nombreProveedor"].ToString();
+                            pagos.txtSaldoPendiente.Text = reader["SaldoAnterior"].ToString();
+                            pagos.txtSaldoUSD.Text = reader["SaldoAnteriorUSD"].ToString();
+                            pagos.txtAbono.Text = reader["AbonoAnterior"].ToString();
 
-
-
+                        }
                     }
-
-
+     
                 }
                 conexion.Close();
 
@@ -139,6 +132,7 @@ namespace Cedisur
                 pagos.ShowDialog();
             }
 
-        }
+        } 
+    
     }
 }

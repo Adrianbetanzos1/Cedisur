@@ -9,26 +9,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Cedisur
+namespace CedisurB
 {
     public partial class AgregarProveedor : Form
     {
         public AgregarProveedor()
         {
             InitializeComponent();
-        }
-
-        private void BtnVolver_Click(object sender, EventArgs e)
-        {
-            Menu menu = new();
-            menu.Show();
-            this.Close();
-        }
-
-        private void BtnSalir_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-
         }
 
         private void LimpiarDatos()
@@ -42,8 +29,7 @@ namespace Cedisur
 
         }
 
-
-        //Agrega los datos de los proveedores 
+        //Agrega los datos de los proveedores a la base de datos
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(TxtIDProveedor.Text) || string.IsNullOrEmpty(TxtNombreProv.Text) || string.IsNullOrEmpty(TxtRfc.Text) || CbTipo.CheckedItems.Count == 0 || CbMoneda.CheckedItems.Count == 0)
@@ -52,35 +38,42 @@ namespace Cedisur
             }
             else if (MessageBox.Show("Estas seguro que deseas agregar este nuevo proveedor?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                using SqlConnection conexion = new("Server=DESKTOP-717JV41\\SQLEXPRESS; Database=Cedisur;  integrated security= true");
-                
-                //Se inicializa el sqlCommand
-                SqlCommand cmd = new("Insert into Proveedor(RfcProveedor, nombreProveedor, fechaDeRegistro, TipoDeProveedor, TipoDePago) values (@RfcProveedor, @nombreProveedor, @fechaDeRegistro, @TipoDeProveedor, @TipoDePago)")
+                using (SqlConnection conexion = new SqlConnection("Server=DESKTOP-717JV41\\SQLEXPRESS; Database=Cedisur;  integrated security= true"))
                 {
-                    CommandType = CommandType.Text,
-                    Connection = conexion
-                };
+                    //Se inicializa el sqlCommand
+                    SqlCommand cmd = new SqlCommand("Insert into Proveedor(RfcProveedor, nombreProveedor, fechaDeRegistro, TipoDeProveedor, TipoDePago) values (@RfcProveedor, @nombreProveedor, @fechaDeRegistro, @TipoDeProveedor, @TipoDePago)")
+                    {
+                        CommandType = CommandType.Text,
+                        Connection = conexion
+                    };
 
-                cmd.Parameters.AddWithValue("@RfcProveedor", TxtRfc.Text);
-                cmd.Parameters.AddWithValue("@nombreProveedor", TxtNombreProv.Text);
-                cmd.Parameters.AddWithValue("@fechaDeRegistro", DTPFecha.Value);
-                cmd.Parameters.AddWithValue("@TipoDeProveedor", CbTipo.SelectedItem);
-                cmd.Parameters.AddWithValue("@TipoDePago", CbMoneda.SelectedItem);
+                    cmd.Parameters.AddWithValue("@RfcProveedor", TxtRfc.Text);
+                    cmd.Parameters.AddWithValue("@nombreProveedor", TxtNombreProv.Text);
+                    cmd.Parameters.AddWithValue("@fechaDeRegistro", DTPFecha.Value);
+                    cmd.Parameters.AddWithValue("@TipoDeProveedor", CbTipo.SelectedItem);
+                    cmd.Parameters.AddWithValue("@TipoDePago", CbMoneda.SelectedItem);
 
-                conexion.Open();
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Registro agregado correctamente");
-                conexion.Close();
-                LimpiarDatos();
+                    conexion.Open();
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Registro agregado correctamente");
+                    conexion.Close();
+                    LimpiarDatos();
+                }
+
+                    
             }
-
         }
 
-
-        //Método para cargar el formulario
-        private void AgregarProveedor_Load(object sender, EventArgs e)
+        private void BtnVolver_Click(object sender, EventArgs e)
         {
-            TxtIDProveedor.Focus();
+            Menu menu = new Menu();
+            menu.Show();
+            this.Close();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
 
         //Valida que sea un valor númerico el que se está poniendo

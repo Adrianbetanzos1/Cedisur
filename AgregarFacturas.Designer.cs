@@ -1,4 +1,4 @@
-﻿namespace Cedisur
+﻿namespace CedisurB
 {
     partial class AgregarFacturas
     {
@@ -29,413 +29,423 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarFacturas));
-            label1 = new Label();
-            panel1 = new Panel();
-            BtnSalir = new PictureBox();
-            BtnVolver = new Button();
-            TxtIDProveedor = new TextBox();
-            label2 = new Label();
-            label3 = new Label();
-            TxtNombreFactura = new TextBox();
-            DTPFecha = new DateTimePicker();
-            label4 = new Label();
-            label5 = new Label();
-            TxtDiasVencimiento = new TextBox();
-            label6 = new Label();
-            TxtImporte = new TextBox();
-            label7 = new Label();
-            TxtDolar = new TextBox();
-            label8 = new Label();
-            TxtSaldoMXP = new TextBox();
-            label9 = new Label();
-            TxtSaldoUSD = new TextBox();
-            label11 = new Label();
-            BtnAgregar = new Button();
-            button1 = new Button();
-            label20 = new Label();
-            TxtAbono = new TextBox();
-            label21 = new Label();
-            label10 = new Label();
-            TxtNombrePro = new TextBox();
-            label12 = new Label();
-            TxtImporteUSD = new TextBox();
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)BtnSalir).BeginInit();
-            SuspendLayout();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.BtnVolver = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.TxtNombrePro = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.TxtIDProveedor = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.TxtSaldoUSD = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.TxtNombreFactura = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.TxtImporteUSD = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.TxtImporte = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.TxtAbono = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.TxtDiasVencimiento = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.TxtSaldoMXP = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.DTPFecha = new System.Windows.Forms.DateTimePicker();
+            this.TxtDolar = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label21 = new System.Windows.Forms.Label();
+            this.BtnAgregar = new System.Windows.Forms.Button();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.SuspendLayout();
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Rockwell", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = SystemColors.ButtonFace;
-            label1.Location = new Point(593, 101);
-            label1.Name = "label1";
-            label1.Size = new Size(347, 39);
-            label1.TabIndex = 0;
-            label1.Text = "AGREGAR FACTURA";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Rockwell", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(529, 81);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(524, 59);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "AGREGAR FACTURA";
             // 
             // panel1
             // 
-            panel1.BackColor = SystemColors.AppWorkspace;
-            panel1.Controls.Add(BtnSalir);
-            panel1.Controls.Add(BtnVolver);
-            panel1.Location = new Point(12, 11);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1565, 67);
-            panel1.TabIndex = 1;
-            // 
-            // BtnSalir
-            // 
-            BtnSalir.Image = (Image)resources.GetObject("BtnSalir.Image");
-            BtnSalir.Location = new Point(1519, 20);
-            BtnSalir.Name = "BtnSalir";
-            BtnSalir.Size = new Size(29, 27);
-            BtnSalir.SizeMode = PictureBoxSizeMode.Zoom;
-            BtnSalir.TabIndex = 37;
-            BtnSalir.TabStop = false;
-            BtnSalir.Click += BtnSalir_Click;
+            this.panel1.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel1.Controls.Add(this.BtnVolver);
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1549, 52);
+            this.panel1.TabIndex = 6;
             // 
             // BtnVolver
             // 
-            BtnVolver.BackColor = SystemColors.AppWorkspace;
-            BtnVolver.Font = new Font("Rockwell", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            BtnVolver.Location = new Point(3, 7);
-            BtnVolver.Name = "BtnVolver";
-            BtnVolver.Size = new Size(141, 53);
-            BtnVolver.TabIndex = 2;
-            BtnVolver.Text = "Volver a la ventana anterior";
-            BtnVolver.UseVisualStyleBackColor = false;
-            BtnVolver.Click += BtnVolver_Click;
+            this.BtnVolver.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnVolver.Location = new System.Drawing.Point(0, 0);
+            this.BtnVolver.Name = "BtnVolver";
+            this.BtnVolver.Size = new System.Drawing.Size(153, 52);
+            this.BtnVolver.TabIndex = 8;
+            this.BtnVolver.Text = "Volver a la ventana anterior";
+            this.BtnVolver.UseVisualStyleBackColor = true;
+            this.BtnVolver.Click += new System.EventHandler(this.BtnVolver_Click);
             // 
-            // TxtIDProveedor
+            // pictureBox2
             // 
-            TxtIDProveedor.Enabled = false;
-            TxtIDProveedor.Location = new Point(136, 286);
-            TxtIDProveedor.Name = "TxtIDProveedor";
-            TxtIDProveedor.Size = new Size(268, 23);
-            TxtIDProveedor.TabIndex = 2;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Rockwell", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.ForeColor = SystemColors.ButtonFace;
-            label2.Location = new Point(136, 258);
-            label2.Name = "label2";
-            label2.Size = new Size(183, 25);
-            label2.TabIndex = 3;
-            label2.Text = "ID del proveedor";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Rockwell", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.ForeColor = SystemColors.ButtonFace;
-            label3.Location = new Point(135, 417);
-            label3.Name = "label3";
-            label3.Size = new Size(227, 25);
-            label3.TabIndex = 5;
-            label3.Text = "Nombre de la factura";
-            // 
-            // TxtNombreFactura
-            // 
-            TxtNombreFactura.Location = new Point(136, 445);
-            TxtNombreFactura.Name = "TxtNombreFactura";
-            TxtNombreFactura.Size = new Size(202, 23);
-            TxtNombreFactura.TabIndex = 4;
-            // 
-            // DTPFecha
-            // 
-            DTPFecha.Location = new Point(385, 445);
-            DTPFecha.Name = "DTPFecha";
-            DTPFecha.Size = new Size(229, 23);
-            DTPFecha.TabIndex = 6;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Rockwell", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.ForeColor = SystemColors.ButtonFace;
-            label4.Location = new Point(385, 417);
-            label4.Name = "label4";
-            label4.Size = new Size(206, 25);
-            label4.TabIndex = 7;
-            label4.Text = "Fecha de la factura";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Rockwell", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.ForeColor = SystemColors.ButtonFace;
-            label5.Location = new Point(661, 417);
-            label5.Name = "label5";
-            label5.Size = new Size(222, 25);
-            label5.TabIndex = 9;
-            label5.Text = "Dias de vencimiento";
-            // 
-            // TxtDiasVencimiento
-            // 
-            TxtDiasVencimiento.Location = new Point(661, 445);
-            TxtDiasVencimiento.Name = "TxtDiasVencimiento";
-            TxtDiasVencimiento.Size = new Size(166, 23);
-            TxtDiasVencimiento.TabIndex = 8;
-            TxtDiasVencimiento.Leave += TxtDiasVencimiento_Leave;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Rockwell", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.ForeColor = SystemColors.ButtonFace;
-            label6.Location = new Point(917, 417);
-            label6.Name = "label6";
-            label6.Size = new Size(151, 25);
-            label6.TabIndex = 11;
-            label6.Text = "Importe MXP";
-            // 
-            // TxtImporte
-            // 
-            TxtImporte.Location = new Point(917, 445);
-            TxtImporte.Name = "TxtImporte";
-            TxtImporte.Size = new Size(166, 23);
-            TxtImporte.TabIndex = 38;
-            TxtImporte.Leave += TxtImporte_Leave;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Rockwell", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.ForeColor = SystemColors.ButtonFace;
-            label7.Location = new Point(1180, 101);
-            label7.Name = "label7";
-            label7.Size = new Size(75, 19);
-            label7.TabIndex = 13;
-            label7.Text = "USD hoy";
-            // 
-            // TxtDolar
-            // 
-            TxtDolar.Location = new Point(1180, 125);
-            TxtDolar.Name = "TxtDolar";
-            TxtDolar.Size = new Size(101, 23);
-            TxtDolar.TabIndex = 12;
-            TxtDolar.Leave += TxtDolar_Leave;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Rockwell", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label8.ForeColor = SystemColors.ButtonFace;
-            label8.Location = new Point(385, 496);
-            label8.Name = "label8";
-            label8.Size = new Size(124, 25);
-            label8.TabIndex = 15;
-            label8.Text = "Saldo MXP";
-            // 
-            // TxtSaldoMXP
-            // 
-            TxtSaldoMXP.Enabled = false;
-            TxtSaldoMXP.Location = new Point(385, 524);
-            TxtSaldoMXP.Name = "TxtSaldoMXP";
-            TxtSaldoMXP.Size = new Size(229, 23);
-            TxtSaldoMXP.TabIndex = 14;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Rockwell", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label9.ForeColor = SystemColors.ButtonFace;
-            label9.Location = new Point(661, 496);
-            label9.Name = "label9";
-            label9.Size = new Size(114, 25);
-            label9.TabIndex = 17;
-            label9.Text = "Saldo USD";
-            // 
-            // TxtSaldoUSD
-            // 
-            TxtSaldoUSD.Enabled = false;
-            TxtSaldoUSD.Location = new Point(661, 524);
-            TxtSaldoUSD.Name = "TxtSaldoUSD";
-            TxtSaldoUSD.Size = new Size(166, 23);
-            TxtSaldoUSD.TabIndex = 16;
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Rockwell", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label11.ForeColor = SystemColors.ButtonFace;
-            label11.Location = new Point(136, 349);
-            label11.Name = "label11";
-            label11.Size = new Size(161, 25);
-            label11.TabIndex = 19;
-            label11.Text = "PROVISIONES";
-            // 
-            // BtnAgregar
-            // 
-            BtnAgregar.BackColor = SystemColors.AppWorkspace;
-            BtnAgregar.Font = new Font("Rockwell", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            BtnAgregar.Location = new Point(661, 617);
-            BtnAgregar.Name = "BtnAgregar";
-            BtnAgregar.Size = new Size(121, 59);
-            BtnAgregar.TabIndex = 3;
-            BtnAgregar.Text = "Agregar";
-            BtnAgregar.UseVisualStyleBackColor = false;
-            BtnAgregar.Click += BtnAgregar_Click;
-            // 
-            // button1
-            // 
-            button1.BackColor = SystemColors.AppWorkspace;
-            button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(1180, 154);
-            button1.Name = "button1";
-            button1.Size = new Size(101, 31);
-            button1.TabIndex = 37;
-            button1.Text = "Convertir";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += Button1_Click;
-            // 
-            // label20
-            // 
-            label20.AutoSize = true;
-            label20.Font = new Font("Rockwell", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label20.ForeColor = SystemColors.ButtonFace;
-            label20.Location = new Point(136, 496);
-            label20.Name = "label20";
-            label20.Size = new Size(77, 25);
-            label20.TabIndex = 39;
-            label20.Text = "Abono";
-            // 
-            // TxtAbono
-            // 
-            TxtAbono.Location = new Point(136, 524);
-            TxtAbono.Name = "TxtAbono";
-            TxtAbono.Size = new Size(202, 23);
-            TxtAbono.TabIndex = 38;
-            TxtAbono.Leave += TxtAbono_Leave;
-            // 
-            // label21
-            // 
-            label21.AutoSize = true;
-            label21.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label21.ForeColor = SystemColors.ButtonFace;
-            label21.Location = new Point(1170, 198);
-            label21.Name = "label21";
-            label21.Size = new Size(104, 17);
-            label21.TabIndex = 40;
-            label21.Text = "Coloque el valor";
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Rockwell", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label10.ForeColor = SystemColors.ButtonFace;
-            label10.Location = new Point(448, 258);
-            label10.Name = "label10";
-            label10.Size = new Size(242, 25);
-            label10.TabIndex = 55;
-            label10.Text = "Nombre del proveedor";
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(1488, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(58, 42);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // TxtNombrePro
             // 
-            TxtNombrePro.Enabled = false;
-            TxtNombrePro.Location = new Point(448, 286);
-            TxtNombrePro.Name = "TxtNombrePro";
-            TxtNombrePro.Size = new Size(268, 23);
-            TxtNombrePro.TabIndex = 54;
+            this.TxtNombrePro.Enabled = false;
+            this.TxtNombrePro.Location = new System.Drawing.Point(544, 294);
+            this.TxtNombrePro.Name = "TxtNombrePro";
+            this.TxtNombrePro.Size = new System.Drawing.Size(333, 20);
+            this.TxtNombrePro.TabIndex = 11;
             // 
-            // label12
+            // label3
             // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Rockwell", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label12.ForeColor = SystemColors.ButtonFace;
-            label12.Location = new Point(1141, 417);
-            label12.Name = "label12";
-            label12.Size = new Size(141, 25);
-            label12.TabIndex = 56;
-            label12.Text = "Importe USD";
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Transparent;
+            this.label3.Location = new System.Drawing.Point(539, 266);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(308, 25);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "NOMBRE DEL PROVEEDOR";
+            // 
+            // TxtIDProveedor
+            // 
+            this.TxtIDProveedor.Enabled = false;
+            this.TxtIDProveedor.Location = new System.Drawing.Point(123, 294);
+            this.TxtIDProveedor.Name = "TxtIDProveedor";
+            this.TxtIDProveedor.Size = new System.Drawing.Size(333, 20);
+            this.TxtIDProveedor.TabIndex = 9;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Transparent;
+            this.label2.Location = new System.Drawing.Point(118, 266);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(232, 25);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "ID DEL PROVEEDOR";
+            // 
+            // TxtSaldoUSD
+            // 
+            this.TxtSaldoUSD.Enabled = false;
+            this.TxtSaldoUSD.Location = new System.Drawing.Point(544, 670);
+            this.TxtSaldoUSD.Name = "TxtSaldoUSD";
+            this.TxtSaldoUSD.Size = new System.Drawing.Size(333, 20);
+            this.TxtSaldoUSD.TabIndex = 15;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Transparent;
+            this.label4.Location = new System.Drawing.Point(539, 642);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(134, 25);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "SALDO USD";
+            // 
+            // TxtNombreFactura
+            // 
+            this.TxtNombreFactura.Location = new System.Drawing.Point(123, 469);
+            this.TxtNombreFactura.Name = "TxtNombreFactura";
+            this.TxtNombreFactura.Size = new System.Drawing.Size(333, 20);
+            this.TxtNombreFactura.TabIndex = 13;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Transparent;
+            this.label5.Location = new System.Drawing.Point(118, 441);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(291, 25);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "NOMBRE DE LA FACTURA";
             // 
             // TxtImporteUSD
             // 
-            TxtImporteUSD.Enabled = false;
-            TxtImporteUSD.Location = new Point(1141, 445);
-            TxtImporteUSD.Name = "TxtImporteUSD";
-            TxtImporteUSD.Size = new Size(166, 23);
-            TxtImporteUSD.TabIndex = 57;
+            this.TxtImporteUSD.Enabled = false;
+            this.TxtImporteUSD.Location = new System.Drawing.Point(544, 565);
+            this.TxtImporteUSD.Name = "TxtImporteUSD";
+            this.TxtImporteUSD.Size = new System.Drawing.Size(333, 20);
+            this.TxtImporteUSD.TabIndex = 19;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Transparent;
+            this.label6.Location = new System.Drawing.Point(539, 537);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(164, 25);
+            this.label6.TabIndex = 18;
+            this.label6.Text = "IMPORTE USD";
+            // 
+            // TxtImporte
+            // 
+            this.TxtImporte.Location = new System.Drawing.Point(123, 565);
+            this.TxtImporte.Name = "TxtImporte";
+            this.TxtImporte.Size = new System.Drawing.Size(333, 20);
+            this.TxtImporte.TabIndex = 17;
+            this.TxtImporte.Leave += new System.EventHandler(this.TxtImporte_Leave_1);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Transparent;
+            this.label7.Location = new System.Drawing.Point(118, 537);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(174, 25);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "IMPORTE MXP";
+            // 
+            // TxtAbono
+            // 
+            this.TxtAbono.Location = new System.Drawing.Point(963, 565);
+            this.TxtAbono.Name = "TxtAbono";
+            this.TxtAbono.Size = new System.Drawing.Size(333, 20);
+            this.TxtAbono.TabIndex = 23;
+            this.TxtAbono.Leave += new System.EventHandler(this.TxtAbono_Leave_1);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Transparent;
+            this.label8.Location = new System.Drawing.Point(958, 537);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(95, 25);
+            this.label8.TabIndex = 22;
+            this.label8.Text = "ABONO";
+            // 
+            // TxtDiasVencimiento
+            // 
+            this.TxtDiasVencimiento.Location = new System.Drawing.Point(963, 469);
+            this.TxtDiasVencimiento.Name = "TxtDiasVencimiento";
+            this.TxtDiasVencimiento.Size = new System.Drawing.Size(333, 20);
+            this.TxtDiasVencimiento.TabIndex = 21;
+            this.TxtDiasVencimiento.Leave += new System.EventHandler(this.TxtDiasVencimiento_Leave_1);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Transparent;
+            this.label9.Location = new System.Drawing.Point(958, 441);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(267, 25);
+            this.label9.TabIndex = 20;
+            this.label9.Text = "DIAS DE VENCIMIENTO";
+            // 
+            // TxtSaldoMXP
+            // 
+            this.TxtSaldoMXP.Enabled = false;
+            this.TxtSaldoMXP.Location = new System.Drawing.Point(123, 670);
+            this.TxtSaldoMXP.Name = "TxtSaldoMXP";
+            this.TxtSaldoMXP.Size = new System.Drawing.Size(333, 20);
+            this.TxtSaldoMXP.TabIndex = 25;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Transparent;
+            this.label11.Location = new System.Drawing.Point(118, 642);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(144, 25);
+            this.label11.TabIndex = 24;
+            this.label11.Text = "SALDO MXP";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Rockwell", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label10.Location = new System.Drawing.Point(113, 350);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(303, 59);
+            this.label10.TabIndex = 26;
+            this.label10.Text = "Provisiones";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.Transparent;
+            this.label12.Location = new System.Drawing.Point(534, 441);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(290, 25);
+            this.label12.TabIndex = 28;
+            this.label12.Text = "FECHA DE FACTURACIÓN";
+            // 
+            // DTPFecha
+            // 
+            this.DTPFecha.Location = new System.Drawing.Point(539, 469);
+            this.DTPFecha.Name = "DTPFecha";
+            this.DTPFecha.Size = new System.Drawing.Size(338, 20);
+            this.DTPFecha.TabIndex = 27;
+            // 
+            // TxtDolar
+            // 
+            this.TxtDolar.Location = new System.Drawing.Point(1227, 185);
+            this.TxtDolar.Name = "TxtDolar";
+            this.TxtDolar.Size = new System.Drawing.Size(333, 20);
+            this.TxtDolar.TabIndex = 30;
+            this.TxtDolar.Leave += new System.EventHandler(this.TxtDolar_Leave_1);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.Transparent;
+            this.label13.Location = new System.Drawing.Point(1341, 157);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(108, 25);
+            this.label13.TabIndex = 29;
+            this.label13.Text = "USD HOY";
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(1336, 211);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(130, 25);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Convertir";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.BackColor = System.Drawing.Color.Transparent;
+            this.label21.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.label21.ForeColor = System.Drawing.Color.Transparent;
+            this.label21.Location = new System.Drawing.Point(1224, 248);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(104, 17);
+            this.label21.TabIndex = 31;
+            this.label21.Text = "Coloque el valor";
+            // 
+            // BtnAgregar
+            // 
+            this.BtnAgregar.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAgregar.Location = new System.Drawing.Point(963, 638);
+            this.BtnAgregar.Name = "BtnAgregar";
+            this.BtnAgregar.Size = new System.Drawing.Size(128, 52);
+            this.BtnAgregar.TabIndex = 32;
+            this.BtnAgregar.Text = "Agregar";
+            this.BtnAgregar.UseVisualStyleBackColor = true;
+            this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
             // AgregarFacturas
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.DarkSlateGray;
-            ClientSize = new Size(1589, 817);
-            Controls.Add(label12);
-            Controls.Add(TxtImporteUSD);
-            Controls.Add(label10);
-            Controls.Add(TxtNombrePro);
-            Controls.Add(label21);
-            Controls.Add(label20);
-            Controls.Add(TxtAbono);
-            Controls.Add(button1);
-            Controls.Add(BtnAgregar);
-            Controls.Add(label11);
-            Controls.Add(label9);
-            Controls.Add(TxtSaldoUSD);
-            Controls.Add(label8);
-            Controls.Add(TxtSaldoMXP);
-            Controls.Add(label7);
-            Controls.Add(TxtDolar);
-            Controls.Add(label6);
-            Controls.Add(TxtImporte);
-            Controls.Add(label5);
-            Controls.Add(TxtDiasVencimiento);
-            Controls.Add(label4);
-            Controls.Add(DTPFecha);
-            Controls.Add(label3);
-            Controls.Add(TxtNombreFactura);
-            Controls.Add(label2);
-            Controls.Add(TxtIDProveedor);
-            Controls.Add(label1);
-            Controls.Add(panel1);
-            FormBorderStyle = FormBorderStyle.None;
-            Name = "AgregarFacturas";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "AgregarFactura";
-            Load += AgregarFacturas_Load;
-            panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)BtnSalir).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.ClientSize = new System.Drawing.Size(1573, 778);
+            this.Controls.Add(this.BtnAgregar);
+            this.Controls.Add(this.label21);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.TxtDolar);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.DTPFecha);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.TxtSaldoMXP);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.TxtAbono);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.TxtDiasVencimiento);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.TxtImporteUSD);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.TxtImporte);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.TxtSaldoUSD);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.TxtNombreFactura);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.TxtNombrePro);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.TxtIDProveedor);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "AgregarFacturas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "AgregarFacturas";
+            this.Load += new System.EventHandler(this.AgregarFacturas_Load_1);
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
 
-        private Label label1;
-        private Panel panel1;
-        private Button BtnVolver;
-        private Label label2;
-        private Label label3;
-        private Label label4;
-        private Label label5;
-        private Label label6;
-        private Label label7;
-        private TextBox TxtDolar;
-        private Label label8;
-        private Label label9;
-        private Label label11;
-        private Button BtnAgregar;
-        private PictureBox BtnSalir;
-        private Button button1;
-        private Label label20;
-        private Label label21;
-        private Label label10;
-        public TextBox TxtNombrePro;
-        public TextBox TxtIDProveedor;
-        public TextBox TxtNombreFactura;
-        public DateTimePicker DTPFecha;
-        public TextBox TxtDiasVencimiento;
-        public TextBox TxtImporte;
-        public TextBox TxtSaldoMXP;
-        public TextBox TxtSaldoUSD;
-        public TextBox TxtAbono;
-        private Label label12;
-        public TextBox TxtImporteUSD;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button BtnVolver;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Button BtnAgregar;
+        public System.Windows.Forms.TextBox TxtNombrePro;
+        public System.Windows.Forms.TextBox TxtIDProveedor;
+        public System.Windows.Forms.TextBox TxtSaldoUSD;
+        public System.Windows.Forms.TextBox TxtNombreFactura;
+        public System.Windows.Forms.TextBox TxtImporteUSD;
+        public System.Windows.Forms.TextBox TxtImporte;
+        public System.Windows.Forms.TextBox TxtAbono;
+        public System.Windows.Forms.TextBox TxtDiasVencimiento;
+        public System.Windows.Forms.TextBox TxtSaldoMXP;
+        public System.Windows.Forms.DateTimePicker DTPFecha;
+        public System.Windows.Forms.TextBox TxtDolar;
     }
 }

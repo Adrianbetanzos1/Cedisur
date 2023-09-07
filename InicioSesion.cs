@@ -1,8 +1,16 @@
-using Common.Cache;
-using System.DirectoryServices;
-using System.Runtime.InteropServices.ObjectiveC;
+ï»¿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Data.SqlClient;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
-namespace Cedisur
+
+namespace CedisurB
 {
     public partial class InicioSesion : Form
     {
@@ -11,19 +19,29 @@ namespace Cedisur
             InitializeComponent();
         }
 
+        private void InicioSesion_Load(object sender, EventArgs e)
+        {
 
-        private void Buttona1_Click(object sender, EventArgs e)
+        }
+
+        private void MsgError(string error)
+        {
+            LblError.Text = "  " + error;
+            LblError.Visible = true;
+        }
+
+        private void BtnAceptar_Click(object sender, EventArgs e)
         {
             if (userTxt.Text != "NombreUsuario")
             {
-                if (passTxt.Text != "Contraseña")
+                if (passTxt.Text != "ContraseÃ±a")
                 {
-                    UserModel usuario = new();
+                    UserModel usuario = new UserModel();
                     var validLogin = usuario.LoginUser(userTxt.Text, passTxt.Text);
                     if (validLogin == true)
                     {
 
-                        Menu menu = new();
+                        Menu menu = new Menu();
                         MessageBox.Show("Bienvenido " + CacheInicioSesionUsuario.NombreCompleto);
 
                         menu.Show();
@@ -34,27 +52,19 @@ namespace Cedisur
                     }
                     else
                     {
-                        MsgError("Usuario/Contraseña incorrectos");
+                        MsgError("Usuario/ContraseÃ±a incorrectos");
                         userTxt.Clear();
                         passTxt.Clear();
                         userTxt.Focus();
                     }
                 }
-                else MsgError("Coloque su contraseña");
+                else MsgError("Coloque su contraseÃ±a");
 
             }
             else MsgError("Coloque su nombre de usuario");
-
         }
 
-        private void MsgError(string error)
-        {
-            LblError.Text = "  " + error;
-            LblError.Visible = true;
-        }
-
-
-        private void CerrarSesion(object? sender, FormClosedEventArgs e)
+        private void CerrarSesion(object sender, FormClosedEventArgs e)
         {
             userTxt.Clear();
             passTxt.Clear();
@@ -64,12 +74,12 @@ namespace Cedisur
 
         }
 
-        private void PictureBox2_Click(object sender, EventArgs e)
+        private void pictureBox3_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
         }
 
-        private void PictureBox3_Click(object sender, EventArgs e)
+        private void pictureBox2_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }

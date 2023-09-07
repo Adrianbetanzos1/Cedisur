@@ -1,4 +1,4 @@
-﻿namespace Cedisur
+﻿namespace CedisurB
 {
     partial class AgregarProveedor
     {
@@ -29,246 +29,254 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarProveedor));
-            panel1 = new Panel();
-            BtnSalir = new PictureBox();
-            BtnVolver = new Button();
-            label4 = new Label();
-            DTPFecha = new DateTimePicker();
-            label3 = new Label();
-            TxtNombreProv = new TextBox();
-            label2 = new Label();
-            TxtIDProveedor = new TextBox();
-            BtnAgregar = new Button();
-            label1 = new Label();
-            label5 = new Label();
-            TxtRfc = new TextBox();
-            CbTipo = new CheckedListBox();
-            label6 = new Label();
-            label7 = new Label();
-            CbMoneda = new CheckedListBox();
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)BtnSalir).BeginInit();
-            SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.BtnVolver = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.TxtIDProveedor = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.TxtNombreProv = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.TxtRfc = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.DTPFecha = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
+            this.CbTipo = new System.Windows.Forms.CheckedListBox();
+            this.CbMoneda = new System.Windows.Forms.CheckedListBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.BtnAgregar = new System.Windows.Forms.Button();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.SuspendLayout();
             // 
             // panel1
             // 
-            panel1.BackColor = SystemColors.AppWorkspace;
-            panel1.Controls.Add(BtnSalir);
-            panel1.Controls.Add(BtnVolver);
-            panel1.Location = new Point(12, 12);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1549, 67);
-            panel1.TabIndex = 2;
+            this.panel1.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel1.Controls.Add(this.BtnVolver);
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1533, 52);
+            this.panel1.TabIndex = 2;
             // 
-            // BtnSalir
+            // pictureBox2
             // 
-            BtnSalir.Image = (Image)resources.GetObject("BtnSalir.Image");
-            BtnSalir.Location = new Point(1502, 16);
-            BtnSalir.Name = "BtnSalir";
-            BtnSalir.Size = new Size(29, 27);
-            BtnSalir.SizeMode = PictureBoxSizeMode.Zoom;
-            BtnSalir.TabIndex = 37;
-            BtnSalir.TabStop = false;
-            BtnSalir.Click += BtnSalir_Click;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(1472, 4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(58, 42);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // BtnVolver
             // 
-            BtnVolver.BackColor = SystemColors.AppWorkspace;
-            BtnVolver.Font = new Font("Rockwell", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            BtnVolver.Location = new Point(3, 7);
-            BtnVolver.Name = "BtnVolver";
-            BtnVolver.Size = new Size(96, 53);
-            BtnVolver.TabIndex = 2;
-            BtnVolver.Text = "Volver al menú";
-            BtnVolver.UseVisualStyleBackColor = false;
-            BtnVolver.Click += BtnVolver_Click;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Rockwell", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.ForeColor = SystemColors.ButtonFace;
-            label4.Location = new Point(1057, 291);
-            label4.Name = "label4";
-            label4.Size = new Size(190, 25);
-            label4.TabIndex = 25;
-            label4.Text = "Fecha de registro";
-            // 
-            // DTPFecha
-            // 
-            DTPFecha.Location = new Point(1057, 319);
-            DTPFecha.Name = "DTPFecha";
-            DTPFecha.Size = new Size(229, 23);
-            DTPFecha.TabIndex = 24;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Rockwell", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.ForeColor = SystemColors.ButtonFace;
-            label3.Location = new Point(549, 291);
-            label3.Name = "label3";
-            label3.Size = new Size(242, 25);
-            label3.TabIndex = 23;
-            label3.Text = "Nombre del proveedor";
-            // 
-            // TxtNombreProv
-            // 
-            TxtNombreProv.Location = new Point(550, 319);
-            TxtNombreProv.Name = "TxtNombreProv";
-            TxtNombreProv.Size = new Size(308, 23);
-            TxtNombreProv.TabIndex = 22;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Rockwell", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.ForeColor = SystemColors.ButtonFace;
-            label2.Location = new Point(104, 291);
-            label2.Name = "label2";
-            label2.Size = new Size(183, 25);
-            label2.TabIndex = 21;
-            label2.Text = "ID del proveedor";
-            // 
-            // TxtIDProveedor
-            // 
-            TxtIDProveedor.Location = new Point(104, 319);
-            TxtIDProveedor.Name = "TxtIDProveedor";
-            TxtIDProveedor.Size = new Size(268, 23);
-            TxtIDProveedor.TabIndex = 20;
-            TxtIDProveedor.Leave += TxtIDProveedor_Leave;
-            // 
-            // BtnAgregar
-            // 
-            BtnAgregar.BackColor = SystemColors.AppWorkspace;
-            BtnAgregar.Font = new Font("Rockwell", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            BtnAgregar.Location = new Point(550, 559);
-            BtnAgregar.Name = "BtnAgregar";
-            BtnAgregar.Size = new Size(121, 59);
-            BtnAgregar.TabIndex = 26;
-            BtnAgregar.Text = "Agregar";
-            BtnAgregar.UseVisualStyleBackColor = false;
-            BtnAgregar.Click += BtnAgregar_Click;
+            this.BtnVolver.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnVolver.Location = new System.Drawing.Point(0, 0);
+            this.BtnVolver.Name = "BtnVolver";
+            this.BtnVolver.Size = new System.Drawing.Size(128, 52);
+            this.BtnVolver.TabIndex = 8;
+            this.BtnVolver.Text = "Volver al menú";
+            this.BtnVolver.UseVisualStyleBackColor = true;
+            this.BtnVolver.Click += new System.EventHandler(this.BtnVolver_Click);
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Rockwell", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = SystemColors.ButtonFace;
-            label1.Location = new Point(523, 139);
-            label1.Name = "label1";
-            label1.Size = new Size(401, 39);
-            label1.TabIndex = 27;
-            label1.Text = "AGREGAR PROVEEDOR";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Rockwell", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(516, 67);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(609, 59);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "AGREGAR PROVEEDOR";
             // 
-            // label5
+            // TxtIDProveedor
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Rockwell", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.ForeColor = SystemColors.ButtonFace;
-            label5.Location = new Point(104, 381);
-            label5.Name = "label5";
-            label5.Size = new Size(203, 25);
-            label5.TabIndex = 29;
-            label5.Text = "RFC del proveedor";
+            this.TxtIDProveedor.Location = new System.Drawing.Point(216, 316);
+            this.TxtIDProveedor.Name = "TxtIDProveedor";
+            this.TxtIDProveedor.Size = new System.Drawing.Size(333, 20);
+            this.TxtIDProveedor.TabIndex = 5;
+            this.TxtIDProveedor.Leave += new System.EventHandler(this.TxtIDProveedor_Leave);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Transparent;
+            this.label2.Location = new System.Drawing.Point(211, 288);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(232, 25);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "ID DEL PROVEEDOR";
+            // 
+            // TxtNombreProv
+            // 
+            this.TxtNombreProv.Location = new System.Drawing.Point(637, 316);
+            this.TxtNombreProv.Name = "TxtNombreProv";
+            this.TxtNombreProv.Size = new System.Drawing.Size(333, 20);
+            this.TxtNombreProv.TabIndex = 7;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Transparent;
+            this.label3.Location = new System.Drawing.Point(632, 288);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(308, 25);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "NOMBRE DEL PROVEEDOR";
             // 
             // TxtRfc
             // 
-            TxtRfc.Location = new Point(104, 409);
-            TxtRfc.Name = "TxtRfc";
-            TxtRfc.Size = new Size(268, 23);
-            TxtRfc.TabIndex = 28;
+            this.TxtRfc.Location = new System.Drawing.Point(216, 437);
+            this.TxtRfc.Name = "TxtRfc";
+            this.TxtRfc.Size = new System.Drawing.Size(333, 20);
+            this.TxtRfc.TabIndex = 9;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Transparent;
+            this.label4.Location = new System.Drawing.Point(211, 409);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(252, 25);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "RFC DEL PROVEEDOR";
+            // 
+            // DTPFecha
+            // 
+            this.DTPFecha.Location = new System.Drawing.Point(1076, 316);
+            this.DTPFecha.Name = "DTPFecha";
+            this.DTPFecha.Size = new System.Drawing.Size(226, 20);
+            this.DTPFecha.TabIndex = 10;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Transparent;
+            this.label5.Location = new System.Drawing.Point(1071, 288);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(241, 25);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "FECHA DE REGISTRO";
             // 
             // CbTipo
             // 
-            CbTipo.FormattingEnabled = true;
-            CbTipo.Items.AddRange(new object[] { "Proveedor", "Acreedor" });
-            CbTipo.Location = new Point(550, 409);
-            CbTipo.Name = "CbTipo";
-            CbTipo.Size = new Size(129, 58);
-            CbTipo.TabIndex = 41;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Rockwell", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.ForeColor = SystemColors.ButtonFace;
-            label6.Location = new Point(550, 381);
-            label6.Name = "label6";
-            label6.Size = new Size(58, 25);
-            label6.TabIndex = 42;
-            label6.Text = "Tipo";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Rockwell", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.ForeColor = SystemColors.ButtonFace;
-            label7.Location = new Point(1057, 381);
-            label7.Name = "label7";
-            label7.Size = new Size(208, 25);
-            label7.TabIndex = 44;
-            label7.Text = "Moneda de cambio";
+            this.CbTipo.FormattingEnabled = true;
+            this.CbTipo.Items.AddRange(new object[] {
+            "Proveedor",
+            "Acreedor"});
+            this.CbTipo.Location = new System.Drawing.Point(637, 433);
+            this.CbTipo.Name = "CbTipo";
+            this.CbTipo.Size = new System.Drawing.Size(179, 49);
+            this.CbTipo.TabIndex = 12;
             // 
             // CbMoneda
             // 
-            CbMoneda.FormattingEnabled = true;
-            CbMoneda.Items.AddRange(new object[] { "Peso mexicano", "Dolar americano" });
-            CbMoneda.Location = new Point(1057, 409);
-            CbMoneda.Name = "CbMoneda";
-            CbMoneda.Size = new Size(129, 58);
-            CbMoneda.TabIndex = 43;
+            this.CbMoneda.FormattingEnabled = true;
+            this.CbMoneda.Items.AddRange(new object[] {
+            "Peso mexicano",
+            "Dolar americano"});
+            this.CbMoneda.Location = new System.Drawing.Point(1076, 433);
+            this.CbMoneda.Name = "CbMoneda";
+            this.CbMoneda.Size = new System.Drawing.Size(183, 49);
+            this.CbMoneda.TabIndex = 13;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Transparent;
+            this.label6.Location = new System.Drawing.Point(632, 405);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(66, 25);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "TIPO";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Transparent;
+            this.label7.Location = new System.Drawing.Point(1071, 405);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(221, 25);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "MONEDA DE PAGO";
+            // 
+            // BtnAgregar
+            // 
+            this.BtnAgregar.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAgregar.Location = new System.Drawing.Point(637, 618);
+            this.BtnAgregar.Name = "BtnAgregar";
+            this.BtnAgregar.Size = new System.Drawing.Size(128, 52);
+            this.BtnAgregar.TabIndex = 9;
+            this.BtnAgregar.Text = "Agregar";
+            this.BtnAgregar.UseVisualStyleBackColor = true;
+            this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
             // AgregarProveedor
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.DarkSlateGray;
-            ClientSize = new Size(1573, 778);
-            Controls.Add(label7);
-            Controls.Add(CbMoneda);
-            Controls.Add(label6);
-            Controls.Add(CbTipo);
-            Controls.Add(label5);
-            Controls.Add(TxtRfc);
-            Controls.Add(label1);
-            Controls.Add(BtnAgregar);
-            Controls.Add(label4);
-            Controls.Add(DTPFecha);
-            Controls.Add(label3);
-            Controls.Add(TxtNombreProv);
-            Controls.Add(label2);
-            Controls.Add(TxtIDProveedor);
-            Controls.Add(panel1);
-            FormBorderStyle = FormBorderStyle.None;
-            Name = "AgregarProveedor";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "AgregarProveedor";
-            Load += AgregarProveedor_Load;
-            panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)BtnSalir).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.ClientSize = new System.Drawing.Size(1557, 739);
+            this.Controls.Add(this.BtnAgregar);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.CbMoneda);
+            this.Controls.Add(this.CbTipo);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.DTPFecha);
+            this.Controls.Add(this.TxtRfc);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.TxtNombreProv);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.TxtIDProveedor);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "AgregarProveedor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "AgregarProveedor";
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
 
-        private Panel panel1;
-        private PictureBox BtnSalir;
-        private Button BtnVolver;
-        private Label label4;
-        private DateTimePicker DTPFecha;
-        private Label label3;
-        private TextBox TxtNombreProv;
-        private Label label2;
-        private TextBox TxtIDProveedor;
-        private Button BtnAgregar;
-        private Label label1;
-        private Label label5;
-        private TextBox TxtRfc;
-        private CheckedListBox CbTipo;
-        private Label label6;
-        private Label label7;
-        private CheckedListBox CbMoneda;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button BtnVolver;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox TxtIDProveedor;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox TxtNombreProv;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox TxtRfc;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DateTimePicker DTPFecha;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.CheckedListBox CbTipo;
+        private System.Windows.Forms.CheckedListBox CbMoneda;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button BtnAgregar;
     }
 }

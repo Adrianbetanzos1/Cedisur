@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
 using System.ComponentModel.Design.Serialization;
 
-namespace Cedisur
+namespace CedisurB
 {
     public abstract class ConexionSQL
     {

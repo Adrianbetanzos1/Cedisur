@@ -1,5 +1,5 @@
-﻿using Cedisur.Clases;
-using Common.Cache;
+﻿using CedisurB.Clases;
+using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,31 +10,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
-namespace Cedisur
+namespace CedisurB
 {
     public partial class VerFacturas : Form
     {
-        private readonly SqlConnection conexion = new("server=DESKTOP-717JV41\\SQLEXPRESS ; database=cedisur ; integrated security = true");
+        
+        private readonly SqlConnection conexion = new SqlConnection("server=DESKTOP-717JV41\\SQLEXPRESS ; database=cedisur ; integrated security = true");
 
         public VerFacturas()
         {
             InitializeComponent();
         }
-
-        private void BtnVolver_Click(object sender, EventArgs e)
-        {
-            Menu menu = new();
-            menu.Show();
-            this.Close();
-        }
-
-        private void BtnSalir_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
 
         private void RestringirAccesos()
         {
@@ -46,10 +33,10 @@ namespace Cedisur
         }
 
 
-        //Al momento de cargar el formulario se cargar el DGV con los nombres preestablecidos
-        private void Proveedores_Load(object sender, EventArgs e)
+      
+       
+            private void VerFacturas_Load(object sender, EventArgs e)
         {
-
             RestringirAccesos();
             DGVfacturas.DataSource = Facturas.MostrarFactura();
             DGVfacturas.Columns[0].HeaderText = "ID factura";
@@ -64,10 +51,8 @@ namespace Cedisur
             DGVfacturas.Columns[9].HeaderText = "ID proveedor";
             DGVfacturas.Columns[10].HeaderText = "Tipo de cambio del día facturado";
 
-
         }
 
-        //Método para búsqueda por medio del nombre de la factura 
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
             if (TxtBusqueda.Text.Equals(""))
@@ -78,10 +63,8 @@ namespace Cedisur
             {
                 DGVfacturas.DataSource = Facturas.Mostrar(TxtBusqueda.Text);
             }
-
         }
 
-        //Método para búsqueda por medio del ID de la factura
         private void BtnBuscarID_Click(object sender, EventArgs e)
         {
             if (TxtBuscarID.Text.Equals(""))
@@ -94,34 +77,68 @@ namespace Cedisur
             }
         }
 
-        /*
-        int LastIdPlusOne
+        private void BtnPagar_Click(object sender, EventArgs e)
         {
-            get
+            if (DGVfacturas.RowCount == 0)
             {
-                int id = 0;
-                if (DGVfacturas.Rows.Count > 0)
+                MessageBox.Show("No hay datos existentes");
+            }
+            else if (MessageBox.Show("Está seguro que desea generar un pago a la factura seleccionada?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                var pago = new AgregarPagos
                 {
-                    foreach (DataGridViewRow row in DGVfacturas.Rows)
+                    ParentForm = this
+                };
+                pago.TxtIdFactura.Text = DGVfacturas.SelectedRows[0].Cells[0].Value.ToString();
+                pago.txtSaldoPendiente.Text = DGVfacturas.SelectedRows[0].Cells[7].Value.ToString();
+                pago.txtSaldoUSD.Text = DGVfacturas.SelectedRows[0].Cells[8].Value.ToString();
+
+                conexion.Open();
+                string query = "select proveedor.ID_proveedor, Factura.FacturaN, Proveedor.nombreProveedor, Factura.abono " +
+                    "from Factura " +
+                    "inner join Proveedor on Factura.ID_proveedor = Proveedor.ID_proveedor " +
+                    "where ID_factura ='" + DGVfacturas.SelectedRows[0].Cells[0].Value.ToString() + "'";
+
+
+
+                using (SqlCommand comando = new SqlCommand(query, conexion))
+                {
+
+                    using (SqlDataReader reader = comando.ExecuteReader())
                     {
-                        var _id = int.Parse(row.Cells[0].Value.ToString());
-                        if (_id > id)
+                        if (reader.Read())
                         {
-                            id = _id;
+                            pago.TxtNombrePro.Text = reader["nombreProveedor"].ToString();
+                            pago.TxtNombreFactura.Text = reader["FacturaN"].ToString();
+                            pago.TxtID.Text = reader["ID_proveedor"].ToString();
+                            pago.TxtAbono.Text = reader["abono"].ToString();
                         }
                     }
+                        
+
+
                 }
-                return id + 1;
+
+                conexion.Close();
+                this.Hide();
+                pago.ShowDialog();
             }
         }
-        */
 
-        //Método para editar los datos en otro formulario, llevandose los datos
+        private void BtnVolver_Click(object sender, EventArgs e)
+        {
+            Menu menu = new Menu();
+            menu.Show();
+            this.Close();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
         private void BtnEditar_Click(object sender, EventArgs e)
         {
-
-
-
             if (DGVfacturas.RowCount == 0)
             {
                 MessageBox.Show("No hay datos existentes");
@@ -150,59 +167,15 @@ namespace Cedisur
             }
         }
 
+        
 
 
-
-        //Método para llevar ciertos datos seleccionados al formulario de agregar pago
-        private void BtnPagar_Click(object sender, EventArgs e)
+        
+        private void BtnReporte_Click(object sender, EventArgs e)
         {
-
-            if (DGVfacturas.RowCount == 0)
-            {
-                MessageBox.Show("No hay datos existentes");
-            }
-            else if (MessageBox.Show("Está seguro que desea generar un pago a la factura seleccionada?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-            {
-                var pago = new AgregarPagos
-                {
-                    ParentForm = this
-                };
-                pago.TxtIdFactura.Text = DGVfacturas.SelectedRows[0].Cells[0].Value.ToString();
-                pago.txtSaldoPendiente.Text = DGVfacturas.SelectedRows[0].Cells[7].Value.ToString();
-                pago.txtSaldoUSD.Text = DGVfacturas.SelectedRows[0].Cells[8].Value.ToString();
-
-                conexion.Open();
-                string query = "select proveedor.ID_proveedor, Factura.FacturaN, Proveedor.nombreProveedor, Factura.abono " +
-                    "from Factura " +
-                    "inner join Proveedor on Factura.ID_proveedor = Proveedor.ID_proveedor " +
-                    "where ID_factura ='" + DGVfacturas.SelectedRows[0].Cells[0].Value.ToString() + "'";
-
-
-
-                using (SqlCommand comando = new(query, conexion))
-                {
-
-                    using SqlDataReader reader = comando.ExecuteReader();
-                    if (reader.Read())
-                    {
-                        pago.TxtNombrePro.Text = reader["nombreProveedor"].ToString();
-                        pago.TxtNombreFactura.Text = reader["FacturaN"].ToString();
-                        pago.TxtID.Text = reader["ID_proveedor"].ToString();
-                        pago.txtABono.Text = reader["abono"].ToString();
-                    }
-
-
-                }
-
-                conexion.Close();
-                this.Hide();
-                pago.ShowDialog();
-            }
-
-
+            Reportes.ReportesFacturas reporte =  new Reportes.ReportesFacturas();
+            reporte.ShowDialog();
         }
+        
     }
-
-
-
 }
